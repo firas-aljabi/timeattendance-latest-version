@@ -95,6 +95,8 @@ class RequestController extends Controller
      * - `1`: FIRST.
      * - `2`: SECOND. Custom Example: 2.
      *
+     * @bodyParam attachments  file Must not be greater than 2048 kilobytes
+     *
      * @response 200 scenario="Add Vacation Request"{
      *   "data": {
      *      "id": 1,
@@ -180,7 +182,7 @@ class RequestController extends Controller
                 new Result($returnData, "Done")
             );
         } else {
-            return ['message' => $createdData['message']];
+            return response()->json(['message' => $createdData['message']], 422);
         }
     }
 

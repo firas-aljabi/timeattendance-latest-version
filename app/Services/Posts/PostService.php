@@ -139,4 +139,14 @@ class PostService implements PostServiceInterface
             return false;
         }
     }
+    public static function isLikedComment($comment_id)
+    {
+        $comment = Comment::find($comment_id);
+        $like = Like::where('comment_id', $comment->id)->where('user_id', auth()->user()->id)->first();
+        if ($like) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

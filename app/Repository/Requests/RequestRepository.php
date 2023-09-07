@@ -183,10 +183,17 @@ class RequestRepository extends BaseRepositoryImplementation
                     $vacationRequest->end_time = $data['end_time'];
                     $vacationRequest->payment_type = $data['payment_type'];
                     $vacationRequest->company_id = auth()->user()->company_id;
+
+                    if (Arr::has($data, 'attachments')) {
+                        $file = Arr::get($data, 'attachments');
+                        $file_name = $this->uploadEmployeeRequestsAttachment($file,  $vacationRequest->user_id);
+                        $vacationRequest->attachments = $file_name;
+                    }
+
                     $vacationRequest->save();
 
                     $availableTime->update([
-                        'hours_daily' => $availableTime->hours_daily - $hours
+                        'hourly_annual' => $availableTime->hourly_annual - $hours
                     ]);
                 } else {
                     return ['success' => false, 'message' => "You Cannot request a vacation Because Your Available Hours Ended."];
@@ -220,11 +227,12 @@ class RequestRepository extends BaseRepositoryImplementation
                     $vacationRequest->end_time = $data['end_time'];
                     $vacationRequest->payment_type = $data['payment_type'];
                     $vacationRequest->company_id = auth()->user()->company_id;
+                    if (Arr::has($data, 'attachments')) {
+                        $file = Arr::get($data, 'attachments');
+                        $file_name = $this->uploadEmployeeRequestsAttachment($file,  $vacationRequest->user_id);
+                        $vacationRequest->attachments = $file_name;
+                    }
                     $vacationRequest->save();
-
-                    $availableTime->update([
-                        'hours_daily' => $availableTime->hours_daily - $hours
-                    ]);
                 } else {
                     return ['success' => false, 'message' => "You Cannot request a vacation Because Your Available Hours Ended."];
                 }
@@ -254,10 +262,15 @@ class RequestRepository extends BaseRepositoryImplementation
                     $vacationRequest->end_date = $data['end_date'];
                     $vacationRequest->payment_type = $data['payment_type'];
                     $vacationRequest->company_id = auth()->user()->company_id;
+                    if (Arr::has($data, 'attachments')) {
+                        $file = Arr::get($data, 'attachments');
+                        $file_name = $this->uploadEmployeeRequestsAttachment($file,  $vacationRequest->user_id);
+                        $vacationRequest->attachments = $file_name;
+                    }
                     $vacationRequest->save();
 
                     $availableTime->update([
-                        'days_monthly' => $availableTime->days_monthly - $days
+                        'daily_annual' => $availableTime->daily_annual - $days
                     ]);
                 } else {
                     return ['success' => false, 'message' => "You Cannot request a vacation Because Your Available Hours Ended."];
@@ -276,6 +289,11 @@ class RequestRepository extends BaseRepositoryImplementation
                 $vacationRequest->payment_type = $data['payment_type'];
                 $vacationRequest->person = $data['person'];
                 $vacationRequest->company_id = auth()->user()->company_id;
+                if (Arr::has($data, 'attachments')) {
+                    $file = Arr::get($data, 'attachments');
+                    $file_name = $this->uploadEmployeeRequestsAttachment($file,  $vacationRequest->user_id);
+                    $vacationRequest->attachments = $file_name;
+                }
                 $vacationRequest->save();
             } elseif ($data['vacation_type'] == VacationRequestTypes::DEATH) {
                 $vacationRequest = new Request();
@@ -290,6 +308,11 @@ class RequestRepository extends BaseRepositoryImplementation
                 $vacationRequest->dead_person = $data['dead_person'];
                 $vacationRequest->degree_of_kinship = $data['degree_of_kinship'];
                 $vacationRequest->company_id = auth()->user()->company_id;
+                if (Arr::has($data, 'attachments')) {
+                    $file = Arr::get($data, 'attachments');
+                    $file_name = $this->uploadEmployeeRequestsAttachment($file,  $vacationRequest->user_id);
+                    $vacationRequest->attachments = $file_name;
+                }
                 $vacationRequest->save();
             } else {
                 $existing_vacation = Request::where('type', RequestType::VACATION)
@@ -312,7 +335,11 @@ class RequestRepository extends BaseRepositoryImplementation
                 $vacationRequest->end_date = $data['end_date'];
                 $vacationRequest->payment_type = $data['payment_type'];
                 $vacationRequest->company_id = auth()->user()->company_id;
-
+                if (Arr::has($data, 'attachments')) {
+                    $file = Arr::get($data, 'attachments');
+                    $file_name = $this->uploadEmployeeRequestsAttachment($file,  $vacationRequest->user_id);
+                    $vacationRequest->attachments = $file_name;
+                }
                 $vacationRequest->save();
                 if ($existing_vacation) {
                     return ['success' => false, 'message' => "You Cannot request a vacation in this Time, Please Choose Another Date."];

@@ -126,6 +126,7 @@ class PostController extends Controller
      *             "likes_count": 1,
      *             "shares_count": 0,
      *             "created_at": "2023-08-27",
+     *             "isLiked": true,
      *             "comments": [
      *                 {
      *                     "content": "New Comment",
@@ -134,6 +135,7 @@ class PostController extends Controller
      *                         "name": "Mouaz Alkhateeb",
      *                         "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg"
      *                     },
+     *                     "isLiked": false,
      *                     "created_at": "2023-08-27"
      *                 }
      *             ],
@@ -299,6 +301,7 @@ class PostController extends Controller
      *             "likes_count": 1,
      *             "shares_count": 0,
      *             "created_at": "2023-08-27",
+     *             "isLiked": false,
      *             "comments": [
      *                 {
      *                     "content": "New Comment",
@@ -307,6 +310,7 @@ class PostController extends Controller
      *                         "name": "Mouaz Alkhateeb",
      *                         "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg"
      *                     },
+     *                     "isLiked": true,
      *                     "created_at": "2023-08-27"
      *                 }
      *             ],
@@ -577,6 +581,7 @@ class PostController extends Controller
      *         "likes_count": 1,
      *         "shares_count": 1,
      *         "created_at": "2023-08-27",
+     *         "isLiked": true,
      *         "writer": {
      *             "id": 3,
      *             "name": "mouaz alkhateeb",
