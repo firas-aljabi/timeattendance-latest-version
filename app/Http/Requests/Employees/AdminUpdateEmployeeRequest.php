@@ -26,7 +26,10 @@ class AdminUpdateEmployeeRequest extends FormRequest
     public function rules()
     {
         return [
+            'user_id' => 'required|exists:users,id',
             'material_status' => ['nullable', Rule::in(MaterialStatus::$statuses)],
+            'housing_allowance' => 'nullable',
+            'transportation_allowance' => 'nullable',
         ];
     }
 }

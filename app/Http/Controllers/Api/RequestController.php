@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\ApiHelper\ApiResponseHelper;
 use App\ApiHelper\Result;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Employees\CreateEmployeeRequest;
 use App\Http\Requests\Employees\GetMonthlyShiftListRequest;
 use App\Http\Requests\Requests\CreateJustifyRequest;
 use App\Http\Requests\Requests\CreateResignationRequest;
@@ -31,9 +30,9 @@ class RequestController extends Controller
      *
      * This endpoint is used to add a vacation request. Employee can access this API Once A Day.
      *
-     * @bodyParam start_time time required The start time of the vacation request in the format `HH:MM:SS` Custom Example: 09:00:00.
+     * @bodyParam start_time time required required_if vacation type equal 1 The start time of the vacation request in the format `HH:MM:SS` Custom Example: 09:00:00.
      *
-     * @bodyParam end_time time required The end time of the vacation request in the format `HH:MM:SS` Custom Example: 15:30:00.
+     * @bodyParam end_time time required required_if vacation type equal 1 The end time of the vacation request in the format `HH:MM:SS` Custom Example: 15:30:00.
      *
      * @bodyParam reason string required The reason for the vacation request Custom Example: death of a lover.
      *
@@ -44,19 +43,57 @@ class RequestController extends Controller
      * @bodyParam payment_type int required The payment type of the vacation request. Must be one of the following values:
      * - `1`: payment.
      * - `2`: unpayment. Custom Example: 1.
-     *
-     * @bodyParam vacation_type int required The vacation type of the vacation request. Must be one of the following values:
+
+     * @bodyParam vacation_type int required . Must be one of the following values:
      * - `1`: HOURLY.
      * - `2`: DAILY.
-     * - `3`: ANNUL.
-     * - `4`: DEATH.
-     * - `5`: SATISFYING.
-     * - `6`: PILGRIMAME.
-     * - `7`: NEW_BABY.
-     * - `8`: EXAM.
-     * - `9`: PREGNANT_WOMAN.
-     * - `10`: METERNITY.
-     * - `11`: SICK_CHILD. Custom Example: 4
+     * - `3`: DEATH.
+     * - `4`: SATISFYING.
+     * - `5`: PILGRIMAME.
+     * - `6`: NEW_BABY.
+     * - `7`: EXAM.
+     * - `8`: PREGNANT_WOMAN.
+     * - `9`: METERNITY.
+     * - `10`: SICK_CHILD
+     * - `11`: MARRIED
+     *
+     * @bodyParam person int required_if vacation_type equal 4. Must be one of the following values:
+     * - `1`: FATHER.
+     * - `2`: MOTHER.
+     * - `3`: SISTER.
+     * - `4`: PROTHER.
+     * - `5`: SON.
+     * - `6`: DAUGHTER.
+     * - `7`: HUSBAND.
+     * - `8`: ME.
+     * - `9`: GRAND_FATHER.
+     * - `10`: GRAND_MOTHER
+     * - `11`: UNCLE.
+     * - `12`: AUNT.
+     * - `13`: MATERNAL_UNCLE.
+     * - `14`: MATERNAL_AUNT. Custom Example: 5.
+     *
+
+     * @bodyParam dead_person int required_if vacation_type equal 3 (death). Must be one of the following values:
+     * - `1`: FATHER.
+     * - `2`: MOTHER.
+     * - `3`: SISTER.
+     * - `4`: PROTHER.
+     * - `5`: SON.
+     * - `6`: DAUGHTER.
+     * - `7`: HUSBAND.
+     * - `8`: ME.
+     * - `9`: GRAND_FATHER.
+     * - `10`: GRAND_MOTHER
+     * - `11`: UNCLE.
+     * - `12`: AUNT.
+     * - `13`: MATERNAL_UNCLE.
+     * - `14`: MATERNAL_AUNT. Custom Example: 5.
+     *
+     *
+     * @bodyParam degree_of_kinship int required_if vacation_type equal 3 (death). Must be one of the following values:
+     * - `1`: FIRST.
+     * - `2`: SECOND. Custom Example: 2.
      *
      * @response 200 scenario="Add Vacation Request"{
      *   "data": {
@@ -70,6 +107,58 @@ class RequestController extends Controller
      *      "end_date": "2023-06-19",
      *      "payment_type": 1,
      *      "vacation_type": 1,
+     *      "person": null,
+     *      "dead_person": null,
+     *      "degree_of_kinship": null,
+     *      "created_at": "1 second ago",
+     *      "user": {
+     *          "id": 3,
+     *          "name": "mouaz alkhateeb",
+     *          "email": "mouaz@gmail.com",
+     *          "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg",
+     *          "position": "Backend Developer"
+     *      }
+     *   }
+     * OR
+     *   "data": {
+     *      "id": 1,
+     *      "type": 1,
+     *      "status": 3,
+     *      "reason": "death of a lover",
+     *      "start_time": null,
+     *      "end_time": null,
+     *      "start_date": "2023-06-19",
+     *      "end_date": "2023-06-25",
+     *      "payment_type": 1,
+     *      "vacation_type": 4,
+     *      "person": 5,
+     *      "dead_person": null,
+     *      "degree_of_kinship": null,
+     *      "created_at": "1 second ago",
+     *      "user": {
+     *          "id": 3,
+     *          "name": "mouaz alkhateeb",
+     *          "email": "mouaz@gmail.com",
+     *          "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg",
+     *          "position": "Backend Developer"
+     *      }
+     *   }
+     * OR
+     *   "data": {
+     *      "id": 1,
+     *      "type": 1,
+     *      "status": 3,
+     *      "reason": "death of a lover",
+     *      "start_time": null,
+     *      "end_time": null,
+     *      "start_date": "2023-06-19",
+     *      "end_date": "2023-06-25",
+     *      "payment_type": 1,
+     *      "vacation_type": 4,
+     *      "person": null,
+     *      "dead_person": 11,
+     *      "degree_of_kinship": 2,
+     *      "created_at": "1 minute ago",
      *      "user": {
      *          "id": 3,
      *          "name": "mouaz alkhateeb",

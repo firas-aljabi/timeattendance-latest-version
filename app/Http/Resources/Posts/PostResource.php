@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Posts;
 
 use App\Http\Resources\Admin\EmployeeResource;
+use App\Services\Posts\PostService;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource
@@ -23,6 +24,7 @@ class PostResource extends JsonResource
             'likes_count' => $this->likes_count,
             'shares_count' => $this->shares_count,
             'created_at' => $this->created_at ? $this->created_at->format('Y-m-d') : null,
+            'isLiked' => PostService::isLiked($this->id),
             'comments' => CommentResource::collection($this->whenLoaded('comments')),
             'likes' => LikeResource::collection($this->whenLoaded('likes')),
             'shares' => ShareResource::collection($this->whenLoaded('shares')),

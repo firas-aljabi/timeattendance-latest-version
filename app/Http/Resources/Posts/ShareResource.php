@@ -21,6 +21,7 @@ class ShareResource extends JsonResource
                     'id' => $this->user->id,
                     'name' => $this->user->name,
                     'image' => $this->user->image,
+                    'position' => $this->user->position,
                 ];
             }),
             'post' => PostResource::make($this->whenLoaded('post')),

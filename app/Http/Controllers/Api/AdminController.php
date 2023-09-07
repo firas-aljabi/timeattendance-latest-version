@@ -72,24 +72,29 @@ class AdminController extends Controller
      *
      * @bodyParam image file Must not be greater than 2048 kilobytes
      *
-     * @bodyParam id_photo file Must be pdf and not be greater than 2048 kilobytes
+     * @bodyParam id_photo file Must be image or pdf and not be greater than 2048 kilobytes
      *
-     * @bodyParam biography file  Must not be greater than 2048 kilobytes
+     * @bodyParam biography file  Must be image or pdf and not be greater than 2048 kilobytes
      *
-     * @bodyParam visa file Must not be greater than 2048 kilobytes
+     * @bodyParam visa file Must be image or pdf and not be greater than 2048 kilobytes
      *
-     * @bodyParam municipal_card file Must not be greater than 2048 kilobytes
+     * @bodyParam municipal_card file Must be image or pdf and not be greater than 2048 kilobytes
      *
-     * @bodyParam health_insurance file Must not be greater than 2048 kilobytes
+     * @bodyParam health_insurance file Must be image or pdf and not be greater than 2048 kilobytes
      *
-     * @bodyParam passport  file Must not be greater than 2048 kilobytes
+     * @bodyParam passport file Must be image or pdf and not be greater than 2048 kilobytes
+     *
      * @bodyParam serial_number number required Custom Example: 0101122
+     *
      * @bodyParam birthday_date date Custom Example: 2023-08-27
+     *
      * @bodyParam nationalitie_id int required Must be from 1 to 56
+     *
      * @bodyParam material_status int optional The material status of the user. Must be one of the following values:
      * - `1`: single status.
      * - `2`: married status.
-     * - `3`: divorced status. Custom Example: 1
+     * - `3`: married status.
+     * - `4`: widower status. Custom Example: 1
      *
      * @bodyParam gender int optional The gender of the user. Must be one of the following values:
      * - `1`: male.
@@ -107,9 +112,6 @@ class AdminController extends Controller
      *
      * @bodyParam skills  string Custom Example: Drwaing
      *
-     * @bodyParam status int optional The status of the user. Must be one of the following values:
-     * - `1`: on duty.
-     * - `2`: on vacation. Custom Example: 1
      *
      * @bodyParam start_job_contract date required Custom Example: 2023-08-27
      * @bodyParam end_job_contract date required Custom Example: 2023-08-27
@@ -119,28 +121,27 @@ class AdminController extends Controller
      * @bodyParam end_health_insurance date Custom Example: 2023-08-27
      * @bodyParam end_employee_residence date Custom Example: 2023-08-27
      *
-     * @bodyParam permission_to_leave int optional The permission to leave of the user. Must be one of the following values:
-     * - `1`: True.
-     * - `2`: False. Custom Example: 1
      *
-     * @bodyParam leave_time number require if permission_to_leave equal 1. Must be one of the following values:
+     * @bodyParam leave_time number Must be one of the following values:
      * - 30.
      * - 60.
      * - 90  Custom Example: 60
      *
-     * @bodyParam permission_to_entry  int optional The permission to entry of the user. Must be one of the following values:
-     * - `1`: True.
-     * - `2`: False. Custom Example: 1
      *
-     * @bodyParam entry_time number require if permission_to_entry equal 1. Must be one of the following values:
+     * @bodyParam entry_time number Must be one of the following values:
      * - 30.
      * - 60.
      * - 90  Custom Example: 90
      *
      * @bodyParam basic_salary double required  Custom Example: 250000
      *
-     * @bodyParam number_of_shifts int Must be at least 1 Custom Example: 3
+     * @bodyParam housing_allowance double The housing allowance. Custom Example: 100000
      *
+     * @bodyParam transportation_allowance double The transportation allowance. Custom Example: 80000
+     *
+     * @bodyParam hourly_annual number  Custom Example: 12
+     * @bodyParam daily_annual number  Custom Example: 12
+     * @bodyParam number_of_shifts int Must be at least 1 Custom Example: 3
      *
      * @bodyParam shifts array optional An array of shift for the user. Required when `number_of_shifts` is not null.
      * @bodyParam user_id int required optional The ID of the user That Exists in users Table.
@@ -155,7 +156,7 @@ class AdminController extends Controller
      * "name": "mouaz alkhateeb",
      * "email": "mouaz@gmail.com",
      * "work_email": "mouazalkhateeb@gmail.com",
-     * "status": "1",
+     * "status": 3,
      * "type": 4,
      * "gender": "1",
      * "mobile": "0969040322",
@@ -168,7 +169,7 @@ class AdminController extends Controller
      * "birthday_date": "2022-11-26",
      * "marital_status": null,
      * "guarantor": "admin",
-     *"branch": "syria branch",
+     * "branch": "syria branch",
      * "start_job_contract": "2023-08-01",
      * "end_job_contract": "2023-10-01",
      * "end_visa": "2023-09-11",
@@ -178,43 +179,41 @@ class AdminController extends Controller
      * "end_health_insurance": "2023-09-14",
      * "end_employee_residence": "2023-09-20",
      * "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg",
-     *"id_photo": null,
+     * "id_photo": null,
      * "biography": "http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf",
      * "employee_sponsorship": "http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg",
      * "visa": "http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg",
-     *"passport": "http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg",
+     * "passport": "http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg",
      * "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
      * "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
      * "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-     * "permission_to_entry": "1",
-     * "entry_time": "30",
-     *"permission_to_leave": "1",
-     *"leave_time": "60",
-     *"number_of_working_hours": 0,
-     *"nationalitie": {
+     * "entry_time": 30,
+     * "leave_time": 60,
+     * "number_of_working_hours": 0,
+     * "nationalitie": {
      *   "name": "Syrian"
-     * },
-     *"percentage": "0",
+     *  },
+     * "percentage": "0",
      * "basic_salary": 200000,
      * "shifts": [
      *   {
      *      "id": 3,
-     *     "start_time": "09:00:00",
-     *    "end_time": "15:00:00",
-     *   "start_break_hour": "12:30:00",
-     *   "end_break_hour": "13:00:00"
-     *},
-     *{
-     *   "id": 4,
-     *   "start_time": "16:00:00",
-     *  "end_time": "22:00:00",
-     *  "start_break_hour": "20:30:00",
-     *  "end_break_hour": "21:00:00"
-     *}
+     *      "start_time": "09:00:00",
+     *      "end_time": "15:00:00",
+     *      "start_break_hour": "12:30:00",
+     *      "end_break_hour": "13:00:00"
+     *   },
+     *   {
+     *     "id": 4,
+     *     "start_time": "16:00:00",
+     *     "end_time": "22:00:00",
+     *     "start_break_hour": "20:30:00",
+     *     "end_break_hour": "21:00:00"
+     *   }
      * ],
-     * "deposits": []
+     *  "deposits": []
+     *  }
      * }
-     *}
      */
     public function store(CreateEmployeeRequest $request)
     {
@@ -267,9 +266,6 @@ class AdminController extends Controller
      * - `2`: married status.
      * - `3`: divorced status. Custom Example: 1
      *
-     * @bodyParam gender int optional The gender of the user. Must be one of the following values:
-     * - `1`: male.
-     * - `2`: female. Custom Example: 1
      *
      * @bodyParam departement string Custom Example: It
      *
@@ -300,47 +296,45 @@ class AdminController extends Controller
      *
      *@response 201 scenario="Add a Hr"{
      * "data": {
-     *"id": 5,
-     *"name": "Hamza Fawaz",
-     *"email": "hamzafawaz123@gmail.com",
+     * "id": 5,
+     * "name": "Hamza Fawaz",
+     * "email": "hamzafawaz123@gmail.com",
      * "work_email": "hamzafawaz122@gmail.com",
-     *"status": "1",
-     *"type": 3,
-     *"gender": "1",
-     *"mobile": "0969010781",
-     *"phone": "0935461184",
-     *"departement": "it",
-     *"address": "Damascus",
-     *"position": null,
-     *"skills": "no skills",
-     *"serial_number": "000003",
-     *"birthday_date": "1998-11-26",
+     * "status": "1",
+     * "type": 3,
+     * "gender": "1",
+     * "mobile": "0969010781",
+     * "phone": "0935461184",
+     * "departement": "it",
+     * "address": "Damascus",
+     * "position": null,
+     * "skills": "no skills",
+     * "serial_number": "000003",
+     * "birthday_date": "1998-11-26",
      * "marital_status": null,
-     *"guarantor": "admin",
+     * "guarantor": "admin",
      * "branch": "syria branch",
-     *"start_job_contract": "2023-06-01",
-     *"end_job_contract": "2023-09-01",
-     *"end_visa": null,
-     *"end_passport": null,
-     *"end_employee_sponsorship": null,
-     *"end_municipal_card": null,
-     *"end_health_insurance": null,
-     *"end_employee_residence": null,
-     *"image": null,
-     *"id_photo": null,
-     *"biography": null,
-     *"employee_sponsorship": null,
-     *"visa": null,
-     *"passport": null,
-     *"municipal_card": null,
-     *"health_insurance": null,
-     *"employee_residence": null,
-     *"permission_to_entry": null,
+     * "start_job_contract": "2023-06-01",
+     * "end_job_contract": "2023-09-01",
+     * "end_visa": null,
+     * "end_passport": null,
+     * "end_employee_sponsorship": null,
+     * "end_municipal_card": null,
+     * "end_health_insurance": null,
+     * "end_employee_residence": null,
+     * "image": null,
+     * "id_photo": null,
+     * "biography": null,
+     * "employee_sponsorship": null,
+     * "visa": null,
+     * "passport": null,
+     * "municipal_card": null,
+     * "health_insurance": null,
+     * "employee_residence": null,
      * "entry_time": null,
-     *"permission_to_leave": null,
-     *"leave_time": null,
-     *"percentage": "0",
-     *"basic_salary": 200000
+     * "leave_time": null,
+     * "percentage": "0",
+     * "basic_salary": 200000
      *}
      */
 
@@ -423,9 +417,7 @@ class AdminController extends Controller
      *     "municipal_card": null,
      *     "health_insurance": null,
      *     "employee_residence": null,
-     *     "permission_to_entry": null,
      *     "entry_time": null,
-     *     "permission_to_leave": null,
      *     "leave_time": null,
      *     "percentage": "0",
      *     "basic_salary": 0
@@ -448,9 +440,9 @@ class AdminController extends Controller
         }
     }
     /**
-     * Updated Employee in the Company
+     * An Employee Edits His personal Information
      *
-     * This endpoint is used to Update Employee in the Company and Just Same Employee Can Access To This Api.
+     * This endpoint is used to An Employee Edits His personal Information in the Company and Just Same Employee Can Access To This Api.
      *
      * @bodyParam email string The email of the employee, The email must have a maximum length of 255 characters. It should follow the pattern of having 16 letters before the @ symbol.
      *                                 Example: mouaz@gmail.com
@@ -459,15 +451,15 @@ class AdminController extends Controller
      *
      * @bodyParam address  string Custom Example: Damascus
      *
-     *@response 201 scenario="Add a Employee"{
+     *@response 201 scenario="An Employee Edits His personal Information"{
      * "data": {
      * "id": 4,
      * "name": "mouaz alkhateeb",
      * "email": "mouaz@gmail.com",
      * "work_email": "mouazalkhateeb@gmail.com",
-     * "status": "1",
+     * "status": 1,
      * "type": 4,
-     * "gender": "1",
+     * "gender": 1,
      * "mobile": "0969040322",
      * "phone": "0969040322",
      * "departement": "it",
@@ -496,9 +488,7 @@ class AdminController extends Controller
      * "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
      * "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
      * "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-     * "permission_to_entry": "1",
      * "entry_time": "30",
-     *"permission_to_leave": "1",
      *"leave_time": "60",
      *"number_of_working_hours": 0,
      *"nationalitie": {
@@ -541,10 +531,105 @@ class AdminController extends Controller
         }
     }
     /**
+     * Admin Update Employee in the Company
+     *
+     * This endpoint is used to Update Employee Data in the Company and Just Admin Or Hr Can Access To This Api.
+     *
+     *@bodyParam user_id int required Must Be Exists In Users Table
+
+     * @bodyParam material_status int optional The material status of the user. Must be one of the following values:
+     * - `1`: single status.
+     * - `2`: married status.
+     * - `3`: married status.
+     * - `4`: widower status. Custom Example: 1
+     *
+     * @bodyParam housing_allowance double The housing allowance. Custom Example: 100000
+     *
+     * @bodyParam transportation_allowance double The transportation allowance. Custom Example: 80000
+     *@response 201 scenario="Admin Update Employee"{
+     * "data": {
+     * "id": 4,
+     * "name": "mouaz alkhateeb",
+     * "email": "mouaz@gmail.com",
+     * "work_email": "mouazalkhateeb@gmail.com",
+     * "status": 1,
+     * "type": 4,
+     * "gender": 1,
+     * "mobile": "0969040322",
+     * "phone": "0969040322",
+     * "departement": "it",
+     * "address": "Damascus",
+     * "position": null,
+     * "skills": "no skills",
+     * "serial_number": "000007",
+     * "birthday_date": "2022-11-26",
+     * "marital_status": null,
+     * "guarantor": "admin",
+     *"branch": "syria branch",
+     * "start_job_contract": "2023-08-01",
+     * "end_job_contract": "2023-10-01",
+     * "end_visa": "2023-09-11",
+     * "end_passport": "2023-09-11",
+     * "end_employee_sponsorship": null,
+     * "end_municipal_card": "2023-09-10",
+     * "end_health_insurance": "2023-09-14",
+     * "end_employee_residence": "2023-09-20",
+     * "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg",
+     *"id_photo": null,
+     * "biography": "http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf",
+     * "employee_sponsorship": "http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg",
+     * "visa": "http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg",
+     *"passport": "http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg",
+     * "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
+     * "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
+     * "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
+     * "entry_time": "30",
+     *"leave_time": "60",
+     *"number_of_working_hours": 0,
+     *"nationalitie": {
+     *   "name": "Syrian"
+     * },
+     *"percentage": "0",
+     * "basic_salary": 200000,
+     * "shifts": [
+     *   {
+     *      "id": 3,
+     *     "start_time": "09:00:00",
+     *    "end_time": "15:00:00",
+     *   "start_break_hour": "12:30:00",
+     *   "end_break_hour": "13:00:00"
+     *},
+     *{
+     *   "id": 4,
+     *   "start_time": "16:00:00",
+     *  "end_time": "22:00:00",
+     *  "start_break_hour": "20:30:00",
+     *  "end_break_hour": "21:00:00"
+     *}
+     * ],
+     * "deposits": []
+     * }
+     *}
+     */
+    public function admin_update_employee(AdminUpdateEmployeeRequest $request)
+    {
+        $createdData =  $this->adminService->admin_update_employee($request->validated());
+        if ($createdData['success']) {
+            $newData = $createdData['data'];
+            $returnData = EmployeeResource::make($newData);
+
+            return ApiResponseHelper::sendResponse(
+                new Result($returnData, "Done")
+            );
+        } else {
+            return ['message' => $createdData['message']];
+        }
+    }
+    /**
      * Update Vacation Hours For Employee
      *
      * This endpoint is used to Update Vacation Hours For Employee in the Company and Admin Or Hr Can Access To This Api.
-     *@bodyParam user_id int required Must Be Exists In Users Table
+     * @bodyParam user_id int required Must Be Exists In Users Table
      * @bodyParam hourly_annual int  The number of hourly hours Vacation per year.
      * @bodyParam daily_annual int  The number of daily hours Vacation per year.
      * @response 200 scenario="Determine Working Hours For Employee"{
@@ -612,9 +697,7 @@ class AdminController extends Controller
      *"municipal_card": null,
      *"health_insurance": null,
      *"employee_residence": null,
-     *"permission_to_entry": 0,
      *"entry_time": null,
-     *"permission_to_leave": 0,
      *"leave_time": null,
      *"basic_salary": 750000
      *"percentage": "0",
@@ -640,8 +723,8 @@ class AdminController extends Controller
      *
      * This endpoint is used to  Renewal Employee Contract in the Company and Admin Or Hr Can Access To This Api.
      *
-     *@bodyParam user_id int required Must Be Exists In Users Table
-     *@bodyParam new_date date Must Be Required if number_of_month equal null Custom Example: 2025-05-01.
+     * @bodyParam user_id int required Must Be Exists In Users Table
+     * @bodyParam new_date date Must Be Required if number_of_month equal null Custom Example: 2025-05-01.
      *
      * @bodyParam number_of_month int Must Be Required if new_date equal null, Must be one of the following values:
      * - `3`: Three Month.
@@ -649,18 +732,18 @@ class AdminController extends Controller
      * - `12`: One Year. Custom Example: 12
      *
      * @response 200 scenario=" Renewal Employee Contract"{
-     *"data": {
-     *"id": 1,
-     *"Start Employee Contract Date": "2023-08-01",
-     *"End Employee Contract Date": "2025-05-01",
-     *"Contract Termination Date": null,
-     *"Contract Termination Period": null,
-     *"Contract Termination Reason": null,
-     *"user": {
-     *"id": 3,
-     *"name": "mouaz alkhateeb"
-     *}
-     *}
+     *  "data": {
+     *      "id": 1,
+     *      "Start Employee Contract Date": "2023-08-01",
+     *      "End Employee Contract Date": "2025-05-01",
+     *      "Contract Termination Date": null,
+     *      "Contract Termination Period": null,
+     *      "Contract Termination Reason": null,
+     *      "user": {
+     *            "id": 3,
+     *            "name": "mouaz alkhateeb"
+     *            }
+     *     }
      */
     public function renewal_employment_contract(UpdateEmployeeContractRequest $request)
     {
@@ -751,16 +834,16 @@ class AdminController extends Controller
      * @bodyParam check_in int required Must Be Value 1 Custom Example: 1
 
      * @response 200 scenario="Employee check in System Daily"{
-     *"data": {
-     *"id": 2,
-     *"Date": "2023-08-27",
-     *"login_time": "14:03:19",
-     *"logout_time": null,
-     *"user": {
-     *"id": 9,
-     *"name": "ahmad alkhateeb"
-     *}
-     *}
+     *    "data": {
+     *        "id": 2,
+     *        "Date": "2023-08-27",
+     *        "login_time": "14:03:19",
+     *        "logout_time": null,
+     *        "user": {
+     *              "id": 9,
+     *              "name": "ahmad alkhateeb"
+     *                }
+     *        }
      * }
      */
     public function check_in_attendance(CheckInAttendanceRequest $request)
@@ -786,16 +869,16 @@ class AdminController extends Controller
      * @bodyParam check_out    int required Must Be Value 1 Custom Example: 1
 
      * @response 200 scenario="Employee check Out System Daily"{
-     *"data": {
-     *"id": 2,
-     *"Date": "2023-08-27",
-     *"login_time": "14:03:19",
-     *"logout_time": null,
-     *"user": {
-     *"id": 9,
-     *"name": "ahmad alkhateeb"
-     *}
-     *}
+     *    "data": {
+     *        "id": 2,
+     *        "Date": "2023-08-27",
+     *        "login_time": "14:03:19",
+     *        "logout_time": null,
+     *        "user": {
+     *        "id": 9,
+     *        "name": "ahmad alkhateeb"
+     *             }
+     *        }
      * }
      */
 
@@ -815,7 +898,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Add Reward and Adversaries Allowance for Employee
+     * Add Reward and Adversaries for Employee
      *
      * This endpoint is used to add reward and adversaries allowance for an employee in the company. Only admins or HR personnel can access this API.
      *
@@ -833,11 +916,8 @@ class AdminController extends Controller
      *
      * @bodyParam adversaries double required if adversaries_type is not null. The amount of adversaries. (Custom Example: 78000, Custom Example: 3)
      *
-     * @bodyParam housing_allowance double The housing allowance. (Custom Example: 100000)
      *
-     * @bodyParam transportation_allowance double The transportation allowance. (Custom Example: 80000)
-     *
-     * @response 200 scenario="Add Reward and Adversaries Allowance for Employee"{
+     * @response 200 scenario="Add Reward and Adversaries for Employee"{
      *     "Net_Salary": 220000,
      *     "Rewards": 50000,
      *     "rewards_type": 1,
@@ -868,9 +948,9 @@ class AdminController extends Controller
         }
     }
     /**
-     * Delete Employee From the Company
+     * Archive Employee From the Company
      *
-     * This endpoint is used to Delete Employee From the Company and Admin Or Hr Can Access To This Api.
+     * This endpoint is used to Archive Employee From the Company and Admin Or Hr Can Access To This Api.
      *
      *@urlParam id int required Must Be Exists In Users Table
      * @response 200 scenario="Delete a Employee"{
@@ -991,9 +1071,7 @@ class AdminController extends Controller
      *"municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
      *"health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
      *"employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-     *"permission_to_entry": 1,
      *"entry_time": 30,
-     *"permission_to_leave": 1,
      *"leave_time": 60,
      *"percentage": "0",
      *"basic_salary": 200000,
@@ -1035,9 +1113,7 @@ class AdminController extends Controller
      *"municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
      *"health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
      *"employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-     *"permission_to_entry": 1,
      *"entry_time": 30,
-     *"permission_to_leave": 1,
      *"leave_time": 60,
      *"percentage": "0",
      *"basic_salary": 200000,
@@ -1100,9 +1176,7 @@ class AdminController extends Controller
      *       "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
      *       "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
      *       "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-     *       "permission_to_entry": 1,
      *       "entry_time": 30,
-     *       "permission_to_leave": 1,
      *       "leave_time": 60,
      *       "percentage": "0",
      *       "basic_salary": 200000,
@@ -1144,9 +1218,7 @@ class AdminController extends Controller
      *       "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
      *       "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
      *       "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-     *       "permission_to_entry": 1,
      *       "entry_time": 30,
-     *       "permission_to_leave":1,
      *       "leave_time": 60,
      *       "percentage": "0",
      *       "basic_salary": 200000,
@@ -1335,10 +1407,8 @@ class AdminController extends Controller
      * "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
      * "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
      * "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-     * "permission_to_entry": "1",
-     * "entry_time": "30",
-     *"permission_to_leave": "1",
-     *"leave_time": "60",
+     * "entry_time": 30,
+     *"leave_time": 60,
      *"number_of_working_hours": 0,
      *"nationalitie": {
      *   "name": "Syrian"
@@ -1428,10 +1498,8 @@ class AdminController extends Controller
      * "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
      * "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
      * "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-     * "permission_to_entry": "1",
-     * "entry_time": "30",
-     *"permission_to_leave": "1",
-     *"leave_time": "60",
+     * "entry_time": 30,
+     *"leave_time": 60,
      *"number_of_working_hours": 0,
      *"nationalitie": {
      *   "name": "Syrian"
@@ -1730,12 +1798,12 @@ class AdminController extends Controller
      *
      * @bodyParam user_id int required The user ID, which must exist in the users table.
      *
-     * @bodyParam leave_time number required if permission_to_leave is equal to 1. Must be one of the following values:
+     * @bodyParam leave_time number  Must be one of the following values:
      * - 30
      * - 60
      * - 90 (Custom Example: 60)
      *
-     * @bodyParam entry_time number required if permission_to_entry is equal to 1. Must be one of the following values:
+     * @bodyParam entry_time numberMust be one of the following values:
      * - 30
      * - 60
      * - 90 (Custom Example: 90)
@@ -1777,9 +1845,7 @@ class AdminController extends Controller
      *         "municipal_card": null,
      *         "health_insurance": null,
      *         "employee_residence": null,
-     *         "permission_to_entry": 1,
      *         "entry_time": 60,
-     *         "permission_to_leave": 1,
      *         "leave_time": 90,
      *         "percentage": "0",
      *         "basic_salary": 200000,

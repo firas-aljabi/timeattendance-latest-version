@@ -22,6 +22,7 @@ class LikeResource extends JsonResource
                     'id' => $this->user->id,
                     'name' => $this->user->name,
                     'image' => $this->user->image,
+                    'position' => $this->user->position,
                 ];
             }),
             'created_at' => $this->created_at ? $this->created_at->format('Y-m-d') : null

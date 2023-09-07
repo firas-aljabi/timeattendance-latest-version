@@ -24,10 +24,6 @@ class HolidayService implements HolidayServiceInterface
     {
         return $this->holidayRepository->create_annual_holiday($data);
     }
-    public function update_weekly_holiday($data)
-    {
-        return $this->holidayRepository->update_weekly_holiday($data);
-    }
     public function update_annual_holiday($data)
     {
         return $this->holidayRepository->update_annual_holiday($data);

@@ -49,26 +49,25 @@ endpoints:
       vacation_type:
         name: vacation_type
         description: |-
-          The vacation type of the vacation request. Must be one of the following values:
+          . Must be one of the following values:
           - `1`: HOURLY.
           - `2`: DAILY.
-          - `3`: ANNUL.
-          - `4`: DEATH.
-          - `5`: SATISFYING.
-          - `6`: PILGRIMAME.
-          - `7`: NEW_BABY.
-          - `8`: EXAM.
-          - `9`: PREGNANT_WOMAN.
-          - `10`: METERNITY.
-          - `11`: SICK_CHILD. Custom
+          - `3`: DEATH.
+          - `4`: SATISFYING.
+          - `5`: PILGRIMAME.
+          - `6`: NEW_BABY.
+          - `7`: EXAM.
+          - `8`: PREGNANT_WOMAN.
+          - `9`: METERNITY.
+          - `10`: SICK_CHILD
         required: true
-        example: 4
+        example: 19
         type: integer
         enumValues: []
         custom: []
       start_time:
         name: start_time
-        description: 'The start time of the vacation request in the format `HH:MM:SS` Custom'
+        description: 'required_if vacation type equal 1 The start time of the vacation request in the format `HH:MM:SS` Custom'
         required: true
         example: '09:00:00.'
         type: time
@@ -76,7 +75,7 @@ endpoints:
         custom: []
       end_time:
         name: end_time
-        description: 'The end time of the vacation request in the format `HH:MM:SS` Custom'
+        description: 'required_if vacation type equal 1 The end time of the vacation request in the format `HH:MM:SS` Custom'
         required: true
         example: '15:30:00.'
         type: time
@@ -93,14 +92,74 @@ endpoints:
         type: integer
         enumValues: []
         custom: []
+      person:
+        name: person
+        description: |-
+          required_if vacation_type equal 4. Must be one of the following values:
+          - `1`: FATHER.
+          - `2`: MOTHER.
+          - `3`: SISTER.
+          - `4`: PROTHER.
+          - `5`: SON.
+          - `6`: DAUGHTER.
+          - `7`: HUSBAND.
+          - `8`: ME.
+          - `9`: GRAND_FATHER.
+          - `10`: GRAND_MOTHER
+          - `11`: UNCLE.
+          - `12`: AUNT.
+          - `13`: MATERNAL_UNCLE.
+          - `14`: MATERNAL_AUNT. Custom
+        required: false
+        example: 5
+        type: integer
+        enumValues: []
+        custom: []
+      dead_person:
+        name: dead_person
+        description: |-
+          required_if vacation_type equal 3 (death). Must be one of the following values:
+          - `1`: FATHER.
+          - `2`: MOTHER.
+          - `3`: SISTER.
+          - `4`: PROTHER.
+          - `5`: SON.
+          - `6`: DAUGHTER.
+          - `7`: HUSBAND.
+          - `8`: ME.
+          - `9`: GRAND_FATHER.
+          - `10`: GRAND_MOTHER
+          - `11`: UNCLE.
+          - `12`: AUNT.
+          - `13`: MATERNAL_UNCLE.
+          - `14`: MATERNAL_AUNT. Custom
+        required: false
+        example: 5
+        type: integer
+        enumValues: []
+        custom: []
+      degree_of_kinship:
+        name: degree_of_kinship
+        description: |-
+          required_if vacation_type equal 3 (death). Must be one of the following values:
+          - `1`: FIRST.
+          - `2`: SECOND. Custom
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        custom: []
     cleanBodyParameters:
       reason: 'death of a lover.'
       start_date: '2023-08-27'
       end_date: '2023-08-27'
-      vacation_type: 4
+      vacation_type: 19
       start_time: '09:00:00.'
       end_time: '15:30:00.'
       payment_type: 1
+      person: 5
+      dead_person: 5
+      degree_of_kinship: 2
     fileParameters: []
     responses:
       -
@@ -118,6 +177,58 @@ endpoints:
                "end_date": "2023-06-19",
                "payment_type": 1,
                "vacation_type": 1,
+               "person": null,
+               "dead_person": null,
+               "degree_of_kinship": null,
+               "created_at": "1 second ago",
+               "user": {
+                   "id": 3,
+                   "name": "mouaz alkhateeb",
+                   "email": "mouaz@gmail.com",
+                   "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg",
+                   "position": "Backend Developer"
+               }
+            }
+          OR
+            "data": {
+               "id": 1,
+               "type": 1,
+               "status": 3,
+               "reason": "death of a lover",
+               "start_time": null,
+               "end_time": null,
+               "start_date": "2023-06-19",
+               "end_date": "2023-06-25",
+               "payment_type": 1,
+               "vacation_type": 4,
+               "person": 5,
+               "dead_person": null,
+               "degree_of_kinship": null,
+               "created_at": "1 second ago",
+               "user": {
+                   "id": 3,
+                   "name": "mouaz alkhateeb",
+                   "email": "mouaz@gmail.com",
+                   "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg",
+                   "position": "Backend Developer"
+               }
+            }
+          OR
+            "data": {
+               "id": 1,
+               "type": 1,
+               "status": 3,
+               "reason": "death of a lover",
+               "start_time": null,
+               "end_time": null,
+               "start_date": "2023-06-19",
+               "end_date": "2023-06-25",
+               "payment_type": 1,
+               "vacation_type": 4,
+               "person": null,
+               "dead_person": 11,
+               "degree_of_kinship": 2,
+               "created_at": "1 minute ago",
                "user": {
                    "id": 3,
                    "name": "mouaz alkhateeb",
@@ -411,12 +522,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 14
+        example: 13
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 14
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -510,12 +621,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 5
+        example: 3
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 5
+      id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -613,7 +724,7 @@ endpoints:
         name: request_id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 17
+        example: 12
         type: integer
         enumValues: []
         custom: []
@@ -626,7 +737,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      request_id: 17
+      request_id: 12
       reject_reason: 'Without Any Reason.'
     fileParameters: []
     responses:
@@ -722,12 +833,12 @@ endpoints:
         name: type
         description: 'optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending).'
         required: false
-        example: 8
+        example: 18
         type: integer
         enumValues: []
         custom: []
     cleanQueryParameters:
-      type: 8
+      type: 18
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -1025,12 +1136,12 @@ endpoints:
         name: duration
         description: 'optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences).'
         required: false
-        example: 2
+        example: 5
         type: integer
         enumValues: []
         custom: []
     cleanQueryParameters:
-      duration: 2
+      duration: 5
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []

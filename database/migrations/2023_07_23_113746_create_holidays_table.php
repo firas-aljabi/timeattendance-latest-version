@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('day')->nullable();
             $table->date('date')->nullable();
             $table->string('holiday_name')->nullable();
+            $table->string('day_name')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->bigInteger('company_id')->unsigned()->nullable();

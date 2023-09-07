@@ -24,6 +24,16 @@ class RequestResource extends JsonResource
                 "end_date" => $this->end_date,
                 'payment_type' => intval($this->payment_type),
                 'vacation_type' => intval($this->vacation_type),
+
+
+                'person' => $this->person !== null ? intval($this->person) : null,
+                'dead_person' => $this->dead_person !== null ? intval($this->dead_person) : null,
+                'degree_of_kinship' => $this->degree_of_kinship !== null ? intval($this->degree_of_kinship) : null,
+
+
+
+
+
                 'created_at' => $this->created_at->diffForHumans(),
                 'user' => $this->whenLoaded('user', function () {
                     return [
@@ -48,6 +58,9 @@ class RequestResource extends JsonResource
                 "end_date" => $this->end_date,
                 'payment_type' => intval($this->payment_type),
                 'vacation_type' => intval($this->vacation_type),
+                'person' => $this->person !== null ? intval($this->person) : null,
+                'dead_person' => $this->dead_person !== null ? intval($this->dead_person) : null,
+                'degree_of_kinship' => $this->degree_of_kinship !== null ? intval($this->degree_of_kinship) : null,
                 'created_at' => $this->created_at->diffForHumans(),
                 'user' => $this->whenLoaded('user', function () {
                     return [

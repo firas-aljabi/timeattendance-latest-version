@@ -21,30 +21,31 @@ class HolidayRepository extends BaseRepositoryImplementation
         });
         return $records->paginate($filter->per_page);
     }
-
-    public function create_weekly_holiday($data)
+    public function create_weekly_holiday(array $data)
     {
-        DB::beginTransaction();
         try {
             if (auth()->user()->type == UserTypes::ADMIN) {
+                $holidays = [];
+                $dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                $days = array_column($data['days'], 'day');
 
-                $holiday = new Holiday();
-                $holiday->day = $data['day'];
-                $holiday->date = $data['date'];
-                $holiday->type = HolidayTypes::WEEKLY;
-                $holiday->company_id = auth()->user()->company_id;
-                $holiday->save();
-
-                DB::commit();
-                if ($holiday === null) {
-                    return ['success' => false, 'message' => "Holiday was not created"];
+                foreach ($days as $day) {
+                    $day = (int) $day;
+                    if ($day >= 1 && $day <= 7) {
+                        $holiday = new Holiday();
+                        $holiday->day = $day;
+                        $holiday->day_name = $dayNames[$day - 1];
+                        $holiday->type = HolidayTypes::WEEKLY;
+                        $holiday->company_id = auth()->user()->company_id;
+                        $holiday->save();
+                        $holidays[] = $holiday;
+                    }
                 }
-                return ['success' => true, 'data' => $holiday];
+                return ['success' => true, 'data' => $holidays];
             } else {
                 return ['success' => false, 'message' => "Unauthorized"];
             }
         } catch (\Exception $e) {
-            DB::rollback();
             Log::error($e->getMessage());
             return ['success' => false, 'message' => $e->getMessage()];
         }
@@ -68,31 +69,6 @@ class HolidayRepository extends BaseRepositoryImplementation
                     return ['success' => false, 'message' => "Holiday was not created"];
                 }
                 return ['success' => true, 'data' => $holiday];
-            } else {
-                return ['success' => false, 'message' => "Unauthorized"];
-            }
-        } catch (\Exception $e) {
-            DB::rollback();
-            Log::error($e->getMessage());
-            return ['success' => false, 'message' => $e->getMessage()];
-        }
-    }
-    public function update_weekly_holiday($data)
-    {
-        DB::beginTransaction();
-
-        $holiday = $this->getById($data['holiday_id']);
-
-        try {
-            if (auth()->user()->type == UserTypes::ADMIN && auth()->user()->company_id == $holiday->company_id) {
-
-                $newHoliday = $this->updateById($data['holiday_id'], $data);
-
-                DB::commit();
-                if ($newHoliday === null) {
-                    return ['success' => false, 'message' => "Holiday was not Updated"];
-                }
-                return ['success' => true, 'data' => $newHoliday];
             } else {
                 return ['success' => false, 'message' => "Unauthorized"];
             }

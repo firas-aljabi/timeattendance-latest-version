@@ -26,7 +26,7 @@ paths:
                     name: 'mouaz alkhateeb'
                     email: mouaz@gmail.com
                     work_email: mouazalkhateeb@gmail.com
-                    status: '1'
+                    status: 3
                     type: 4
                     gender: '1'
                     mobile: '0969040322'
@@ -57,10 +57,8 @@ paths:
                     municipal_card: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg'
                     health_insurance: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg'
                     employee_residence: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
-                    permission_to_entry: '1'
-                    entry_time: '30'
-                    permission_to_leave: '1'
-                    leave_time: '60'
+                    entry_time: 30
+                    leave_time: 60
                     number_of_working_hours: 0
                     nationalitie:
                       name: Syrian
@@ -97,8 +95,8 @@ paths:
                         type: string
                         example: mouazalkhateeb@gmail.com
                       status:
-                        type: string
-                        example: '1'
+                        type: integer
+                        example: 3
                       type:
                         type: integer
                         example: 4
@@ -189,18 +187,12 @@ paths:
                       employee_residence:
                         type: string
                         example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
-                      permission_to_entry:
-                        type: string
-                        example: '1'
                       entry_time:
-                        type: string
-                        example: '30'
-                      permission_to_leave:
-                        type: string
-                        example: '1'
+                        type: integer
+                        example: 30
                       leave_time:
-                        type: string
-                        example: '60'
+                        type: integer
+                        example: 60
                       number_of_working_hours:
                         type: integer
                         example: 0
@@ -288,14 +280,14 @@ paths:
                 nationalitie_id:
                   type: integer
                   description: 'Must be from 1 to 56'
-                  example: 9
+                  example: 1
                 birthday_date:
                   type: date
                   description: Custom
                   example: '2023-08-27'
                 material_status:
                   type: integer
-                  description: "optional The material status of the user. Must be one of the following values:\n- `1`: single status.\n- `2`: married status.\n- `3`: divorced status. Custom"
+                  description: "optional The material status of the user. Must be one of the following values:\n- `1`: single status.\n- `2`: married status.\n- `3`: married status.\n- `4`: widower status. Custom"
                   example: 1
                 departement:
                   type: string
@@ -329,10 +321,6 @@ paths:
                   type: integer
                   description: "optional The gender of the user. Must be one of the following values:\n- `1`: male.\n- `2`: female. Custom"
                   example: 1
-                status:
-                  type: integer
-                  description: "optional The status of the user. Must be one of the following values:\n- `1`: on duty.\n- `2`: on vacation. Custom"
-                  example: 1
                 start_job_contract:
                   type: date
                   description: Custom
@@ -363,16 +351,16 @@ paths:
                   example: '2023-08-27'
                 leave_time:
                   type: number
-                  description: "require if permission_to_leave equal 1. Must be one of the following values:\n- 30.\n- 60.\n- 90  Custom"
+                  description: "Must be one of the following values:\n- 30.\n- 60.\n- 90  Custom"
                   example: 60.0
                 entry_time:
                   type: number
-                  description: "require if permission_to_entry equal 1. Must be one of the following values:\n- 30.\n- 60.\n- 90  Custom"
+                  description: "Must be one of the following values:\n- 30.\n- 60.\n- 90  Custom"
                   example: 90.0
                 end_passport:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2023-09-05T15:24:25'
+                  example: '2023-09-07T13:30:41'
                 image:
                   type: string
                   format: binary
@@ -380,55 +368,55 @@ paths:
                 id_photo:
                   type: string
                   format: binary
-                  description: 'Must be pdf and not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
                 biography:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
                 visa:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
                 municipal_card:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
                 employee_residence:
                   type: string
                   format: binary
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  description: 'Must be a file. Must not be greater than 2048 kilobytes.'
                 health_insurance:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
                 passport:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
                 employee_sponsorship:
                   type: string
                   format: binary
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  description: 'Must be a file. Must not be greater than 2048 kilobytes.'
                 basic_salary:
                   type: number
                   description: Custom
                   example: 250000.0
                 housing_allowance:
-                  type: string
-                  description: ''
-                  example: null
+                  type: number
+                  description: 'The housing allowance. Custom'
+                  example: 100000.0
                 hourly_annual:
-                  type: string
-                  description: ''
-                  example: null
+                  type: number
+                  description: Custom
+                  example: 12.0
                 daily_annual:
-                  type: string
-                  description: ''
-                  example: null
+                  type: number
+                  description: Custom
+                  example: 12.0
                 transportation_allowance:
-                  type: string
-                  description: ''
-                  example: null
+                  type: number
+                  description: 'The transportation allowance. Custom'
+                  example: 80000.0
                 number_of_shifts:
                   type: integer
                   description: 'Must be at least 1 Custom'
@@ -437,21 +425,13 @@ paths:
                   type: array
                   description: 'optional An array of shift for the user. Required when `number_of_shifts` is not null.'
                   example:
-                    - in
+                    - dignissimos
                   items:
                     type: string
-                permission_to_leave:
-                  type: integer
-                  description: "optional The permission to leave of the user. Must be one of the following values:\n- `1`: True.\n- `2`: False. Custom"
-                  example: 1
-                permission_to_entry:
-                  type: integer
-                  description: "optional The permission to entry of the user. Must be one of the following values:\n- `1`: True.\n- `2`: False. Custom"
-                  example: 1
                 user_id:
                   type: integer
                   description: 'optional The ID of the user That Exists in users Table.'
-                  example: 16
+                  example: 6
                 start_time:
                   type: time
                   description: 'The start time of the shift in the format `HH:MM:SS` Custom'
@@ -495,7 +475,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n\"data\": {\n\"id\": 5,\n\"name\": \"Hamza Fawaz\",\n\"email\": \"hamzafawaz123@gmail.com\",\n\"work_email\": \"hamzafawaz122@gmail.com\",\n\"status\": \"1\",\n\"type\": 3,\n\"gender\": \"1\",\n\"mobile\": \"0969010781\",\n\"phone\": \"0935461184\",\n\"departement\": \"it\",\n\"address\": \"Damascus\",\n\"position\": null,\n\"skills\": \"no skills\",\n\"serial_number\": \"000003\",\n\"birthday_date\": \"1998-11-26\",\n\"marital_status\": null,\n\"guarantor\": \"admin\",\n\"branch\": \"syria branch\",\n\"start_job_contract\": \"2023-06-01\",\n\"end_job_contract\": \"2023-09-01\",\n\"end_visa\": null,\n\"end_passport\": null,\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": null,\n\"end_health_insurance\": null,\n\"end_employee_residence\": null,\n\"image\": null,\n\"id_photo\": null,\n\"biography\": null,\n\"employee_sponsorship\": null,\n\"visa\": null,\n\"passport\": null,\n\"municipal_card\": null,\n\"health_insurance\": null,\n\"employee_residence\": null,\n\"permission_to_entry\": null,\n\"entry_time\": null,\n\"permission_to_leave\": null,\n\"leave_time\": null,\n\"percentage\": \"0\",\n\"basic_salary\": 200000\n}"
+                example: "{\n\"data\": {\n\"id\": 5,\n\"name\": \"Hamza Fawaz\",\n\"email\": \"hamzafawaz123@gmail.com\",\n\"work_email\": \"hamzafawaz122@gmail.com\",\n\"status\": \"1\",\n\"type\": 3,\n\"gender\": \"1\",\n\"mobile\": \"0969010781\",\n\"phone\": \"0935461184\",\n\"departement\": \"it\",\n\"address\": \"Damascus\",\n\"position\": null,\n\"skills\": \"no skills\",\n\"serial_number\": \"000003\",\n\"birthday_date\": \"1998-11-26\",\n\"marital_status\": null,\n\"guarantor\": \"admin\",\n\"branch\": \"syria branch\",\n\"start_job_contract\": \"2023-06-01\",\n\"end_job_contract\": \"2023-09-01\",\n\"end_visa\": null,\n\"end_passport\": null,\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": null,\n\"end_health_insurance\": null,\n\"end_employee_residence\": null,\n\"image\": null,\n\"id_photo\": null,\n\"biography\": null,\n\"employee_sponsorship\": null,\n\"visa\": null,\n\"passport\": null,\n\"municipal_card\": null,\n\"health_insurance\": null,\n\"employee_residence\": null,\n\"entry_time\": null,\n\"leave_time\": null,\n\"percentage\": \"0\",\n\"basic_salary\": 200000\n}"
       tags:
         - 'Admin Operations'
       requestBody:
@@ -532,7 +512,7 @@ paths:
                 nationalitie_id:
                   type: integer
                   description: 'Must be from 1 to 56'
-                  example: 12
+                  example: 15
                 birthday_date:
                   type: date
                   description: Custom
@@ -570,13 +550,12 @@ paths:
                   description: Custom
                   example: 101122.0
                 gender:
-                  type: integer
-                  description: "optional The gender of the user. Must be one of the following values:\n- `1`: male.\n- `2`: female. Custom"
-                  example: 1
-                status:
-                  type: integer
-                  description: "optional The status of the user. Must be one of the following values:\n- `1`: on duty.\n- `2`: on vacation. Custom"
-                  example: 1
+                  type: string
+                  description: ''
+                  example: '1'
+                  enum:
+                    - '1'
+                    - '2'
                 start_job_contract:
                   type: date
                   description: Custom
@@ -616,7 +595,7 @@ paths:
                 entry_time:
                   type: string
                   description: ''
-                  example: '30'
+                  example: '60'
                   enum:
                     - '30'
                     - '60'
@@ -624,7 +603,7 @@ paths:
                 end_passport:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2023-09-05T15:24:25'
+                  example: '2023-09-07T13:30:41'
                 image:
                   type: string
                   format: binary
@@ -648,7 +627,7 @@ paths:
                 employee_residence:
                   type: string
                   format: binary
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  description: 'Must be a file. Must not be greater than 2048 kilobytes.'
                 health_insurance:
                   type: string
                   format: binary
@@ -660,7 +639,7 @@ paths:
                 employee_sponsorship:
                   type: string
                   format: binary
-                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+                  description: 'Must be a file. Must not be greater than 2048 kilobytes.'
                 basic_salary:
                   type: number
                   description: Custom
@@ -684,14 +663,18 @@ paths:
                 number_of_shifts:
                   type: integer
                   description: 'Must be at least 1.'
-                  example: 66
+                  example: 32
                 shifts:
                   type: array
                   description: 'This field is required when <code>number_of_shifts</code> is <code>!=</code> or <code>null</code>.'
                   example:
-                    - rerum
+                    - distinctio
                   items:
                     type: string
+                status:
+                  type: integer
+                  description: "optional The status of the user. Must be one of the following values:\n- `1`: on duty.\n- `2`: on vacation. Custom"
+                  example: 1
               required:
                 - name
                 - email
@@ -751,9 +734,7 @@ paths:
                     municipal_card: null
                     health_insurance: null
                     employee_residence: null
-                    permission_to_entry: null
                     entry_time: null
-                    permission_to_leave: null
                     leave_time: null
                     percentage: '0'
                     basic_salary: 0
@@ -866,13 +847,7 @@ paths:
                       employee_residence:
                         type: string
                         example: null
-                      permission_to_entry:
-                        type: string
-                        example: null
                       entry_time:
-                        type: string
-                        example: null
-                      permission_to_leave:
                         type: string
                         example: null
                       leave_time:
@@ -920,11 +895,11 @@ paths:
                 company_id:
                   type: string
                   description: ''
-                  example: quas
+                  example: inventore
                 nationalitie_id:
                   type: integer
                   description: 'Must be from 1 to 56'
-                  example: 7
+                  example: 15
                 birthday_date:
                   type: date
                   description: Custom
@@ -937,6 +912,7 @@ paths:
                     - '1'
                     - '2'
                     - '3'
+                    - '4'
                 address:
                   type: string
                   description: Custom
@@ -960,7 +936,7 @@ paths:
                 comapny_id:
                   type: integer
                   description: 'Must be exists in companies table.'
-                  example: 13
+                  example: 2
               required:
                 - name
                 - email
@@ -971,13 +947,13 @@ paths:
                 - comapny_id
   /api/update_employee:
     post:
-      summary: 'Updated Employee in the Company'
-      operationId: updatedEmployeeInTheCompany
-      description: 'This endpoint is used to Update Employee in the Company and Just Same Employee Can Access To This Api.'
+      summary: 'An Employee Edits His personal Information'
+      operationId: anEmployeeEditsHisPersonalInformation
+      description: 'This endpoint is used to An Employee Edits His personal Information in the Company and Just Same Employee Can Access To This Api.'
       parameters: []
       responses:
         201:
-          description: 'Add a Employee'
+          description: 'An Employee Edits His personal Information'
           content:
             application/json:
               schema:
@@ -988,9 +964,9 @@ paths:
                     name: 'mouaz alkhateeb'
                     email: mouaz@gmail.com
                     work_email: mouazalkhateeb@gmail.com
-                    status: '1'
+                    status: 1
                     type: 4
-                    gender: '1'
+                    gender: 1
                     mobile: '0969040322'
                     phone: '0969040322'
                     departement: it
@@ -1019,9 +995,7 @@ paths:
                     municipal_card: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg'
                     health_insurance: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg'
                     employee_residence: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
-                    permission_to_entry: '1'
                     entry_time: '30'
-                    permission_to_leave: '1'
                     leave_time: '60'
                     number_of_working_hours: 0
                     nationalitie:
@@ -1059,14 +1033,14 @@ paths:
                         type: string
                         example: mouazalkhateeb@gmail.com
                       status:
-                        type: string
-                        example: '1'
+                        type: integer
+                        example: 1
                       type:
                         type: integer
                         example: 4
                       gender:
-                        type: string
-                        example: '1'
+                        type: integer
+                        example: 1
                       mobile:
                         type: string
                         example: '0969040322'
@@ -1151,15 +1125,9 @@ paths:
                       employee_residence:
                         type: string
                         example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
-                      permission_to_entry:
-                        type: string
-                        example: '1'
                       entry_time:
                         type: string
                         example: '30'
-                      permission_to_leave:
-                        type: string
-                        example: '1'
                       leave_time:
                         type: string
                         example: '60'
@@ -1239,11 +1207,275 @@ paths:
                   type: string
                   format: binary
                   description: 'Must not be greater than 2048 kilobytes'
+  /api/admin_update_employee:
+    post:
+      summary: 'Admin Update Employee in the Company'
+      operationId: adminUpdateEmployeeInTheCompany
+      description: 'This endpoint is used to Update Employee Data in the Company and Just Admin Or Hr Can Access To This Api.'
+      parameters: []
+      responses:
+        201:
+          description: 'Admin Update Employee'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 4
+                    name: 'mouaz alkhateeb'
+                    email: mouaz@gmail.com
+                    work_email: mouazalkhateeb@gmail.com
+                    status: 1
+                    type: 4
+                    gender: 1
+                    mobile: '0969040322'
+                    phone: '0969040322'
+                    departement: it
+                    address: Damascus
+                    position: null
+                    skills: 'no skills'
+                    serial_number: '000007'
+                    birthday_date: '2022-11-26'
+                    marital_status: null
+                    guarantor: admin
+                    branch: 'syria branch'
+                    start_job_contract: '2023-08-01'
+                    end_job_contract: '2023-10-01'
+                    end_visa: '2023-09-11'
+                    end_passport: '2023-09-11'
+                    end_employee_sponsorship: null
+                    end_municipal_card: '2023-09-10'
+                    end_health_insurance: '2023-09-14'
+                    end_employee_residence: '2023-09-20'
+                    image: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg'
+                    id_photo: null
+                    biography: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf'
+                    employee_sponsorship: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg'
+                    visa: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg'
+                    passport: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg'
+                    municipal_card: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg'
+                    health_insurance: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg'
+                    employee_residence: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
+                    entry_time: '30'
+                    leave_time: '60'
+                    number_of_working_hours: 0
+                    nationalitie:
+                      name: Syrian
+                    percentage: '0'
+                    basic_salary: 200000
+                    shifts:
+                      -
+                        id: 3
+                        start_time: '09:00:00'
+                        end_time: '15:00:00'
+                        start_break_hour: '12:30:00'
+                        end_break_hour: '13:00:00'
+                      -
+                        id: 4
+                        start_time: '16:00:00'
+                        end_time: '22:00:00'
+                        start_break_hour: '20:30:00'
+                        end_break_hour: '21:00:00'
+                    deposits: []
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 4
+                      name:
+                        type: string
+                        example: 'mouaz alkhateeb'
+                      email:
+                        type: string
+                        example: mouaz@gmail.com
+                      work_email:
+                        type: string
+                        example: mouazalkhateeb@gmail.com
+                      status:
+                        type: integer
+                        example: 1
+                      type:
+                        type: integer
+                        example: 4
+                      gender:
+                        type: integer
+                        example: 1
+                      mobile:
+                        type: string
+                        example: '0969040322'
+                      phone:
+                        type: string
+                        example: '0969040322'
+                      departement:
+                        type: string
+                        example: it
+                      address:
+                        type: string
+                        example: Damascus
+                      position:
+                        type: string
+                        example: null
+                      skills:
+                        type: string
+                        example: 'no skills'
+                      serial_number:
+                        type: string
+                        example: '000007'
+                      birthday_date:
+                        type: string
+                        example: '2022-11-26'
+                      marital_status:
+                        type: string
+                        example: null
+                      guarantor:
+                        type: string
+                        example: admin
+                      branch:
+                        type: string
+                        example: 'syria branch'
+                      start_job_contract:
+                        type: string
+                        example: '2023-08-01'
+                      end_job_contract:
+                        type: string
+                        example: '2023-10-01'
+                      end_visa:
+                        type: string
+                        example: '2023-09-11'
+                      end_passport:
+                        type: string
+                        example: '2023-09-11'
+                      end_employee_sponsorship:
+                        type: string
+                        example: null
+                      end_municipal_card:
+                        type: string
+                        example: '2023-09-10'
+                      end_health_insurance:
+                        type: string
+                        example: '2023-09-14'
+                      end_employee_residence:
+                        type: string
+                        example: '2023-09-20'
+                      image:
+                        type: string
+                        example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg'
+                      id_photo:
+                        type: string
+                        example: null
+                      biography:
+                        type: string
+                        example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf'
+                      employee_sponsorship:
+                        type: string
+                        example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg'
+                      visa:
+                        type: string
+                        example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg'
+                      passport:
+                        type: string
+                        example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg'
+                      municipal_card:
+                        type: string
+                        example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg'
+                      health_insurance:
+                        type: string
+                        example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg'
+                      employee_residence:
+                        type: string
+                        example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
+                      entry_time:
+                        type: string
+                        example: '30'
+                      leave_time:
+                        type: string
+                        example: '60'
+                      number_of_working_hours:
+                        type: integer
+                        example: 0
+                      nationalitie:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: Syrian
+                      percentage:
+                        type: string
+                        example: '0'
+                      basic_salary:
+                        type: integer
+                        example: 200000
+                      shifts:
+                        type: array
+                        example:
+                          -
+                            id: 3
+                            start_time: '09:00:00'
+                            end_time: '15:00:00'
+                            start_break_hour: '12:30:00'
+                            end_break_hour: '13:00:00'
+                          -
+                            id: 4
+                            start_time: '16:00:00'
+                            end_time: '22:00:00'
+                            start_break_hour: '20:30:00'
+                            end_break_hour: '21:00:00'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 3
+                            start_time:
+                              type: string
+                              example: '09:00:00'
+                            end_time:
+                              type: string
+                              example: '15:00:00'
+                            start_break_hour:
+                              type: string
+                              example: '12:30:00'
+                            end_break_hour:
+                              type: string
+                              example: '13:00:00'
+                      deposits:
+                        type: array
+                        example: []
+      tags:
+        - 'Admin Operations'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'Must Be Exists In Users Table'
+                  example: 6
+                material_status:
+                  type: integer
+                  description: "optional The material status of the user. Must be one of the following values:\n- `1`: single status.\n- `2`: married status.\n- `3`: married status.\n- `4`: widower status. Custom"
+                  example: 1
+                housing_allowance:
+                  type: number
+                  description: 'The housing allowance. Custom'
+                  example: 100000.0
+                transportation_allowance:
+                  type: number
+                  description: 'The transportation allowance. Custom'
+                  example: 80000.0
+              required:
+                - user_id
   '/api/employee/{id}':
     delete:
-      summary: 'Delete Employee From the Company'
-      operationId: deleteEmployeeFromTheCompany
-      description: 'This endpoint is used to Delete Employee From the Company and Admin Or Hr Can Access To This Api.'
+      summary: 'Archive Employee From the Company'
+      operationId: archiveEmployeeFromTheCompany
+      description: 'This endpoint is used to Archive Employee From the Company and Admin Or Hr Can Access To This Api.'
       parameters: []
       responses:
         200:
@@ -1261,7 +1493,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In Users Table'
-        example: 8
+        example: 17
         required: true
         schema:
           type: integer
@@ -1308,26 +1540,26 @@ paths:
                 user_id:
                   type: integer
                   description: 'Must Be Exists In Users Table'
-                  example: 18
+                  example: 6
                 hourly_annual:
                   type: integer
                   description: 'The number of hourly hours Vacation per year.'
-                  example: 4
+                  example: 8
                 daily_annual:
                   type: integer
                   description: 'The number of daily hours Vacation per year.'
-                  example: 18
+                  example: 1
               required:
                 - user_id
   /api/reward_adversaries_salary:
     post:
-      summary: 'Add Reward and Adversaries Allowance for Employee'
-      operationId: addRewardAndAdversariesAllowanceForEmployee
+      summary: 'Add Reward and Adversaries for Employee'
+      operationId: addRewardAndAdversariesForEmployee
       description: 'This endpoint is used to add reward and adversaries allowance for an employee in the company. Only admins or HR personnel can access this API.'
       parameters: []
       responses:
         200:
-          description: 'Add Reward and Adversaries Allowance for Employee'
+          description: 'Add Reward and Adversaries for Employee'
           content:
             application/json:
               schema:
@@ -1407,14 +1639,6 @@ paths:
                   type: number
                   description: 'if adversaries_type is not null. The amount of adversaries. (Custom Example: 78000, Custom'
                   example: 3.0
-                housing_allowance:
-                  type: number
-                  description: 'The housing allowance. (Custom'
-                  example: 100000.0
-                transportation_allowance:
-                  type: number
-                  description: 'The transportation allowance. (Custom'
-                  example: 80000.0
               required:
                 - user_id
                 - rewards
@@ -1432,7 +1656,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n  \"all_employees_count\": \"1\",\n  \"attendance_rate\": \"0\",\n  \"on_duty_employees_count\": \"1\",\n  \"on_vacation_employees_count\": \"0\",\n  \"on_duty_employees_percentage\": \"100\",\n  \"on_vacation_employees_percentage\": \"0\",\n  \"male_employees_percentage\": \"0\",\n  \"female_employees_percentage\": \"0\",\n  \"nationalities_rate\": {\n    \"most_nationalities\": [\n      {\n        \"nationality_id\": 2,\n        \"nationality_name\": \"Syrian\",\n        \"percent\": 40\n      },\n      {\n        \"nationality_id\": 16,\n        \"nationality_name\": \"Kuwaiti\",\n        \"percent\": 20\n      },\n      {\n        \"nationality_id\": 38,\n        \"nationality_name\": \"Ukrainian\",\n        \"percent\": 20\n      }\n    ],\n    \"others\": 20\n  },\n },\n  \"contract_expiration_percentage\": \"0\",\n  \"contract_expiration\": [],\n  \"expired_passports_percentage\": \"100\",\n  \"expired_passports\": [\n     {\n        \"id\": 8,\n        \"name\": \"mouaz alkhateeb\",\n        \"end_passport\": \"2023-09-11\"\n     }\n  ]\n}"
+                example: "{\n  \"all_employees_count\": \"1\",\n  \"attendance_rate\": \"0\",\n  \"active_employees_count\": \"1\",\n  \"on_vacation_employees_count\": \"0\",\n  \"active_employees_percentage\": \"100\",\n  \"on_vacation_employees_percentage\": \"0\",\n  \"male_employees_percentage\": \"0\",\n  \"female_employees_percentage\": \"0\",\n  \"nationalities_rate\": {\n    \"most_nationalities\": [\n      {\n        \"nationality_id\": 2,\n        \"nationality_name\": \"Syrian\",\n        \"percent\": 40\n      },\n      {\n        \"nationality_id\": 16,\n        \"nationality_name\": \"Kuwaiti\",\n        \"percent\": 20\n      },\n      {\n        \"nationality_id\": 38,\n        \"nationality_name\": \"Ukrainian\",\n        \"percent\": 20\n      }\n    ],\n    \"others\": 20\n  },\n },\n  \"contract_expiration_percentage\": \"0\",\n  \"contract_expiration\": [],\n  \"expired_passports_percentage\": \"100\",\n  \"expired_passports\": [\n     {\n        \"id\": 8,\n        \"name\": \"mouaz alkhateeb\",\n        \"end_passport\": \"2023-09-11\"\n     }\n  ]\n}"
       tags:
         - 'Admin Operations'
   /api/get_employees_list:
@@ -1458,7 +1682,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n\"data\": [\n{\n\"id\": 8,\n\"name\": \"mouaz alkhateeb\",\n\"email\": \"mouaz@gmail.com\",\n\"work_email\": \"mouazalkhateeb@gmail.com\",\n\"status\": 1,\n\"type\": 4,\n\"gender\": 1,\n\"mobile\": \"0969040322\",\n\"phone\": \"0969040322\",\n\"departement\": \"it\",\n\"address\": \"Damascus\",\n\"position\": null,\n\"skills\": \"no skills\",\n\"serial_number\": \"000007\",\n\"birthday_date\": \"2022-11-26\",\n\"marital_status\": null,\n\"guarantor\": \"admin\",\n\"branch\": \"syria branch\",\n\"start_job_contract\": \"2023-08-01\",\n\"end_job_contract\": \"2023-10-01\",\n\"end_visa\": \"2023-09-11\",\n\"end_passport\": \"2023-09-11\",\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": \"2023-09-10\",\n\"end_health_insurance\": \"2023-09-14\",\n\"end_employee_residence\": \"2023-09-20\",\n\"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n\"id_photo\": null,\n\"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n\"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n\"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n\"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n\"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n\"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n\"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n\"permission_to_entry\": 1,\n\"entry_time\": 30,\n\"permission_to_leave\": 1,\n\"leave_time\": 60,\n\"percentage\": \"0\",\n\"basic_salary\": 200000,\n\"number_of_working_hours\": 0,\n},\n{\n\"id\": 9,\n\"name\": \"ahmad alkhateeb\",\n\"email\": \"ahmad@gmail.com\",\n\"work_email\": \"ahmadlkhateeb@gmail.com\",\n\"status\": 1,\n\"type\": 4,\n\"gender\": 1,\n\"mobile\": \"0969040355\",\n\"phone\": \"0969040344\",\n\"departement\": \"it\",\n\"address\": \"Damascus\",\n\"position\": \"laravel developer\",\n\"skills\": \"no skills\",\n\"serial_number\": \"000011\",\n\"birthday_date\": \"2022-11-26\",\n\"marital_status\": null,\n\"guarantor\": \"User\",\n\"branch\": \"syria branch\",\n\"start_job_contract\": \"2023-08-01\",\n\"end_job_contract\": \"2023-10-01\",\n\"end_visa\": \"2023-09-11\",\n\"end_passport\": \"2023-09-11\",\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": \"2023-09-10\",\n\"end_health_insurance\": \"2023-09-14\",\n\"end_employee_residence\": \"2023-09-20\",\n\"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n\"id_photo\": null,\n\"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n\"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n\"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n\"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n\"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n\"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n\"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n\"permission_to_entry\": 1,\n\"entry_time\": 30,\n\"permission_to_leave\": 1,\n\"leave_time\": 60,\n\"percentage\": \"0\",\n\"basic_salary\": 200000,\n\"number_of_working_hours\": 0,\n}\n]\n}"
+                example: "{\n\"data\": [\n{\n\"id\": 8,\n\"name\": \"mouaz alkhateeb\",\n\"email\": \"mouaz@gmail.com\",\n\"work_email\": \"mouazalkhateeb@gmail.com\",\n\"status\": 1,\n\"type\": 4,\n\"gender\": 1,\n\"mobile\": \"0969040322\",\n\"phone\": \"0969040322\",\n\"departement\": \"it\",\n\"address\": \"Damascus\",\n\"position\": null,\n\"skills\": \"no skills\",\n\"serial_number\": \"000007\",\n\"birthday_date\": \"2022-11-26\",\n\"marital_status\": null,\n\"guarantor\": \"admin\",\n\"branch\": \"syria branch\",\n\"start_job_contract\": \"2023-08-01\",\n\"end_job_contract\": \"2023-10-01\",\n\"end_visa\": \"2023-09-11\",\n\"end_passport\": \"2023-09-11\",\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": \"2023-09-10\",\n\"end_health_insurance\": \"2023-09-14\",\n\"end_employee_residence\": \"2023-09-20\",\n\"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n\"id_photo\": null,\n\"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n\"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n\"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n\"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n\"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n\"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n\"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n\"entry_time\": 30,\n\"leave_time\": 60,\n\"percentage\": \"0\",\n\"basic_salary\": 200000,\n\"number_of_working_hours\": 0,\n},\n{\n\"id\": 9,\n\"name\": \"ahmad alkhateeb\",\n\"email\": \"ahmad@gmail.com\",\n\"work_email\": \"ahmadlkhateeb@gmail.com\",\n\"status\": 1,\n\"type\": 4,\n\"gender\": 1,\n\"mobile\": \"0969040355\",\n\"phone\": \"0969040344\",\n\"departement\": \"it\",\n\"address\": \"Damascus\",\n\"position\": \"laravel developer\",\n\"skills\": \"no skills\",\n\"serial_number\": \"000011\",\n\"birthday_date\": \"2022-11-26\",\n\"marital_status\": null,\n\"guarantor\": \"User\",\n\"branch\": \"syria branch\",\n\"start_job_contract\": \"2023-08-01\",\n\"end_job_contract\": \"2023-10-01\",\n\"end_visa\": \"2023-09-11\",\n\"end_passport\": \"2023-09-11\",\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": \"2023-09-10\",\n\"end_health_insurance\": \"2023-09-14\",\n\"end_employee_residence\": \"2023-09-20\",\n\"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n\"id_photo\": null,\n\"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n\"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n\"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n\"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n\"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n\"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n\"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n\"entry_time\": 30,\n\"leave_time\": 60,\n\"percentage\": \"0\",\n\"basic_salary\": 200000,\n\"number_of_working_hours\": 0,\n}\n]\n}"
       tags:
         - 'Admin Operations'
   /api/get_employees_dismissed_list:
@@ -1484,7 +1708,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n  \"data\": [\n    {\n      \"id\": 8,\n      \"name\": \"mouaz alkhateeb\",\n      \"email\": \"mouaz@gmail.com\",\n      \"work_email\": \"mouazalkhateeb@gmail.com\",\n      \"status\": 4,\n      \"type\": 4,\n      \"gender\": 1,\n      \"mobile\": \"0969040322\",\n      \"phone\": \"0969040322\",\n      \"department\": \"it\",\n      \"address\": \"Damascus\",\n      \"position\": null,\n      \"skills\": \"no skills\",\n      \"serial_number\": \"000007\",\n      \"birthday_date\": \"2022-11-26\",\n      \"marital_status\": null,\n      \"guarantor\": \"admin\",\n      \"branch\": \"syria branch\",\n      \"start_job_contract\": \"2023-08-01\",\n      \"end_job_contract\": \"2023-10-01\",\n      \"end_visa\": \"2023-09-11\",\n      \"end_passport\": \"2023-09-11\",\n      \"end_employee_sponsorship\": null,\n      \"end_municipal_card\": \"2023-09-10\",\n      \"end_health_insurance\": \"2023-09-14\",\n      \"end_employee_residence\": \"2023-09-20\",\n      \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n      \"id_photo\": null,\n      \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n      \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n      \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n      \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n      \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n      \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n      \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n      \"permission_to_entry\": 1,\n      \"entry_time\": 30,\n      \"permission_to_leave\": 1,\n      \"leave_time\": 60,\n      \"percentage\": \"0\",\n      \"basic_salary\": 200000,\n      \"number_of_working_hours\": 0\n    },\n    {\n      \"id\": 9,\n      \"name\": \"ahmad alkhateeb\",\n      \"email\": \"ahmad@gmail.com\",\n      \"work_email\": \"ahmadlkhateeb@gmail.com\",\n      \"status\": 4,\n      \"type\": 4,\n      \"gender\": 1,\n      \"mobile\": \"0969040355\",\n      \"phone\": \"0969040344\",\n      \"department\": \"it\",\n      \"address\": \"Damascus\",\n      \"position\": \"laravel developer\",\n      \"skills\": \"no skills\",\n      \"serial_number\": \"000011\",\n      \"birthday_date\": \"2022-11-26\",\n      \"marital_status\": null,\n      \"guarantor\": \"User\",\n      \"branch\": \"syria branch\",\n      \"start_job_contract\": \"2023-08-01\",\n      \"end_job_contract\": \"2023-10-01\",\n      \"end_visa\": \"2023-09-11\",\n      \"end_passport\": \"2023-09-11\",\n      \"end_employee_sponsorship\": null,\n      \"end_municipal_card\": \"2023-09-10\",\n      \"end_health_insurance\": \"2023-09-14\",\n      \"end_employee_residence\": \"2023-09-20\",\n      \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n      \"id_photo\": null,\n      \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n      \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n      \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n      \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n      \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n      \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n      \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n      \"permission_to_entry\": 1,\n      \"entry_time\": 30,\n      \"permission_to_leave\":1,\n      \"leave_time\": 60,\n      \"percentage\": \"0\",\n      \"basic_salary\": 200000,\n      \"number_of_working_hours\": 0,\n    }\n   ]\n }"
+                example: "{\n  \"data\": [\n    {\n      \"id\": 8,\n      \"name\": \"mouaz alkhateeb\",\n      \"email\": \"mouaz@gmail.com\",\n      \"work_email\": \"mouazalkhateeb@gmail.com\",\n      \"status\": 4,\n      \"type\": 4,\n      \"gender\": 1,\n      \"mobile\": \"0969040322\",\n      \"phone\": \"0969040322\",\n      \"department\": \"it\",\n      \"address\": \"Damascus\",\n      \"position\": null,\n      \"skills\": \"no skills\",\n      \"serial_number\": \"000007\",\n      \"birthday_date\": \"2022-11-26\",\n      \"marital_status\": null,\n      \"guarantor\": \"admin\",\n      \"branch\": \"syria branch\",\n      \"start_job_contract\": \"2023-08-01\",\n      \"end_job_contract\": \"2023-10-01\",\n      \"end_visa\": \"2023-09-11\",\n      \"end_passport\": \"2023-09-11\",\n      \"end_employee_sponsorship\": null,\n      \"end_municipal_card\": \"2023-09-10\",\n      \"end_health_insurance\": \"2023-09-14\",\n      \"end_employee_residence\": \"2023-09-20\",\n      \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n      \"id_photo\": null,\n      \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n      \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n      \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n      \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n      \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n      \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n      \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n      \"entry_time\": 30,\n      \"leave_time\": 60,\n      \"percentage\": \"0\",\n      \"basic_salary\": 200000,\n      \"number_of_working_hours\": 0\n    },\n    {\n      \"id\": 9,\n      \"name\": \"ahmad alkhateeb\",\n      \"email\": \"ahmad@gmail.com\",\n      \"work_email\": \"ahmadlkhateeb@gmail.com\",\n      \"status\": 4,\n      \"type\": 4,\n      \"gender\": 1,\n      \"mobile\": \"0969040355\",\n      \"phone\": \"0969040344\",\n      \"department\": \"it\",\n      \"address\": \"Damascus\",\n      \"position\": \"laravel developer\",\n      \"skills\": \"no skills\",\n      \"serial_number\": \"000011\",\n      \"birthday_date\": \"2022-11-26\",\n      \"marital_status\": null,\n      \"guarantor\": \"User\",\n      \"branch\": \"syria branch\",\n      \"start_job_contract\": \"2023-08-01\",\n      \"end_job_contract\": \"2023-10-01\",\n      \"end_visa\": \"2023-09-11\",\n      \"end_passport\": \"2023-09-11\",\n      \"end_employee_sponsorship\": null,\n      \"end_municipal_card\": \"2023-09-10\",\n      \"end_health_insurance\": \"2023-09-14\",\n      \"end_employee_residence\": \"2023-09-20\",\n      \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n      \"id_photo\": null,\n      \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n      \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n      \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n      \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n      \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n      \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n      \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n      \"entry_time\": 30,\n      \"leave_time\": 60,\n      \"percentage\": \"0\",\n      \"basic_salary\": 200000,\n      \"number_of_working_hours\": 0,\n    }\n   ]\n }"
       tags:
         - 'Admin Operations'
   /api/employees_salaries:
@@ -1591,7 +1815,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n\"data\": {\n\"id\": 6,\n\"name\": \"Firas Jabi\",\n\"email\": \"firassaljabi1232@gmail.com\",\n\"work_email\": \"firassaljabi1237@goma.com\",\n\"status\": 1,\n\"type\": 2,\n\"gender\": 1,\n\"mobile\": \"0969040342\",\n\"phone\": \"0935463111\",\n\"departement\": null,\n\"address\": \"Damascus\",\n\"position\": null,\n\"skills\": null,\n\"serial_number\": \"00011\",\n\"birthday_date\": \"1998-11-26\",\n\"marital_status\": null,\n\"guarantor\": null,\n\"branch\": \"syria branch\",\n\"start_job_contract\": null,\n\"end_job_contract\": null,\n\"end_visa\": null,\n\"end_passport\": null,\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": null,\n\"end_health_insurance\": null,\n\"end_employee_residence\": null,\n\"image\": null,\n\"id_photo\": null,\n\"biography\": null,\n\"employee_sponsorship\": null,\n\"visa\": null,\n\"passport\": null,\n\"municipal_card\": null,\n\"health_insurance\": null,\n\"employee_residence\": null,\n\"permission_to_entry\": 0,\n\"entry_time\": null,\n\"permission_to_leave\": 0,\n\"leave_time\": null,\n\"basic_salary\": 750000\n\"percentage\": \"0\",\n}\n}"
+                example: "{\n\"data\": {\n\"id\": 6,\n\"name\": \"Firas Jabi\",\n\"email\": \"firassaljabi1232@gmail.com\",\n\"work_email\": \"firassaljabi1237@goma.com\",\n\"status\": 1,\n\"type\": 2,\n\"gender\": 1,\n\"mobile\": \"0969040342\",\n\"phone\": \"0935463111\",\n\"departement\": null,\n\"address\": \"Damascus\",\n\"position\": null,\n\"skills\": null,\n\"serial_number\": \"00011\",\n\"birthday_date\": \"1998-11-26\",\n\"marital_status\": null,\n\"guarantor\": null,\n\"branch\": \"syria branch\",\n\"start_job_contract\": null,\n\"end_job_contract\": null,\n\"end_visa\": null,\n\"end_passport\": null,\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": null,\n\"end_health_insurance\": null,\n\"end_employee_residence\": null,\n\"image\": null,\n\"id_photo\": null,\n\"biography\": null,\n\"employee_sponsorship\": null,\n\"visa\": null,\n\"passport\": null,\n\"municipal_card\": null,\n\"health_insurance\": null,\n\"employee_residence\": null,\n\"entry_time\": null,\n\"leave_time\": null,\n\"basic_salary\": 750000\n\"percentage\": \"0\",\n}\n}"
       tags:
         - 'Admin Operations'
       requestBody:
@@ -1604,7 +1828,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'Must Be Exists In Users Table'
-                  example: 19
+                  example: 4
                 new_salary:
                   type: number
                   description: 'Refers To New Salary Custom'
@@ -1612,43 +1836,6 @@ paths:
               required:
                 - user_id
                 - new_salary
-  /api/update_employment_contract:
-    post:
-      summary: 'Renewal Employee Contract'
-      operationId: renewalEmployeeContract
-      description: 'This endpoint is used to  Renewal Employee Contract in the Company and Admin Or Hr Can Access To This Api.'
-      parameters: []
-      responses:
-        200:
-          description: 'Renewal Employee Contract'
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "{\n\"data\": {\n\"id\": 1,\n\"Start Employee Contract Date\": \"2023-08-01\",\n\"End Employee Contract Date\": \"2025-05-01\",\n\"Contract Termination Date\": null,\n\"Contract Termination Period\": null,\n\"Contract Termination Reason\": null,\n\"user\": {\n\"id\": 3,\n\"name\": \"mouaz alkhateeb\"\n}\n}"
-      tags:
-        - 'Admin Operations'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user_id:
-                  type: integer
-                  description: 'Must Be Exists In Users Table'
-                  example: 8
-                number_of_month:
-                  type: integer
-                  description: "Must Be Required if new_date equal null, Must be one of the following values:\n- `3`: Three Month.\n- `6`: Six Month.\n- `12`: One Year. Custom"
-                  example: 12
-                new_date:
-                  type: date
-                  description: 'Must Be Required if number_of_month equal null Custom'
-                  example: 2025-05-01.
-              required:
-                - user_id
   /api/employees_attendances:
     get:
       summary: 'Show Employees Attendance in the Company'
@@ -1847,10 +2034,8 @@ paths:
                     municipal_card: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg'
                     health_insurance: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg'
                     employee_residence: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
-                    permission_to_entry: '1'
-                    entry_time: '30'
-                    permission_to_leave: '1'
-                    leave_time: '60'
+                    entry_time: 30
+                    leave_time: 60
                     number_of_working_hours: 0
                     nationalitie:
                       name: Syrian
@@ -1990,18 +2175,12 @@ paths:
                       employee_residence:
                         type: string
                         example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
-                      permission_to_entry:
-                        type: string
-                        example: '1'
                       entry_time:
-                        type: string
-                        example: '30'
-                      permission_to_leave:
-                        type: string
-                        example: '1'
+                        type: integer
+                        example: 30
                       leave_time:
-                        type: string
-                        example: '60'
+                        type: integer
+                        example: 60
                       number_of_working_hours:
                         type: integer
                         example: 0
@@ -2104,7 +2283,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In Users Table'
-        example: 2
+        example: 19
         required: true
         schema:
           type: integer
@@ -2158,10 +2337,8 @@ paths:
                     municipal_card: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg'
                     health_insurance: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg'
                     employee_residence: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
-                    permission_to_entry: '1'
-                    entry_time: '30'
-                    permission_to_leave: '1'
-                    leave_time: '60'
+                    entry_time: 30
+                    leave_time: 60
                     number_of_working_hours: 0
                     nationalitie:
                       name: Syrian
@@ -2301,18 +2478,12 @@ paths:
                       employee_residence:
                         type: string
                         example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg'
-                      permission_to_entry:
-                        type: string
-                        example: '1'
                       entry_time:
-                        type: string
-                        example: '30'
-                      permission_to_leave:
-                        type: string
-                        example: '1'
+                        type: integer
+                        example: 30
                       leave_time:
-                        type: string
-                        example: '60'
+                        type: integer
+                        example: 60
                       number_of_working_hours:
                         type: integer
                         example: 0
@@ -2534,15 +2705,15 @@ paths:
                   example: 1
               required:
                 - check_out
-  /api/termination_employees_contract:
+  /api/cancle_employees_contract:
     post:
-      summary: 'Terminate Employee Contract'
-      operationId: terminateEmployeeContract
+      summary: 'Cancle Employee Contract'
+      operationId: cancleEmployeeContract
       description: "This endpoint is used to terminate an employee's contract in the company. Only admins or HR personnel can access this API."
       parameters: []
       responses:
         200:
-          description: 'Termination Employee Contract'
+          description: 'Cancle Employee Contract'
           content:
             text/plain:
               schema:
@@ -2560,7 +2731,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'The ID of the user whose contract is being terminated. Must exist in the Users table.'
-                  example: 20
+                  example: 1
                 terminate_type:
                   type: integer
                   description: "The type of termination. Must be one of the following values:\n- `1`: Temporary\n- `2`: Permanent Custom"
@@ -2568,14 +2739,51 @@ paths:
                 contract_termination_period:
                   type: integer
                   description: "The period of the contract termination. Required if terminate_type is 1. Must be one of the following values:\n- `0`: Open term\n- `3`: Three months\n- `6`: Six months\n- `12`: One year"
-                  example: 4
+                  example: 13
                 contract_termination_reason:
                   type: string
-                  description: 'The reason for the contract termination. Required if terminate_type is 1.'
-                  example: similique
+                  description: 'The reason for the contract cancle. Required if terminate_type is 1.'
+                  example: mollitia
               required:
                 - user_id
                 - terminate_type
+  /api/renewal_employment_contract:
+    post:
+      summary: 'Renewal Employee Contract'
+      operationId: renewalEmployeeContract
+      description: 'This endpoint is used to  Renewal Employee Contract in the Company and Admin Or Hr Can Access To This Api.'
+      parameters: []
+      responses:
+        200:
+          description: 'Renewal Employee Contract'
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"data\": {\n     \"id\": 1,\n     \"Start Employee Contract Date\": \"2023-08-01\",\n     \"End Employee Contract Date\": \"2025-05-01\",\n     \"Contract Termination Date\": null,\n     \"Contract Termination Period\": null,\n     \"Contract Termination Reason\": null,\n     \"user\": {\n           \"id\": 3,\n           \"name\": \"mouaz alkhateeb\"\n           }\n    }"
+      tags:
+        - 'Admin Operations'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'Must Be Exists In Users Table'
+                  example: 17
+                number_of_month:
+                  type: integer
+                  description: "Must Be Required if new_date equal null, Must be one of the following values:\n- `3`: Three Month.\n- `6`: Six Month.\n- `12`: One Year. Custom"
+                  example: 12
+                new_date:
+                  type: date
+                  description: 'Must Be Required if number_of_month equal null Custom'
+                  example: 2025-05-01.
+              required:
+                - user_id
   /api/list_of_nationalities:
     get:
       summary: 'Show Nationalities List in the Company'
@@ -2955,7 +3163,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"mouaz alkhateeb\",\n        \"email\": \"mouaz@gmail.com\",\n        \"work_email\": \"mouazalkhateeb@gmail.com\",\n        \"status\": 1,\n        \"type\": 4,\n        \"gender\": 1,\n        \"mobile\": \"0969040322\",\n        \"phone\": \"0969040322\",\n        \"departement\": \"it\",\n        \"address\": \"Damascus\",\n        \"position\": null,\n        \"skills\": \"no skills\",\n        \"serial_number\": \"000007\",\n        \"birthday_date\": \"2022-11-26\",\n        \"marital_status\": null,\n        \"guarantor\": \"admin\",\n        \"branch\": \"syria branch\",\n        \"start_job_contract\": \"2023-08-01\",\n        \"end_job_contract\": \"2023-10-01\",\n        \"end_visa\": \"2023-09-11\",\n        \"end_passport\": \"2023-09-11\",\n        \"end_employee_sponsorship\": null,\n        \"end_municipal_card\": \"2023-09-10\",\n        \"end_health_insurance\": \"2023-09-14\",\n        \"end_employee_residence\": \"2023-09-20\",\n        \"image\": null,\n        \"id_photo\": null,\n        \"biography\": null,\n        \"employee_sponsorship\": null,\n        \"visa\": null,\n        \"passport\": null,\n        \"municipal_card\": null,\n        \"health_insurance\": null,\n        \"employee_residence\": null,\n        \"permission_to_entry\": 1,\n        \"entry_time\": 60,\n        \"permission_to_leave\": 1,\n        \"leave_time\": 90,\n        \"percentage\": \"0\",\n        \"basic_salary\": 200000,\n        \"number_of_working_hours\": 0,\n    }\n}"
+                example: "{\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"mouaz alkhateeb\",\n        \"email\": \"mouaz@gmail.com\",\n        \"work_email\": \"mouazalkhateeb@gmail.com\",\n        \"status\": 1,\n        \"type\": 4,\n        \"gender\": 1,\n        \"mobile\": \"0969040322\",\n        \"phone\": \"0969040322\",\n        \"departement\": \"it\",\n        \"address\": \"Damascus\",\n        \"position\": null,\n        \"skills\": \"no skills\",\n        \"serial_number\": \"000007\",\n        \"birthday_date\": \"2022-11-26\",\n        \"marital_status\": null,\n        \"guarantor\": \"admin\",\n        \"branch\": \"syria branch\",\n        \"start_job_contract\": \"2023-08-01\",\n        \"end_job_contract\": \"2023-10-01\",\n        \"end_visa\": \"2023-09-11\",\n        \"end_passport\": \"2023-09-11\",\n        \"end_employee_sponsorship\": null,\n        \"end_municipal_card\": \"2023-09-10\",\n        \"end_health_insurance\": \"2023-09-14\",\n        \"end_employee_residence\": \"2023-09-20\",\n        \"image\": null,\n        \"id_photo\": null,\n        \"biography\": null,\n        \"employee_sponsorship\": null,\n        \"visa\": null,\n        \"passport\": null,\n        \"municipal_card\": null,\n        \"health_insurance\": null,\n        \"employee_residence\": null,\n        \"entry_time\": 60,\n        \"leave_time\": 90,\n        \"percentage\": \"0\",\n        \"basic_salary\": 200000,\n        \"number_of_working_hours\": 0,\n    }\n}"
       tags:
         - 'Admin Operations'
       requestBody:
@@ -2968,19 +3176,17 @@ paths:
                 user_id:
                   type: integer
                   description: 'The user ID, which must exist in the users table.'
-                  example: 11
+                  example: 13
                 entry_time:
-                  type: number
-                  description: "if permission_to_entry is equal to 1. Must be one of the following values:\n- 30\n- 60\n- 90 (Custom"
-                  example: 90.0
+                  type: numberMust
+                  description: "be one of the following values:\n- 30\n- 60\n- 90 (Custom"
+                  example: 90)
                 leave_time:
                   type: number
-                  description: "if permission_to_leave is equal to 1. Must be one of the following values:\n- 30\n- 60\n- 90 (Custom"
+                  description: "Must be one of the following values:\n- 30\n- 60\n- 90 (Custom"
                   example: 60.0
               required:
                 - user_id
-                - entry_time
-                - leave_time
   /api/leave_calendar:
     get:
       summary: 'Leave Calendar in the Company'
@@ -3001,12 +3207,12 @@ paths:
           in: query
           name: day
           description: 'Filter Leave Calendar by day. Use the value "1" to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value "2" to return records where the date is equal to tomorrow''s date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31'
-          example: 2
+          example: 15
           required: false
           schema:
             type: integer
             description: 'Filter Leave Calendar by day. Use the value "1" to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value "2" to return records where the date is equal to tomorrow''s date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31'
-            example: 2
+            example: 15
       responses:
         200:
           description: 'Leave Calendar'
@@ -3126,7 +3332,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n\"data\": {\n\"id\": 3,\n\"email\": \"mouaz@gmail.com\",\n\"content\": \"test alert to this employeeee\",\n\"created_at\": \"2023-08-27\"\n}\n*}"
+                example: "{\n\"data\": {\n\"id\": 3,\n\"email\": \"mouaz@gmail.com\",\n\"content\": \"test alert to this employeeee\",\n\"created_at\": \"2 seconds ago\"\n}\n*}"
       tags:
         - Alerts
       requestBody:
@@ -3472,13 +3678,38 @@ paths:
         - Authentication
   /api/verify_code:
     post:
-      summary: ''
-      operationId: postApiVerify_code
-      description: ''
+      summary: 'Verfiy Code'
+      operationId: verfiyCode
+      description: 'This endpoint is used to Verfiy Code for user in the system.'
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Success Verfiy Code..!!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Success Verfiy Code..!!'
       tags:
         - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: number
+                  description: 'Should Check Your Email Inbox Custom'
+                  example: 2587.0
+              required:
+                - code
       security: []
   /api/create_company:
     post:
@@ -3679,7 +3910,7 @@ paths:
                 company_id:
                   type: integer
                   description: 'The ID of the company. Must exist in the companies table.'
-                  example: 10
+                  example: 3
                 start_commercial_record:
                   type: date
                   description: 'The start date of the commercial record. Custom'
@@ -3722,7 +3953,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In companies Table'
-        example: 7
+        example: 2
         required: true
         schema:
           type: integer
@@ -3814,7 +4045,7 @@ paths:
                 company_id:
                   type: integer
                   description: 'The ID of the company. Must exist in the companies table.'
-                  example: 12
+                  example: 11
                 name:
                   type: string
                   description: 'The name of the company. Custom'
@@ -3927,7 +4158,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'The ID of the user. Must exist in the users table.'
-                  example: 11
+                  example: 19
                 manufacturing_year:
                   type: number
                   description: "The manufacturing year of the car. This field is required if the deposit type is 1 (car).\nCustom"
@@ -4077,7 +4308,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
-        example: 15
+        example: 10
         required: true
         schema:
           type: integer
@@ -4184,7 +4415,7 @@ paths:
                 deposit_id:
                   type: integer
                   description: 'Must Be Exists In deposits Table'
-                  example: 15
+                  example: 14
                 reason_reject:
                   type: string
                   description: 'The reject reason for the deposit Custom'
@@ -4290,7 +4521,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
-        example: 14
+        example: 17
         required: true
         schema:
           type: integer
@@ -4392,7 +4623,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
-        example: 3
+        example: 6
         required: true
         schema:
           type: integer
@@ -4491,11 +4722,11 @@ paths:
                 deposit_id:
                   type: integer
                   description: 'Must Be Exists In deposits Table'
-                  example: 9
+                  example: 19
                 reason_clearance_reject:
                   type: string
                   description: ''
-                  example: et
+                  example: possimus
                 reason_reject:
                   type: string
                   description: 'The reject reason for the deposit Custom'
@@ -4509,7 +4740,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
-        example: 15
+        example: 8
         required: true
         schema:
           type: integer
@@ -4864,7 +5095,7 @@ paths:
                   data:
                     id: 1
                     day: 6
-                    date: '2023-06-01'
+                    day_name: Friday
                 properties:
                   data:
                     type: object
@@ -4875,9 +5106,9 @@ paths:
                       day:
                         type: integer
                         example: 6
-                      date:
+                      day_name:
                         type: string
-                        example: '2023-06-01'
+                        example: Friday
       tags:
         - Holidays
       requestBody:
@@ -4887,17 +5118,20 @@ paths:
             schema:
               type: object
               properties:
+                days:
+                  type: array
+                  description: ''
+                  example:
+                    - sit
+                  items:
+                    type: string
                 day:
                   type: integer
                   description: 'Bust Be From 1 to 7 Custom'
                   example: 5
-                date:
-                  type: date
-                  description: Custom
-                  example: '2023-08-27'
               required:
+                - days
                 - day
-                - date
   /api/create_annual_holiday:
     post:
       summary: 'Create Annual Holiday'
@@ -4933,62 +5167,6 @@ paths:
                   type: date
                   description: Custom
                   example: '2023-08-29'
-  /api/update_weekly_holiday:
-    post:
-      summary: 'Update Weekly Holiday'
-      operationId: updateWeeklyHoliday
-      description: 'This endpoint is used to Update Weekly Holiday and  Admin Or Hr Can Access To This Api.'
-      parameters: []
-      responses:
-        200:
-          description: 'Update Weekly Holiday'
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    id: 1
-                    day: 6
-                    date: '2023-06-01'
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        example: 1
-                      day:
-                        type: integer
-                        example: 6
-                      date:
-                        type: string
-                        example: '2023-06-01'
-      tags:
-        - Holidays
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                holiday_id:
-                  type: integer
-                  description: 'Must Be Exists In Holidays Table'
-                  example: 18
-                day:
-                  type: integer
-                  description: 'Bust Be From 1 to 7 Custom'
-                  example: 5
-                date:
-                  type: date
-                  description: Custom
-                  example: '2023-08-27'
-              required:
-                - holiday_id
-                - day
-                - date
   /api/update_annual_holiday:
     post:
       summary: 'Update Annual Holiday'
@@ -5015,7 +5193,7 @@ paths:
                 holiday_id:
                   type: integer
                   description: 'Must Be Exists In Holidays Table'
-                  example: 7
+                  example: 18
                 holiday_name:
                   type: string
                   description: Custom
@@ -5034,7 +5212,7 @@ paths:
     get:
       summary: 'List Of Holidays'
       operationId: listOfHolidays
-      description: 'This endpoint is used to Show Holidays List in the Company and Admin Or Hr Can Access To This Api.'
+      description: 'This endpoint is used to retrieve the list of holidays in the company. Only admins or HR personnel can access this API.'
       parameters: []
       responses:
         200:
@@ -5046,46 +5224,66 @@ paths:
                 example:
                   data:
                     -
-                      id: 2
+                      id: 8
                       type: 1
                       day: 6
-                      date: '2023-06-01'
+                      day_name: Friday
                     -
-                      id: 3
+                      id: 10
                       type: 2
-                      holiday_name: 'Eid Aladha almobarak'
-                      start_date: '2023-06-02'
-                      end_date: '2023-06-06'
+                      holiday_name: 'Eid Aladha'
+                      start_date: '2023-08-04'
+                      end_date: '2023-08-06'
+                    -
+                      id: 11
+                      type: 1
+                      day: 4
+                      day_name: Wednesday
+                    -
+                      id: 12
+                      type: 1
+                      day: 6
+                      day_name: Friday
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 2
+                        id: 8
                         type: 1
                         day: 6
-                        date: '2023-06-01'
+                        day_name: Friday
                       -
-                        id: 3
+                        id: 10
                         type: 2
-                        holiday_name: 'Eid Aladha almobarak'
-                        start_date: '2023-06-02'
-                        end_date: '2023-06-06'
+                        holiday_name: 'Eid Aladha'
+                        start_date: '2023-08-04'
+                        end_date: '2023-08-06'
+                      -
+                        id: 11
+                        type: 1
+                        day: 4
+                        day_name: Wednesday
+                      -
+                        id: 12
+                        type: 1
+                        day: 6
+                        day_name: Friday
                     items:
                       type: object
                       properties:
                         id:
                           type: integer
-                          example: 2
+                          example: 8
                         type:
                           type: integer
                           example: 1
                         day:
                           type: integer
                           example: 6
-                        date:
+                        day_name:
                           type: string
-                          example: '2023-06-01'
+                          example: Friday
       tags:
         - Holidays
   /api/get_hrs_list:
@@ -5331,7 +5529,7 @@ paths:
         in: path
         name: user_id
         description: 'The user ID, must be in the Users table.'
-        example: 16
+        example: 18
         required: true
         schema:
           type: integer
@@ -5548,7 +5746,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n  \"data\": {\n    \"id\": 2,\n    \"content\": \"New Comment\",\n    \"likes_count\": null,\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees/2023-08-27-Employee-8.jpg\"\n      },\n    \"created_at\": \"2023-08-27\",\n}"
+                example: "{\n  \"data\": {\n    \"id\": 2,\n    \"content\": \"New Comment\",\n    \"likes_count\": null,\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees/2023-08-27-Employee-8.jpg\",\n        \"position: \"Backend\"\n      },\n     \"post_id\": 1,\n    \"created_at\": \"2023-08-27\",\n}"
       tags:
         - Posts
       requestBody:
@@ -5565,7 +5763,7 @@ paths:
                 post_id:
                   type: integer
                   description: 'Must Be in posts Table.'
-                  example: 17
+                  example: 16
               required:
                 - content
                 - post_id
@@ -5582,7 +5780,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n  \"data\": {\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees/2023-08-27-Employee-8.jpg\"\n      },\n    \"created_at\": \"2023-08-27\",\n}"
+                example: "{\n  \"data\": {\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees/2023-08-27-Employee-8.jpg\",\n         \"position: \"Backend\"\n      },\n    \"created_at\": \"2023-08-27\",\n}"
       tags:
         - Posts
       requestBody:
@@ -5595,7 +5793,7 @@ paths:
                 post_id:
                   type: integer
                   description: 'Must Be in posts Table.'
-                  example: 11
+                  example: 9
               required:
                 - post_id
   /api/add_like_comment:
@@ -5611,7 +5809,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n  \"data\": {\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees/2023-08-27-Employee-8.jpg\"\n      },\n    \"created_at\": \"2023-08-27\",\n}"
+                example: "{\n  \"data\": {\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees/2023-08-27-Employee-8.jpg\",\n        \"position: \"Backend\"\n      },\n    \"created_at\": \"2023-08-27\",\n}"
       tags:
         - Posts
       requestBody:
@@ -5624,7 +5822,7 @@ paths:
                 comment_id:
                   type: integer
                   description: 'Must Be in comments Table.'
-                  example: 17
+                  example: 16
               required:
                 - comment_id
   /api/share_post:
@@ -5653,7 +5851,7 @@ paths:
                 post_id:
                   type: integer
                   description: 'The ID of the post to share. Must be in the posts table.'
-                  example: 14
+                  example: 2
               required:
                 - post_id
   '/api/post/{id}':
@@ -5678,7 +5876,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In posts Table'
-        example: 12
+        example: 11
         required: true
         schema:
           type: integer
@@ -5704,7 +5902,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In comments Table'
-        example: 18
+        example: 10
         required: true
         schema:
           type: integer
@@ -5718,79 +5916,10 @@ paths:
         200:
           description: 'Add Vacation Request'
           content:
-            application/json:
+            text/plain:
               schema:
-                type: object
-                example:
-                  data:
-                    id: 1
-                    type: 1
-                    status: 3
-                    reason: 'death of a lover'
-                    start_time: '05:00:00'
-                    end_time: '07:00:00'
-                    start_date: '2023-06-19'
-                    end_date: '2023-06-19'
-                    payment_type: 1
-                    vacation_type: 1
-                    user:
-                      id: 3
-                      name: 'mouaz alkhateeb'
-                      email: mouaz@gmail.com
-                      image: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg'
-                      position: 'Backend Developer'
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        example: 1
-                      type:
-                        type: integer
-                        example: 1
-                      status:
-                        type: integer
-                        example: 3
-                      reason:
-                        type: string
-                        example: 'death of a lover'
-                      start_time:
-                        type: string
-                        example: '05:00:00'
-                      end_time:
-                        type: string
-                        example: '07:00:00'
-                      start_date:
-                        type: string
-                        example: '2023-06-19'
-                      end_date:
-                        type: string
-                        example: '2023-06-19'
-                      payment_type:
-                        type: integer
-                        example: 1
-                      vacation_type:
-                        type: integer
-                        example: 1
-                      user:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            example: 3
-                          name:
-                            type: string
-                            example: 'mouaz alkhateeb'
-                          email:
-                            type: string
-                            example: mouaz@gmail.com
-                          image:
-                            type: string
-                            example: 'http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg'
-                          position:
-                            type: string
-                            example: 'Backend Developer'
+                type: string
+                example: "{\n  \"data\": {\n     \"id\": 1,\n     \"type\": 1,\n     \"status\": 3,\n     \"reason\": \"death of a lover\",\n     \"start_time\": \"05:00:00\",\n     \"end_time\": \"07:00:00\",\n     \"start_date\": \"2023-06-19\",\n     \"end_date\": \"2023-06-19\",\n     \"payment_type\": 1,\n     \"vacation_type\": 1,\n     \"person\": null,\n     \"dead_person\": null,\n     \"degree_of_kinship\": null,\n     \"created_at\": \"1 second ago\",\n     \"user\": {\n         \"id\": 3,\n         \"name\": \"mouaz alkhateeb\",\n         \"email\": \"mouaz@gmail.com\",\n         \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n         \"position\": \"Backend Developer\"\n     }\n  }\nOR\n  \"data\": {\n     \"id\": 1,\n     \"type\": 1,\n     \"status\": 3,\n     \"reason\": \"death of a lover\",\n     \"start_time\": null,\n     \"end_time\": null,\n     \"start_date\": \"2023-06-19\",\n     \"end_date\": \"2023-06-25\",\n     \"payment_type\": 1,\n     \"vacation_type\": 4,\n     \"person\": 5,\n     \"dead_person\": null,\n     \"degree_of_kinship\": null,\n     \"created_at\": \"1 second ago\",\n     \"user\": {\n         \"id\": 3,\n         \"name\": \"mouaz alkhateeb\",\n         \"email\": \"mouaz@gmail.com\",\n         \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n         \"position\": \"Backend Developer\"\n     }\n  }\nOR\n  \"data\": {\n     \"id\": 1,\n     \"type\": 1,\n     \"status\": 3,\n     \"reason\": \"death of a lover\",\n     \"start_time\": null,\n     \"end_time\": null,\n     \"start_date\": \"2023-06-19\",\n     \"end_date\": \"2023-06-25\",\n     \"payment_type\": 1,\n     \"vacation_type\": 4,\n     \"person\": null,\n     \"dead_person\": 11,\n     \"degree_of_kinship\": 2,\n     \"created_at\": \"1 minute ago\",\n     \"user\": {\n         \"id\": 3,\n         \"name\": \"mouaz alkhateeb\",\n         \"email\": \"mouaz@gmail.com\",\n         \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n         \"position\": \"Backend Developer\"\n     }\n  }\n}"
       tags:
         - Requests
       requestBody:
@@ -5814,20 +5943,32 @@ paths:
                   example: '2023-08-27'
                 vacation_type:
                   type: integer
-                  description: "The vacation type of the vacation request. Must be one of the following values:\n- `1`: HOURLY.\n- `2`: DAILY.\n- `3`: ANNUL.\n- `4`: DEATH.\n- `5`: SATISFYING.\n- `6`: PILGRIMAME.\n- `7`: NEW_BABY.\n- `8`: EXAM.\n- `9`: PREGNANT_WOMAN.\n- `10`: METERNITY.\n- `11`: SICK_CHILD. Custom"
-                  example: 4
+                  description: ". Must be one of the following values:\n- `1`: HOURLY.\n- `2`: DAILY.\n- `3`: DEATH.\n- `4`: SATISFYING.\n- `5`: PILGRIMAME.\n- `6`: NEW_BABY.\n- `7`: EXAM.\n- `8`: PREGNANT_WOMAN.\n- `9`: METERNITY.\n- `10`: SICK_CHILD"
+                  example: 19
                 start_time:
                   type: time
-                  description: 'The start time of the vacation request in the format `HH:MM:SS` Custom'
+                  description: 'required_if vacation type equal 1 The start time of the vacation request in the format `HH:MM:SS` Custom'
                   example: '09:00:00.'
                 end_time:
                   type: time
-                  description: 'The end time of the vacation request in the format `HH:MM:SS` Custom'
+                  description: 'required_if vacation type equal 1 The end time of the vacation request in the format `HH:MM:SS` Custom'
                   example: '15:30:00.'
                 payment_type:
                   type: integer
                   description: "The payment type of the vacation request. Must be one of the following values:\n- `1`: payment.\n- `2`: unpayment. Custom"
                   example: 1
+                person:
+                  type: integer
+                  description: "required_if vacation_type equal 4. Must be one of the following values:\n- `1`: FATHER.\n- `2`: MOTHER.\n- `3`: SISTER.\n- `4`: PROTHER.\n- `5`: SON.\n- `6`: DAUGHTER.\n- `7`: HUSBAND.\n- `8`: ME.\n- `9`: GRAND_FATHER.\n- `10`: GRAND_MOTHER\n- `11`: UNCLE.\n- `12`: AUNT.\n- `13`: MATERNAL_UNCLE.\n- `14`: MATERNAL_AUNT. Custom"
+                  example: 5
+                dead_person:
+                  type: integer
+                  description: "required_if vacation_type equal 3 (death). Must be one of the following values:\n- `1`: FATHER.\n- `2`: MOTHER.\n- `3`: SISTER.\n- `4`: PROTHER.\n- `5`: SON.\n- `6`: DAUGHTER.\n- `7`: HUSBAND.\n- `8`: ME.\n- `9`: GRAND_FATHER.\n- `10`: GRAND_MOTHER\n- `11`: UNCLE.\n- `12`: AUNT.\n- `13`: MATERNAL_UNCLE.\n- `14`: MATERNAL_AUNT. Custom"
+                  example: 5
+                degree_of_kinship:
+                  type: integer
+                  description: "required_if vacation_type equal 3 (death). Must be one of the following values:\n- `1`: FIRST.\n- `2`: SECOND. Custom"
+                  example: 2
               required:
                 - reason
                 - start_date
@@ -6030,7 +6171,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In requests Table'
-        example: 14
+        example: 13
         required: true
         schema:
           type: integer
@@ -6055,7 +6196,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In requests Table'
-        example: 5
+        example: 3
         required: true
         schema:
           type: integer
@@ -6085,7 +6226,7 @@ paths:
                 request_id:
                   type: integer
                   description: 'Must Be Exists In requests Table'
-                  example: 17
+                  example: 12
                 reject_reason:
                   type: string
                   description: 'The reject reason for the request Custom'
@@ -6103,12 +6244,12 @@ paths:
           in: query
           name: type
           description: 'optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending).'
-          example: 8
+          example: 18
           required: false
           schema:
             type: integer
             description: 'optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending).'
-            example: 8
+            example: 18
       responses:
         200:
           description: ''
@@ -6436,12 +6577,12 @@ paths:
           in: query
           name: duration
           description: 'optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences).'
-          example: 2
+          example: 5
           required: false
           schema:
             type: integer
             description: 'optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences).'
-            example: 2
+            example: 5
       responses:
         200:
           description: ''
@@ -6791,7 +6932,7 @@ paths:
                 shift_id:
                   type: integer
                   description: 'Must Be Exists In shifts Table'
-                  example: 10
+                  example: 4
                 start_time:
                   type: time
                   description: 'The start time of the shift in the format `HH:MM:SS` Custom'

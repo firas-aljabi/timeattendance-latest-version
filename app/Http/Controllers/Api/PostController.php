@@ -472,7 +472,8 @@ class PostController extends Controller
      *      "user": {
      *         "id": 3,
      *         "name": "mouaz alkhateeb",
-     *         "image": "employees/2023-08-27-Employee-8.jpg"
+     *         "image": "employees/2023-08-27-Employee-8.jpg",
+     *         "position: "Backend"
      *       },
      *      "post_id": 1,
      *     "created_at": "2023-08-27",
@@ -502,7 +503,8 @@ class PostController extends Controller
      *      "user": {
      *         "id": 3,
      *         "name": "mouaz alkhateeb",
-     *         "image": "employees/2023-08-27-Employee-8.jpg"
+     *         "image": "employees/2023-08-27-Employee-8.jpg",
+     *          "position: "Backend"
      *       },
      *     "created_at": "2023-08-27",
      *}
@@ -533,7 +535,8 @@ class PostController extends Controller
      *      "user": {
      *         "id": 3,
      *         "name": "mouaz alkhateeb",
-     *         "image": "employees/2023-08-27-Employee-8.jpg"
+     *         "image": "employees/2023-08-27-Employee-8.jpg",
+     *         "position: "Backend"
      *       },
      *     "created_at": "2023-08-27",
      *}

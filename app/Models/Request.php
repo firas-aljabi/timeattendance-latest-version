@@ -23,7 +23,10 @@ class Request extends Model
         'end_time',
         'reject_reason',
         'attachments',
-        'justify_type'
+        'justify_type',
+        'person',
+        'dead_person',
+        'degree_of_kinship'
     ];
 
     public function user()

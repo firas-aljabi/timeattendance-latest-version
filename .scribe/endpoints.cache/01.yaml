@@ -76,7 +76,7 @@ endpoints:
         name: nationalitie_id
         description: 'Must be from 1 to 56'
         required: true
-        example: 9
+        example: 1
         type: integer
         enumValues: []
         custom: []
@@ -94,7 +94,8 @@ endpoints:
           optional The material status of the user. Must be one of the following values:
           - `1`: single status.
           - `2`: married status.
-          - `3`: divorced status. Custom
+          - `3`: married status.
+          - `4`: widower status. Custom
         required: false
         example: 1
         type: integer
@@ -167,17 +168,6 @@ endpoints:
         type: integer
         enumValues: []
         custom: []
-      status:
-        name: status
-        description: |-
-          optional The status of the user. Must be one of the following values:
-          - `1`: on duty.
-          - `2`: on vacation. Custom
-        required: false
-        example: 1
-        type: integer
-        enumValues: []
-        custom: []
       start_job_contract:
         name: start_job_contract
         description: Custom
@@ -237,7 +227,7 @@ endpoints:
       leave_time:
         name: leave_time
         description: |-
-          require if permission_to_leave equal 1. Must be one of the following values:
+          Must be one of the following values:
           - 30.
           - 60.
           - 90  Custom
@@ -249,7 +239,7 @@ endpoints:
       entry_time:
         name: entry_time
         description: |-
-          require if permission_to_entry equal 1. Must be one of the following values:
+          Must be one of the following values:
           - 30.
           - 60.
           - 90  Custom
@@ -262,7 +252,7 @@ endpoints:
         name: end_passport
         description: 'Must be a valid date.'
         required: false
-        example: '2023-09-05T15:24:25'
+        example: '2023-09-07T13:30:41'
         type: string
         enumValues: []
         custom: []
@@ -276,7 +266,7 @@ endpoints:
         custom: []
       id_photo:
         name: id_photo
-        description: 'Must be pdf and not be greater than 2048 kilobytes'
+        description: 'Must be image or pdf and not be greater than 2048 kilobytes'
         required: false
         example: null
         type: file
@@ -284,7 +274,7 @@ endpoints:
         custom: []
       biography:
         name: biography
-        description: 'Must not be greater than 2048 kilobytes'
+        description: 'Must be image or pdf and not be greater than 2048 kilobytes'
         required: false
         example: null
         type: file
@@ -292,7 +282,7 @@ endpoints:
         custom: []
       visa:
         name: visa
-        description: 'Must not be greater than 2048 kilobytes'
+        description: 'Must be image or pdf and not be greater than 2048 kilobytes'
         required: false
         example: null
         type: file
@@ -300,7 +290,7 @@ endpoints:
         custom: []
       municipal_card:
         name: municipal_card
-        description: 'Must not be greater than 2048 kilobytes'
+        description: 'Must be image or pdf and not be greater than 2048 kilobytes'
         required: false
         example: null
         type: file
@@ -308,7 +298,7 @@ endpoints:
         custom: []
       employee_residence:
         name: employee_residence
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        description: 'Must be a file. Must not be greater than 2048 kilobytes.'
         required: false
         example: null
         type: file
@@ -316,7 +306,7 @@ endpoints:
         custom: []
       health_insurance:
         name: health_insurance
-        description: 'Must not be greater than 2048 kilobytes'
+        description: 'Must be image or pdf and not be greater than 2048 kilobytes'
         required: false
         example: null
         type: file
@@ -324,7 +314,7 @@ endpoints:
         custom: []
       passport:
         name: passport
-        description: 'Must not be greater than 2048 kilobytes'
+        description: 'Must be image or pdf and not be greater than 2048 kilobytes'
         required: false
         example: null
         type: file
@@ -332,7 +322,7 @@ endpoints:
         custom: []
       employee_sponsorship:
         name: employee_sponsorship
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        description: 'Must be a file. Must not be greater than 2048 kilobytes.'
         required: false
         example: null
         type: file
@@ -348,34 +338,34 @@ endpoints:
         custom: []
       housing_allowance:
         name: housing_allowance
-        description: ''
+        description: 'The housing allowance. Custom'
         required: false
-        example: null
-        type: string
+        example: 100000.0
+        type: number
         enumValues: []
         custom: []
       hourly_annual:
         name: hourly_annual
-        description: ''
+        description: Custom
         required: false
-        example: null
-        type: string
+        example: 12.0
+        type: number
         enumValues: []
         custom: []
       daily_annual:
         name: daily_annual
-        description: ''
+        description: Custom
         required: false
-        example: null
-        type: string
+        example: 12.0
+        type: number
         enumValues: []
         custom: []
       transportation_allowance:
         name: transportation_allowance
-        description: ''
+        description: 'The transportation allowance. Custom'
         required: false
-        example: null
-        type: string
+        example: 80000.0
+        type: number
         enumValues: []
         custom: []
       number_of_shifts:
@@ -391,7 +381,7 @@ endpoints:
         description: 'optional An array of shift for the user. Required when `number_of_shifts` is not null.'
         required: false
         example:
-          - in
+          - dignissimos
         type: 'string[]'
         enumValues: []
         custom: []
@@ -407,7 +397,7 @@ endpoints:
         name: 'shifts[].start_time'
         description: ''
         required: true
-        example: deleniti
+        example: sed
         type: string
         enumValues: []
         custom: []
@@ -415,7 +405,7 @@ endpoints:
         name: 'shifts[].end_time'
         description: ''
         required: true
-        example: quae
+        example: quas
         type: string
         enumValues: []
         custom: []
@@ -423,7 +413,7 @@ endpoints:
         name: 'shifts[].start_break_hour'
         description: ''
         required: true
-        example: asperiores
+        example: et
         type: string
         enumValues: []
         custom: []
@@ -431,37 +421,15 @@ endpoints:
         name: 'shifts[].end_break_hour'
         description: ''
         required: true
-        example: dicta
+        example: est
         type: string
-        enumValues: []
-        custom: []
-      permission_to_leave:
-        name: permission_to_leave
-        description: |-
-          optional The permission to leave of the user. Must be one of the following values:
-          - `1`: True.
-          - `2`: False. Custom
-        required: false
-        example: 1
-        type: integer
-        enumValues: []
-        custom: []
-      permission_to_entry:
-        name: permission_to_entry
-        description: |-
-          optional The permission to entry of the user. Must be one of the following values:
-          - `1`: True.
-          - `2`: False. Custom
-        required: false
-        example: 1
-        type: integer
         enumValues: []
         custom: []
       user_id:
         name: user_id
         description: 'optional The ID of the user That Exists in users Table.'
         required: true
-        example: 16
+        example: 6
         type: integer
         enumValues: []
         custom: []
@@ -502,7 +470,7 @@ endpoints:
       email: mouaz@gmail.com
       password: Abc071096904038
       work_email: mouazalkhateeb@goma.com.
-      nationalitie_id: 9
+      nationalitie_id: 1
       birthday_date: '2023-08-27'
       material_status: 1
       departement: It
@@ -513,7 +481,6 @@ endpoints:
       skills: Drwaing
       serial_number: 101122.0
       gender: 1
-      status: 1
       start_job_contract: '2023-08-27'
       end_job_contract: '2023-08-27'
       end_visa: '2023-08-27'
@@ -523,14 +490,16 @@ endpoints:
       end_employee_residence: '2023-08-27'
       leave_time: 60.0
       entry_time: 90.0
-      end_passport: '2023-09-05T15:24:25'
+      end_passport: '2023-09-07T13:30:41'
       basic_salary: 250000.0
+      housing_allowance: 100000.0
+      hourly_annual: 12.0
+      daily_annual: 12.0
+      transportation_allowance: 80000.0
       number_of_shifts: 3
       shifts:
-        - in
-      permission_to_leave: 1
-      permission_to_entry: 1
-      user_id: 16
+        - dignissimos
+      user_id: 6
       start_time: '09:00:00.'
       end_time: '09:00:00.'
       start_break_hour: '09:00:00.'
@@ -555,7 +524,7 @@ endpoints:
           "name": "mouaz alkhateeb",
           "email": "mouaz@gmail.com",
           "work_email": "mouazalkhateeb@gmail.com",
-          "status": "1",
+          "status": 3,
           "type": 4,
           "gender": "1",
           "mobile": "0969040322",
@@ -586,34 +555,32 @@ endpoints:
           "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
           "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
           "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-          "permission_to_entry": "1",
-          "entry_time": "30",
-          "permission_to_leave": "1",
-          "leave_time": "60",
+          "entry_time": 30,
+          "leave_time": 60,
           "number_of_working_hours": 0,
           "nationalitie": {
             "name": "Syrian"
-          },
+           },
           "percentage": "0",
           "basic_salary": 200000,
           "shifts": [
             {
                "id": 3,
-              "start_time": "09:00:00",
-             "end_time": "15:00:00",
-            "start_break_hour": "12:30:00",
-            "end_break_hour": "13:00:00"
-          },
-          {
-            "id": 4,
-            "start_time": "16:00:00",
-           "end_time": "22:00:00",
-           "start_break_hour": "20:30:00",
-           "end_break_hour": "21:00:00"
-          }
+               "start_time": "09:00:00",
+               "end_time": "15:00:00",
+               "start_break_hour": "12:30:00",
+               "end_break_hour": "13:00:00"
+            },
+            {
+              "id": 4,
+              "start_time": "16:00:00",
+              "end_time": "22:00:00",
+              "start_break_hour": "20:30:00",
+              "end_break_hour": "21:00:00"
+            }
           ],
-          "deposits": []
-          }
+           "deposits": []
+           }
           }
         headers: []
         description: 'Add a Employee'
@@ -697,7 +664,7 @@ endpoints:
         name: nationalitie_id
         description: 'Must be from 1 to 56'
         required: true
-        example: 12
+        example: 15
         type: integer
         enumValues: []
         custom: []
@@ -779,25 +746,13 @@ endpoints:
         custom: []
       gender:
         name: gender
-        description: |-
-          optional The gender of the user. Must be one of the following values:
-          - `1`: male.
-          - `2`: female. Custom
+        description: ''
         required: false
-        example: 1
-        type: integer
-        enumValues: []
-        custom: []
-      status:
-        name: status
-        description: |-
-          optional The status of the user. Must be one of the following values:
-          - `1`: on duty.
-          - `2`: on vacation. Custom
-        required: false
-        example: 1
-        type: integer
-        enumValues: []
+        example: '1'
+        type: string
+        enumValues:
+          - '1'
+          - '2'
         custom: []
       start_job_contract:
         name: start_job_contract
@@ -870,7 +825,7 @@ endpoints:
         name: entry_time
         description: ''
         required: false
-        example: '30'
+        example: '60'
         type: string
         enumValues:
           - '30'
@@ -881,7 +836,7 @@ endpoints:
         name: end_passport
         description: 'Must be a valid date.'
         required: false
-        example: '2023-09-05T15:24:25'
+        example: '2023-09-07T13:30:41'
         type: string
         enumValues: []
         custom: []
@@ -927,7 +882,7 @@ endpoints:
         custom: []
       employee_residence:
         name: employee_residence
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        description: 'Must be a file. Must not be greater than 2048 kilobytes.'
         required: false
         example: null
         type: file
@@ -951,7 +906,7 @@ endpoints:
         custom: []
       employee_sponsorship:
         name: employee_sponsorship
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        description: 'Must be a file. Must not be greater than 2048 kilobytes.'
         required: false
         example: null
         type: file
@@ -1001,7 +956,7 @@ endpoints:
         name: number_of_shifts
         description: 'Must be at least 1.'
         required: false
-        example: 66
+        example: 32
         type: integer
         enumValues: []
         custom: []
@@ -1010,7 +965,7 @@ endpoints:
         description: 'This field is required when <code>number_of_shifts</code> is <code>!=</code> or <code>null</code>.'
         required: false
         example:
-          - rerum
+          - distinctio
         type: 'string[]'
         enumValues: []
         custom: []
@@ -1026,7 +981,7 @@ endpoints:
         name: 'shifts[].start_time'
         description: ''
         required: true
-        example: repellendus
+        example: quia
         type: string
         enumValues: []
         custom: []
@@ -1034,7 +989,7 @@ endpoints:
         name: 'shifts[].end_time'
         description: ''
         required: true
-        example: nostrum
+        example: mollitia
         type: string
         enumValues: []
         custom: []
@@ -1042,7 +997,7 @@ endpoints:
         name: 'shifts[].start_break_hour'
         description: ''
         required: true
-        example: aut
+        example: iure
         type: string
         enumValues: []
         custom: []
@@ -1050,8 +1005,19 @@ endpoints:
         name: 'shifts[].end_break_hour'
         description: ''
         required: true
-        example: assumenda
+        example: perferendis
         type: string
+        enumValues: []
+        custom: []
+      status:
+        name: status
+        description: |-
+          optional The status of the user. Must be one of the following values:
+          - `1`: on duty.
+          - `2`: on vacation. Custom
+        required: false
+        example: 1
+        type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
@@ -1059,7 +1025,7 @@ endpoints:
       email: mouaz@gmail.com
       password: Abc071096904038
       work_email: mouazalkhateeb@goma.com.
-      nationalitie_id: 12
+      nationalitie_id: 15
       birthday_date: '2023-08-27'
       material_status: 1
       departement: It
@@ -1069,8 +1035,7 @@ endpoints:
       branch: Syria
       skills: Drwaing
       serial_number: 101122.0
-      gender: 1
-      status: 1
+      gender: '1'
       start_job_contract: '2023-08-27'
       end_job_contract: '2023-08-27'
       end_visa: '2023-08-27'
@@ -1079,12 +1044,13 @@ endpoints:
       end_health_insurance: '2023-08-27'
       end_employee_residence: '2023-08-27'
       leave_time: '60'
-      entry_time: '30'
-      end_passport: '2023-09-05T15:24:25'
+      entry_time: '60'
+      end_passport: '2023-09-07T13:30:41'
       basic_salary: 250000.0
-      number_of_shifts: 66
+      number_of_shifts: 32
       shifts:
-        - rerum
+        - distinctio
+      status: 1
     fileParameters:
       image: null
       id_photo: null
@@ -1136,9 +1102,7 @@ endpoints:
           "municipal_card": null,
           "health_insurance": null,
           "employee_residence": null,
-          "permission_to_entry": null,
           "entry_time": null,
-          "permission_to_leave": null,
           "leave_time": null,
           "percentage": "0",
           "basic_salary": 200000
@@ -1225,7 +1189,7 @@ endpoints:
         name: company_id
         description: ''
         required: true
-        example: quas
+        example: inventore
         type: string
         enumValues: []
         custom: []
@@ -1233,7 +1197,7 @@ endpoints:
         name: nationalitie_id
         description: 'Must be from 1 to 56'
         required: true
-        example: 7
+        example: 15
         type: integer
         enumValues: []
         custom: []
@@ -1255,6 +1219,7 @@ endpoints:
           - '1'
           - '2'
           - '3'
+          - '4'
         custom: []
       address:
         name: address
@@ -1303,7 +1268,7 @@ endpoints:
         name: comapny_id
         description: 'Must be exists in companies table.'
         required: true
-        example: 13
+        example: 2
         type: integer
         enumValues: []
         custom: []
@@ -1312,15 +1277,15 @@ endpoints:
       email: mouaz@gmail.com
       password: Abc071096904038
       work_email: mouazalkhateeb@goma.com.
-      company_id: quas
-      nationalitie_id: 7
+      company_id: inventore
+      nationalitie_id: 15
       birthday_date: '2023-08-27'
       material_status: '3'
       address: Damascus
       serial_number: 101122.0
       gender: 1
       branch: Syria
-      comapny_id: 13
+      comapny_id: 2
     fileParameters:
       image: null
     responses:
@@ -1364,9 +1329,7 @@ endpoints:
               "municipal_card": null,
               "health_insurance": null,
               "employee_residence": null,
-              "permission_to_entry": null,
               "entry_time": null,
-              "permission_to_leave": null,
               "leave_time": null,
               "percentage": "0",
               "basic_salary": 0
@@ -1390,8 +1353,8 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Updated Employee in the Company'
-      description: 'This endpoint is used to Update Employee in the Company and Just Same Employee Can Access To This Api.'
+      title: 'An Employee Edits His personal Information'
+      description: 'This endpoint is used to An Employee Edits His personal Information in the Company and Just Same Employee Can Access To This Api.'
       authenticated: true
       custom: []
     headers:
@@ -1449,9 +1412,9 @@ endpoints:
           "name": "mouaz alkhateeb",
           "email": "mouaz@gmail.com",
           "work_email": "mouazalkhateeb@gmail.com",
-          "status": "1",
+          "status": 1,
           "type": 4,
-          "gender": "1",
+          "gender": 1,
           "mobile": "0969040322",
           "phone": "0969040322",
           "departement": "it",
@@ -1480,9 +1443,7 @@ endpoints:
           "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
           "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
           "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-          "permission_to_entry": "1",
           "entry_time": "30",
-          "permission_to_leave": "1",
           "leave_time": "60",
           "number_of_working_hours": 0,
           "nationalitie": {
@@ -1510,7 +1471,148 @@ endpoints:
           }
           }
         headers: []
-        description: 'Add a Employee'
+        description: 'An Employee Edits His personal Information'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/admin_update_employee
+    metadata:
+      groupName: 'Admin Operations'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Admin Update Employee in the Company'
+      description: 'This endpoint is used to Update Employee Data in the Company and Just Admin Or Hr Can Access To This Api.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'Must Be Exists In Users Table'
+        required: true
+        example: 6
+        type: integer
+        enumValues: []
+        custom: []
+      material_status:
+        name: material_status
+        description: |-
+          optional The material status of the user. Must be one of the following values:
+          - `1`: single status.
+          - `2`: married status.
+          - `3`: married status.
+          - `4`: widower status. Custom
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        custom: []
+      housing_allowance:
+        name: housing_allowance
+        description: 'The housing allowance. Custom'
+        required: false
+        example: 100000.0
+        type: number
+        enumValues: []
+        custom: []
+      transportation_allowance:
+        name: transportation_allowance
+        description: 'The transportation allowance. Custom'
+        required: false
+        example: 80000.0
+        type: number
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      user_id: 6
+      material_status: 1
+      housing_allowance: 100000.0
+      transportation_allowance: 80000.0
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+          "data": {
+          "id": 4,
+          "name": "mouaz alkhateeb",
+          "email": "mouaz@gmail.com",
+          "work_email": "mouazalkhateeb@gmail.com",
+          "status": 1,
+          "type": 4,
+          "gender": 1,
+          "mobile": "0969040322",
+          "phone": "0969040322",
+          "departement": "it",
+          "address": "Damascus",
+          "position": null,
+          "skills": "no skills",
+          "serial_number": "000007",
+          "birthday_date": "2022-11-26",
+          "marital_status": null,
+          "guarantor": "admin",
+          "branch": "syria branch",
+          "start_job_contract": "2023-08-01",
+          "end_job_contract": "2023-10-01",
+          "end_visa": "2023-09-11",
+          "end_passport": "2023-09-11",
+          "end_employee_sponsorship": null,
+          "end_municipal_card": "2023-09-10",
+          "end_health_insurance": "2023-09-14",
+          "end_employee_residence": "2023-09-20",
+          "image": "http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg",
+          "id_photo": null,
+          "biography": "http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf",
+          "employee_sponsorship": "http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg",
+          "visa": "http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg",
+          "passport": "http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg",
+          "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
+          "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
+          "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
+          "entry_time": "30",
+          "leave_time": "60",
+          "number_of_working_hours": 0,
+          "nationalitie": {
+            "name": "Syrian"
+          },
+          "percentage": "0",
+          "basic_salary": 200000,
+          "shifts": [
+            {
+               "id": 3,
+              "start_time": "09:00:00",
+             "end_time": "15:00:00",
+            "start_break_hour": "12:30:00",
+            "end_break_hour": "13:00:00"
+          },
+          {
+            "id": 4,
+            "start_time": "16:00:00",
+           "end_time": "22:00:00",
+           "start_break_hour": "20:30:00",
+           "end_break_hour": "21:00:00"
+          }
+          ],
+          "deposits": []
+          }
+          }
+        headers: []
+        description: 'Admin Update Employee'
         custom: []
     responseFields: []
     auth: []
@@ -1527,8 +1629,8 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Delete Employee From the Company'
-      description: 'This endpoint is used to Delete Employee From the Company and Admin Or Hr Can Access To This Api.'
+      title: 'Archive Employee From the Company'
+      description: 'This endpoint is used to Archive Employee From the Company and Admin Or Hr Can Access To This Api.'
       authenticated: true
       custom: []
     headers:
@@ -1539,12 +1641,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 8
+        example: 17
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 8
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1591,7 +1693,7 @@ endpoints:
         name: user_id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 18
+        example: 6
         type: integer
         enumValues: []
         custom: []
@@ -1599,7 +1701,7 @@ endpoints:
         name: hourly_annual
         description: 'The number of hourly hours Vacation per year.'
         required: false
-        example: 4
+        example: 8
         type: integer
         enumValues: []
         custom: []
@@ -1607,14 +1709,14 @@ endpoints:
         name: daily_annual
         description: 'The number of daily hours Vacation per year.'
         required: false
-        example: 18
+        example: 1
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 18
-      hourly_annual: 4
-      daily_annual: 18
+      user_id: 6
+      hourly_annual: 8
+      daily_annual: 1
     fileParameters: []
     responses:
       -
@@ -1644,7 +1746,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Add Reward and Adversaries Allowance for Employee'
+      title: 'Add Reward and Adversaries for Employee'
       description: 'This endpoint is used to add reward and adversaries allowance for an employee in the company. Only admins or HR personnel can access this API.'
       authenticated: true
       custom: []
@@ -1702,30 +1804,12 @@ endpoints:
         type: number
         enumValues: []
         custom: []
-      housing_allowance:
-        name: housing_allowance
-        description: 'The housing allowance. (Custom'
-        required: false
-        example: 100000.0
-        type: number
-        enumValues: []
-        custom: []
-      transportation_allowance:
-        name: transportation_allowance
-        description: 'The transportation allowance. (Custom'
-        required: false
-        example: 80000.0
-        type: number
-        enumValues: []
-        custom: []
     cleanBodyParameters:
       user_id: 17
       rewards_type: 1
       adversaries_type: 1
       rewards: 5.0
       adversaries: 3.0
-      housing_allowance: 100000.0
-      transportation_allowance: 80000.0
     fileParameters: []
     responses:
       -
@@ -1746,7 +1830,7 @@ endpoints:
               }
           }
         headers: []
-        description: 'Add Reward and Adversaries Allowance for Employee'
+        description: 'Add Reward and Adversaries for Employee'
         custom: []
     responseFields: []
     auth: []
@@ -1784,9 +1868,9 @@ endpoints:
           {
             "all_employees_count": "1",
             "attendance_rate": "0",
-            "on_duty_employees_count": "1",
+            "active_employees_count": "1",
             "on_vacation_employees_count": "0",
-            "on_duty_employees_percentage": "100",
+            "active_employees_percentage": "100",
             "on_vacation_employees_percentage": "0",
             "male_employees_percentage": "0",
             "female_employees_percentage": "0",
@@ -1905,9 +1989,7 @@ endpoints:
           "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
           "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
           "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-          "permission_to_entry": 1,
           "entry_time": 30,
-          "permission_to_leave": 1,
           "leave_time": 60,
           "percentage": "0",
           "basic_salary": 200000,
@@ -1949,9 +2031,7 @@ endpoints:
           "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
           "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
           "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-          "permission_to_entry": 1,
           "entry_time": 30,
-          "permission_to_leave": 1,
           "leave_time": 60,
           "percentage": "0",
           "basic_salary": 200000,
@@ -2042,9 +2122,7 @@ endpoints:
                 "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
                 "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
                 "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-                "permission_to_entry": 1,
                 "entry_time": 30,
-                "permission_to_leave": 1,
                 "leave_time": 60,
                 "percentage": "0",
                 "basic_salary": 200000,
@@ -2086,9 +2164,7 @@ endpoints:
                 "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
                 "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
                 "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-                "permission_to_entry": 1,
                 "entry_time": 30,
-                "permission_to_leave":1,
                 "leave_time": 60,
                 "percentage": "0",
                 "basic_salary": 200000,
@@ -2194,7 +2270,7 @@ endpoints:
         name: user_id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 19
+        example: 4
         type: integer
         enumValues: []
         custom: []
@@ -2207,7 +2283,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 19
+      user_id: 4
       new_salary: 75000.0
     fileParameters: []
     responses:
@@ -2251,9 +2327,7 @@ endpoints:
           "municipal_card": null,
           "health_insurance": null,
           "employee_residence": null,
-          "permission_to_entry": 0,
           "entry_time": null,
-          "permission_to_leave": 0,
           "leave_time": null,
           "basic_salary": 750000
           "percentage": "0",
@@ -2261,86 +2335,6 @@ endpoints:
           }
         headers: []
         description: 'Update Employee Salary'
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/update_employment_contract
-    metadata:
-      groupName: 'Admin Operations'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Renewal Employee Contract'
-      description: 'This endpoint is used to  Renewal Employee Contract in the Company and Admin Or Hr Can Access To This Api.'
-      authenticated: true
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      user_id:
-        name: user_id
-        description: 'Must Be Exists In Users Table'
-        required: true
-        example: 8
-        type: integer
-        enumValues: []
-        custom: []
-      number_of_month:
-        name: number_of_month
-        description: |-
-          Must Be Required if new_date equal null, Must be one of the following values:
-          - `3`: Three Month.
-          - `6`: Six Month.
-          - `12`: One Year. Custom
-        required: false
-        example: 12
-        type: integer
-        enumValues: []
-        custom: []
-      new_date:
-        name: new_date
-        description: 'Must Be Required if number_of_month equal null Custom'
-        required: false
-        example: 2025-05-01.
-        type: date
-        enumValues: []
-        custom: []
-    cleanBodyParameters:
-      user_id: 8
-      number_of_month: 12
-      new_date: 2025-05-01.
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "data": {
-          "id": 1,
-          "Start Employee Contract Date": "2023-08-01",
-          "End Employee Contract Date": "2025-05-01",
-          "Contract Termination Date": null,
-          "Contract Termination Period": null,
-          "Contract Termination Reason": null,
-          "user": {
-          "id": 3,
-          "name": "mouaz alkhateeb"
-          }
-          }
-        headers: []
-        description: 'Renewal Employee Contract'
         custom: []
     responseFields: []
     auth: []
@@ -2481,12 +2475,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 2
+        example: 19
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 2
+      id: 19
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2533,10 +2527,8 @@ endpoints:
           "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
           "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
           "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-          "permission_to_entry": "1",
-          "entry_time": "30",
-          "permission_to_leave": "1",
-          "leave_time": "60",
+          "entry_time": 30,
+          "leave_time": 60,
           "number_of_working_hours": 0,
           "nationalitie": {
             "name": "Syrian"
@@ -2648,10 +2640,8 @@ endpoints:
           "municipal_card": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg",
           "health_insurance": "http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg",
           "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
-          "permission_to_entry": "1",
-          "entry_time": "30",
-          "permission_to_leave": "1",
-          "leave_time": "60",
+          "entry_time": 30,
+          "leave_time": 60,
           "number_of_working_hours": 0,
           "nationalitie": {
             "name": "Syrian"
@@ -2736,16 +2726,16 @@ endpoints:
         status: 200
         content: |-
           {
-          "data": {
-          "id": 2,
-          "Date": "2023-08-27",
-          "login_time": "14:03:19",
-          "logout_time": null,
-          "user": {
-          "id": 9,
-          "name": "ahmad alkhateeb"
-          }
-          }
+             "data": {
+                 "id": 2,
+                 "Date": "2023-08-27",
+                 "login_time": "14:03:19",
+                 "logout_time": null,
+                 "user": {
+                       "id": 9,
+                       "name": "ahmad alkhateeb"
+                         }
+                 }
           }
         headers: []
         description: 'Employee check in System Daily'
@@ -2793,16 +2783,16 @@ endpoints:
         status: 200
         content: |-
           {
-          "data": {
-          "id": 2,
-          "Date": "2023-08-27",
-          "login_time": "14:03:19",
-          "logout_time": null,
-          "user": {
-          "id": 9,
-          "name": "ahmad alkhateeb"
-          }
-          }
+             "data": {
+                 "id": 2,
+                 "Date": "2023-08-27",
+                 "login_time": "14:03:19",
+                 "logout_time": null,
+                 "user": {
+                 "id": 9,
+                 "name": "ahmad alkhateeb"
+                      }
+                 }
           }
         headers: []
         description: 'Employee check Out System Daily'
@@ -2816,13 +2806,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/termination_employees_contract
+    uri: api/cancle_employees_contract
     metadata:
       groupName: 'Admin Operations'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Terminate Employee Contract'
+      title: 'Cancle Employee Contract'
       description: "This endpoint is used to terminate an employee's contract in the company. Only admins or HR personnel can access this API."
       authenticated: true
       custom: []
@@ -2838,7 +2828,7 @@ endpoints:
         name: user_id
         description: 'The ID of the user whose contract is being terminated. Must exist in the Users table.'
         required: true
-        example: 20
+        example: 1
         type: integer
         enumValues: []
         custom: []
@@ -2862,23 +2852,23 @@ endpoints:
           - `6`: Six months
           - `12`: One year
         required: false
-        example: 4
+        example: 13
         type: integer
         enumValues: []
         custom: []
       contract_termination_reason:
         name: contract_termination_reason
-        description: 'The reason for the contract termination. Required if terminate_type is 1.'
+        description: 'The reason for the contract cancle. Required if terminate_type is 1.'
         required: false
-        example: similique
+        example: mollitia
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 20
+      user_id: 1
       terminate_type: 2
-      contract_termination_period: 4
-      contract_termination_reason: similique
+      contract_termination_period: 13
+      contract_termination_reason: mollitia
     fileParameters: []
     responses:
       -
@@ -2916,7 +2906,87 @@ endpoints:
             }
           }
         headers: []
-        description: 'Termination Employee Contract'
+        description: 'Cancle Employee Contract'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/renewal_employment_contract
+    metadata:
+      groupName: 'Admin Operations'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Renewal Employee Contract'
+      description: 'This endpoint is used to  Renewal Employee Contract in the Company and Admin Or Hr Can Access To This Api.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'Must Be Exists In Users Table'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        custom: []
+      number_of_month:
+        name: number_of_month
+        description: |-
+          Must Be Required if new_date equal null, Must be one of the following values:
+          - `3`: Three Month.
+          - `6`: Six Month.
+          - `12`: One Year. Custom
+        required: false
+        example: 12
+        type: integer
+        enumValues: []
+        custom: []
+      new_date:
+        name: new_date
+        description: 'Must Be Required if number_of_month equal null Custom'
+        required: false
+        example: 2025-05-01.
+        type: date
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      user_id: 17
+      number_of_month: 12
+      new_date: 2025-05-01.
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "data": {
+               "id": 1,
+               "Start Employee Contract Date": "2023-08-01",
+               "End Employee Contract Date": "2025-05-01",
+               "Contract Termination Date": null,
+               "Contract Termination Period": null,
+               "Contract Termination Reason": null,
+               "user": {
+                     "id": 3,
+                     "name": "mouaz alkhateeb"
+                     }
+              }
+        headers: []
+        description: 'Renewal Employee Contract'
         custom: []
     responseFields: []
     auth: []
@@ -3213,37 +3283,37 @@ endpoints:
         name: user_id
         description: 'The user ID, which must exist in the users table.'
         required: true
-        example: 11
+        example: 13
         type: integer
         enumValues: []
         custom: []
       entry_time:
         name: entry_time
         description: |-
-          if permission_to_entry is equal to 1. Must be one of the following values:
+          be one of the following values:
           - 30
           - 60
           - 90 (Custom
-        required: true
-        example: 90.0
-        type: number
+        required: false
+        example: 90)
+        type: numberMust
         enumValues: []
         custom: []
       leave_time:
         name: leave_time
         description: |-
-          if permission_to_leave is equal to 1. Must be one of the following values:
+          Must be one of the following values:
           - 30
           - 60
           - 90 (Custom
-        required: true
+        required: false
         example: 60.0
         type: number
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 11
-      entry_time: 90.0
+      user_id: 13
+      entry_time: 90)
       leave_time: 60.0
     fileParameters: []
     responses:
@@ -3287,9 +3357,7 @@ endpoints:
                   "municipal_card": null,
                   "health_insurance": null,
                   "employee_residence": null,
-                  "permission_to_entry": 1,
                   "entry_time": 60,
-                  "permission_to_leave": 1,
                   "leave_time": 90,
                   "percentage": "0",
                   "basic_salary": 200000,
@@ -3336,13 +3404,13 @@ endpoints:
         name: day
         description: 'Filter Leave Calendar by day. Use the value "1" to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value "2" to return records where the date is equal to tomorrow''s date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31'
         required: false
-        example: 2
+        example: 15
         type: integer
         enumValues: []
         custom: []
     cleanQueryParameters:
       date: '2023-06-03'
-      day: 2
+      day: 15
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []

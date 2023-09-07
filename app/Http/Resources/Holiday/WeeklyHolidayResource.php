@@ -12,7 +12,7 @@ class WeeklyHolidayResource extends JsonResource
         return [
             'id' => $this->id,
             'day' => intval($this->day),
-            'date' => $this->date,
+            'day_name' => $this->day_name
         ];
     }
 }

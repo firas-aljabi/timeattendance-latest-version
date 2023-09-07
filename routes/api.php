@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('create_hr', [AdminController::class, 'store_hr']);
     Route::post('create_admin', [AdminController::class, 'store_admin']);
     Route::post('update_employee', [AdminController::class, 'update_employee']);
+    Route::post('admin_update_employee', [AdminController::class, 'admin_update_employee']);
     Route::delete('employee/{id}', [AdminController::class, 'destroyEmployee']);
     Route::post('update_working_hours', [AdminController::class, 'update_working_hours']);
     Route::post('reward_adversaries_salary', [AdminController::class, 'reward_adversaries_salary']);
@@ -103,7 +104,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     // -- Holiday -- //
     Route::post('create_weekly_holiday', [HolidayController::class, 'create_weekly_holiday']);
     Route::post('create_annual_holiday', [HolidayController::class, 'create_annual_holiday']);
-    Route::post('update_weekly_holiday', [HolidayController::class, 'update_weekly_holiday']);
     Route::post('update_annual_holiday', [HolidayController::class, 'update_annual_holiday']);
     Route::get('list_of_holidays', [HolidayController::class, 'list_of_holidays']);
 

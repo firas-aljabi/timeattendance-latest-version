@@ -15,8 +15,8 @@ class CreateWeeklyHolidayRequest extends FormRequest
     public function rules()
     {
         return [
-            "day" => "required",
-            "date" => "required|date"
+            'days' => 'required|array',
+            'days.*.day' => 'required_if:days,!=,null',
         ];
     }
 }

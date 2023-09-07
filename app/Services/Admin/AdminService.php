@@ -40,6 +40,11 @@ class AdminService implements AdminServiceInterface
     {
         return $this->adminRepository->update_employee($data);
     }
+    public function admin_update_employee($data)
+    {
+        return $this->adminRepository->admin_update_employee($data);
+    }
+
     public function update_employee_permission_time($data)
     {
         return $this->adminRepository->update_employee_permission_time($data);

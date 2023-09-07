@@ -39,7 +39,6 @@ class CreateEmployeeRequest extends FormRequest
             'skills' => 'nullable|string',
             'serial_number' => 'required|unique:users,serial_number',
             "gender" => ["nullable", Rule::in(GenderStatus::$statuses)],
-            'status' => [Rule::in(EmployeeStatus::$statuses)],
             'start_job_contract' => 'required|date',
             'end_job_contract' => 'required|date',
             'end_visa' => 'nullable|date',

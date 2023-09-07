@@ -204,7 +204,7 @@ class AdminRepository extends BaseRepositoryImplementation
                 $user->departement = $data['departement'];
                 $user->skills = $data['skills'];
                 $user->gender = $data['gender'];
-                $user->status = $data['status'];
+                $user->status = EmployeeStatus::ABSENT;
                 $user->phone = $data['phone'];
                 $user->company_id = auth()->user()->company_id;
                 $user->serial_number = $data['serial_number'];
@@ -428,6 +428,50 @@ class AdminRepository extends BaseRepositoryImplementation
             return ['success' => false, 'message' => $e->getMessage()];
         }
     }
+    public function admin_update_employee($data)
+    {
+        DB::beginTransaction();
+
+        $currentMonth = Carbon::now()->format('Y-m');
+
+        $salary = Salary::where('user_id', $data['user_id'])->whereDate('created_at', 'like', $currentMonth . '%')->first();
+        try {
+            if (auth()->user()->type == UserTypes::ADMIN || auth()->user()->type == UserTypes::HR) {
+                $user = $this->updateById($data['user_id'], $data);
+                if (isset($data['housing_allowance']) && isset($data['transportation_allowance'])) {
+                    $salary->update([
+                        'transportation_allowance' => $data['transportation_allowance'],
+                        'housing_allowance' => $data['housing_allowance'],
+                        'salary' =>  $salary->salary + $data['transportation_allowance'] + $data['housing_allowance'],
+                        'date' => date('Y-m-d'),
+                    ]);
+                } elseif (isset($data['housing_allowance'])) {
+                    $salary->update([
+                        'housing_allowance' => $data['housing_allowance'],
+                        'salary' =>  $salary->salary + $data['housing_allowance'],
+                        'date' => date('Y-m-d'),
+                    ]);
+                } elseif (isset($data['transportation_allowance'])) {
+                    $salary->update([
+                        'transportation_allowance' => $data['transportation_allowance'],
+                        'salary' =>  $salary->salary + $data['transportation_allowance'],
+                        'date' => date('Y-m-d'),
+                    ]);
+                }
+            } else {
+                return ['success' => false, 'message' => "Unauthorized"];
+            }
+            DB::commit();
+            if ($user === null) {
+                return ['success' => false, 'message' => "User was not Updated"];
+            }
+            return ['success' => true, 'data' => $user->load('salaries')];
+        } catch (\Exception $e) {
+            DB::rollback();
+            Log::error($e->getMessage());
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
     public function update_employee_permission_time($data)
     {
         DB::beginTransaction();
@@ -476,7 +520,7 @@ class AdminRepository extends BaseRepositoryImplementation
                 $user->departement = $data['departement'];
                 $user->skills = $data['skills'];
                 $user->gender = $data['gender'];
-                $user->status = $data['status'];
+                $user->status = EmployeeStatus::ACTIVE;
                 $user->phone = $data['phone'];
                 $user->serial_number = $data['serial_number'];
                 $user->work_email = $data['work_email'];
@@ -566,6 +610,7 @@ class AdminRepository extends BaseRepositoryImplementation
                 Salary::create([
                     'user_id' => $user->id,
                     'salary' => $user->basic_salary,
+                    'basic_salary' => $user->basic_salary,
                     'rewards' => 0,
                     'adversaries' => 0,
                     'housing_allowance' => 0,
@@ -870,9 +915,9 @@ class AdminRepository extends BaseRepositoryImplementation
                     $query->where('start_date', '<=', $date)
                         ->where('end_date', '>=', $date)
                         ->orWhere('start_date', '=', $date)
-                        ->orWhere('end_date', '=', $date);
+                        ->orWhere('end_date', '=', $date)
+                        ->orWhere('day_name', date('l'));
                 })->get();
-
             foreach ($holidays as  $holiday) {
                 if ($holiday && $holiday->type == HolidayTypes::WEEKLY) {
                     // Today is a weekly holiday, do not allow attendance

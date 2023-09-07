@@ -14,6 +14,7 @@ class VacationRequestTypes
     public const PREGNANT_WOMAN = 8;
     public const METERNITY = 9;
     public const SICK_CHILD = 10;
+    public const MARRIED = 11;
 
-    public static array $statuses = [self::HOURLY, self::DAILY,   self::DEATH, self::SATISFYING, self::PILGRIMAME, self::NEW_BABY, self::EXAM, self::PREGNANT_WOMAN,   self::METERNITY, self::SICK_CHILD];
+    public static array $statuses = [self::HOURLY, self::DAILY,   self::DEATH, self::SATISFYING, self::PILGRIMAME, self::NEW_BABY, self::EXAM, self::PREGNANT_WOMAN,   self::METERNITY, self::SICK_CHILD, self::MARRIED];
 }

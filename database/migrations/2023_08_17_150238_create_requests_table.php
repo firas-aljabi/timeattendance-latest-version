@@ -32,6 +32,9 @@ return new class extends Migration
             $table->tinyInteger('payment_type')->nullable();
             $table->text('reason');
             $table->text('reject_reason')->nullable();
+            $table->tinyInteger('person')->nullable();
+            $table->tinyInteger('dead_person')->nullable();
+            $table->tinyInteger('degree_of_kinship')->nullable();
             $table->longText('attachments')->nullable();
             $table->timestamps();
         });

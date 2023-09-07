@@ -140,8 +140,10 @@ class RequestRepository extends BaseRepositoryImplementation
             }
             $start_date = $data['start_date'];
             $end_date = $data['end_date'];
-            $start_time = $data['start_time'];
-            $end_time = $data['end_time'];
+            if (isset($data['start_time']) && isset($data['end_time'])) {
+                $start_time = $data['start_time'];
+                $end_time = $data['end_time'];
+            }
 
 
             $availableTime = EmployeeAvailableTime::where('user_id', auth()->user()->id)->first();
@@ -149,9 +151,8 @@ class RequestRepository extends BaseRepositoryImplementation
             if (!$availableTime) {
                 return ['success' => false, 'message' => "You Cannot Request Vacation Because You Don't Have Accrued Vacation Hours."];
             }
-            $availableTimeHoursCount =  $availableTime->hours_daily;
-            $availableDaysMonthlyCount =  $availableTime->days_monthly;
-            $availableDaysAnnualCount =  $availableTime->days_annual;
+            $availableDailyHoursPerYear =  $availableTime->hourly_annual;
+            $availableAnnualHoursPerYear =  $availableTime->daily_annual;
 
             if ($data['vacation_type'] == VacationRequestTypes::HOURLY && $data['payment_type'] == PaymentType::PAYMENT) {
                 $existing_vacation_time = Request::where('start_date', $start_date)
@@ -169,7 +170,44 @@ class RequestRepository extends BaseRepositoryImplementation
                 $diff = $start->diff($end);
                 $hours = $diff->format('%h.%i');
 
-                if ($availableTimeHoursCount != 0 && $hours <  $availableTimeHoursCount) {
+                if ($availableDailyHoursPerYear != 0 && $hours <  $availableDailyHoursPerYear) {
+                    $vacationRequest = new Request();
+                    $vacationRequest->user_id = $user_id;
+                    $vacationRequest->reason = $data['reason'];
+                    $vacationRequest->type = RequestType::VACATION;
+                    $vacationRequest->vacation_type = $data['vacation_type'];
+                    $vacationRequest->status = RequestStatus::PENDING;
+                    $vacationRequest->start_date = $data['start_date'];
+                    $vacationRequest->end_date = $data['end_date'];
+                    $vacationRequest->start_time = $data['start_time'];
+                    $vacationRequest->end_time = $data['end_time'];
+                    $vacationRequest->payment_type = $data['payment_type'];
+                    $vacationRequest->company_id = auth()->user()->company_id;
+                    $vacationRequest->save();
+
+                    $availableTime->update([
+                        'hours_daily' => $availableTime->hours_daily - $hours
+                    ]);
+                } else {
+                    return ['success' => false, 'message' => "You Cannot request a vacation Because Your Available Hours Ended."];
+                }
+            } elseif ($data['vacation_type'] == VacationRequestTypes::HOURLY && $data['payment_type'] == PaymentType::UNPAYMENT) {
+                $existing_vacation_time = Request::where('start_date', $start_date)
+                    ->where('end_date', $end_date)
+                    ->orWhere(function ($query) use ($start_time, $end_time) {
+                        $query->where('start_time', '<=', $end_time)
+                            ->where('end_time', '>=', $start_time);
+                    })->first();
+                if ($existing_vacation_time) {
+                    return ['success' => false, 'message' => "You Cannot request a vacation in this Time, Please Choose Another Time."];
+                }
+
+                $start = new DateTime($start_time);
+                $end = new DateTime($end_time);
+                $diff = $start->diff($end);
+                $hours = $diff->format('%h.%i');
+
+                if ($availableDailyHoursPerYear != 0 && $hours <  $availableDailyHoursPerYear) {
                     $vacationRequest = new Request();
                     $vacationRequest->user_id = $user_id;
                     $vacationRequest->reason = $data['reason'];
@@ -195,10 +233,7 @@ class RequestRepository extends BaseRepositoryImplementation
                 $existing_vacation_time = Request::where('start_date', $start_date)
                     ->where('type', RequestType::VACATION)
                     ->where('end_date', $end_date)
-                    ->orWhere(function ($query) use ($start_time, $end_time) {
-                        $query->where('start_time', '<=', $end_time)
-                            ->where('end_time', '>=', $start_time);
-                    })->first();
+                    ->first();
                 if ($existing_vacation_time) {
                     return ['success' => false, 'message' => "You Cannot request a vacation in this Time, Please Choose Another Time."];
                 }
@@ -208,7 +243,7 @@ class RequestRepository extends BaseRepositoryImplementation
                 $diff = $start->diff($end);
                 $days = $diff->days;
 
-                if ($availableDaysMonthlyCount != 0 && $days <  $availableDaysMonthlyCount) {
+                if ($availableAnnualHoursPerYear != 0 && $days <  $availableAnnualHoursPerYear) {
                     $vacationRequest = new Request();
                     $vacationRequest->user_id = $user_id;
                     $vacationRequest->reason = $data['reason'];
@@ -227,45 +262,35 @@ class RequestRepository extends BaseRepositoryImplementation
                 } else {
                     return ['success' => false, 'message' => "You Cannot request a vacation Because Your Available Hours Ended."];
                 }
-            } elseif ($data['vacation_type'] == VacationRequestTypes::ANNUL && $data['payment_type'] == PaymentType::PAYMENT) {
-
-                $existing_vacation_time = Request::where('type', RequestType::VACATION)
-                    ->where('start_date', $start_date)
-                    ->where('end_date', $end_date)
-                    ->orWhere(function ($query) use ($start_time, $end_time) {
-                        $query->where('start_time', '<=', $end_time)
-                            ->where('end_time', '>=', $start_time);
-                    })->first();
-                if ($existing_vacation_time) {
-                    return ['success' => false, 'message' => "You Cannot request a vacation in this Time, Please Choose Another Time."];
-                }
-
-                $start = new DateTime($start_date);
-                $end = new DateTime($end_date);
-                $diff = $start->diff($end);
-                $daysAnnual = $diff->days;
-
-                if ($availableDaysAnnualCount != 0 && $daysAnnual <  $availableDaysAnnualCount) {
-                    $vacationRequest = new Request();
-                    $vacationRequest->user_id = $user_id;
-                    $vacationRequest->reason = $data['reason'];
-                    $vacationRequest->type = RequestType::VACATION;
-                    $vacationRequest->vacation_type = $data['vacation_type'];
-                    $vacationRequest->status = RequestStatus::PENDING;
-                    $vacationRequest->start_date = $data['start_date'];
-                    $vacationRequest->end_date = $data['end_date'];
-                    $vacationRequest->payment_type = $data['payment_type'];
-                    $vacationRequest->company_id = auth()->user()->company_id;
-                    $vacationRequest->save();
-
-                    $availableTime->update([
-                        'days_annual' => $availableTime->days_annual - $daysAnnual
-                    ]);
-                } else {
-                    return ['success' => false, 'message' => "You Cannot request a vacation Because Your Available Hours Ended."];
-                }
             } elseif ($data['vacation_type'] == VacationRequestTypes::METERNITY && auth()->user()->gender == GenderStatus::MALE) {
                 return ['success' => false, 'message' => "You Cannot request a vacation For This Reason."];
+            } elseif ($data['vacation_type'] == VacationRequestTypes::SATISFYING) {
+                $vacationRequest = new Request();
+                $vacationRequest->user_id = $user_id;
+                $vacationRequest->reason = $data['reason'];
+                $vacationRequest->type = RequestType::VACATION;
+                $vacationRequest->vacation_type = $data['vacation_type'];
+                $vacationRequest->status = RequestStatus::PENDING;
+                $vacationRequest->start_date = $data['start_date'];
+                $vacationRequest->end_date = $data['end_date'];
+                $vacationRequest->payment_type = $data['payment_type'];
+                $vacationRequest->person = $data['person'];
+                $vacationRequest->company_id = auth()->user()->company_id;
+                $vacationRequest->save();
+            } elseif ($data['vacation_type'] == VacationRequestTypes::DEATH) {
+                $vacationRequest = new Request();
+                $vacationRequest->user_id = $user_id;
+                $vacationRequest->reason = $data['reason'];
+                $vacationRequest->type = RequestType::VACATION;
+                $vacationRequest->vacation_type = $data['vacation_type'];
+                $vacationRequest->status = RequestStatus::PENDING;
+                $vacationRequest->start_date = $data['start_date'];
+                $vacationRequest->end_date = $data['end_date'];
+                $vacationRequest->payment_type = $data['payment_type'];
+                $vacationRequest->dead_person = $data['dead_person'];
+                $vacationRequest->degree_of_kinship = $data['degree_of_kinship'];
+                $vacationRequest->company_id = auth()->user()->company_id;
+                $vacationRequest->save();
             } else {
                 $existing_vacation = Request::where('type', RequestType::VACATION)
                     ->where('start_date', $start_date)

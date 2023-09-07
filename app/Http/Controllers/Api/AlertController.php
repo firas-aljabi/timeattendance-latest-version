@@ -43,7 +43,7 @@ class AlertController extends Controller
      * "id": 3,
      * "email": "mouaz@gmail.com",
      * "content": "test alert to this employeeee",
-     * "created_at": "2023-08-27"
+     * "created_at": "2 seconds ago"
      * }
      * *}
      */

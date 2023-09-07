@@ -527,13 +527,13 @@ endpoints:
         name: post_id
         description: 'Must Be in posts Table.'
         required: true
-        example: 17
+        example: 16
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
       content: 'test comment'
-      post_id: 17
+      post_id: 16
     fileParameters: []
     responses:
       -
@@ -547,8 +547,10 @@ endpoints:
                "user": {
                   "id": 3,
                   "name": "mouaz alkhateeb",
-                  "image": "employees/2023-08-27-Employee-8.jpg"
+                  "image": "employees/2023-08-27-Employee-8.jpg",
+                  "position: "Backend"
                 },
+               "post_id": 1,
               "created_at": "2023-08-27",
           }
         headers: []
@@ -585,12 +587,12 @@ endpoints:
         name: post_id
         description: 'Must Be in posts Table.'
         required: true
-        example: 11
+        example: 9
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
-      post_id: 11
+      post_id: 9
     fileParameters: []
     responses:
       -
@@ -601,7 +603,8 @@ endpoints:
                "user": {
                   "id": 3,
                   "name": "mouaz alkhateeb",
-                  "image": "employees/2023-08-27-Employee-8.jpg"
+                  "image": "employees/2023-08-27-Employee-8.jpg",
+                   "position: "Backend"
                 },
               "created_at": "2023-08-27",
           }
@@ -639,12 +642,12 @@ endpoints:
         name: comment_id
         description: 'Must Be in comments Table.'
         required: true
-        example: 17
+        example: 16
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
-      comment_id: 17
+      comment_id: 16
     fileParameters: []
     responses:
       -
@@ -655,7 +658,8 @@ endpoints:
                "user": {
                   "id": 3,
                   "name": "mouaz alkhateeb",
-                  "image": "employees/2023-08-27-Employee-8.jpg"
+                  "image": "employees/2023-08-27-Employee-8.jpg",
+                  "position: "Backend"
                 },
               "created_at": "2023-08-27",
           }
@@ -693,12 +697,12 @@ endpoints:
         name: post_id
         description: 'The ID of the post to share. Must be in the posts table.'
         required: true
-        example: 14
+        example: 2
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
-      post_id: 14
+      post_id: 2
     fileParameters: []
     responses:
       -
@@ -796,12 +800,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In posts Table'
         required: true
-        example: 12
+        example: 11
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 12
+      id: 11
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -844,12 +848,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In comments Table'
         required: true
-        example: 18
+        example: 10
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 10
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

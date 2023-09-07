@@ -35,7 +35,7 @@ class CompanyService implements CompanyServiceInterface
     {
         if (auth()->user()->type == UserTypes::ADMIN && auth()->user()->company_id == $id || auth()->user()->type == UserTypes::SUPER_ADMIN) {
 
-            return ['success' => true, 'data' => $this->companyRepository->with('admin')->getById($id)];
+            return ['success' => true, 'data' => $this->companyRepository->with('admin', 'locations')->getById($id)];
         } else {
             return ['success' => false, 'message' => "Unauthorized"];
         }

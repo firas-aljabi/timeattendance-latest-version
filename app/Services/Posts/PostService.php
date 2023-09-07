@@ -127,4 +127,16 @@ class PostService implements PostServiceInterface
             return "Unauthorized";
         }
     }
+
+
+    public static function isLiked($post_id)
+    {
+        $post = Post::find($post_id);
+        $like = Like::where('post_id', $post->id)->where('user_id', auth()->user()->id)->first();
+        if ($like) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -176,8 +176,8 @@ endpoints:
         APIs for managing Authentication
       subgroup: ''
       subgroupDescription: ''
-      title: ''
-      description: ''
+      title: 'Verfiy Code'
+      description: 'This endpoint is used to Verfiy Code for user in the system.'
       authenticated: false
       custom: []
     headers:
@@ -187,10 +187,28 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Should Check Your Email Inbox Custom'
+        required: true
+        example: 2587.0
+        type: number
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      code: 2587.0
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "Success Verfiy Code..!!"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null

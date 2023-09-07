@@ -123,7 +123,7 @@ class AuthController extends Controller
                 $token = Auth::guard('api')->attempt($credentials);
 
                 if (!$token) {
-                    return response()->json(['error' => 'Invalid login credentials'], 401);
+                    return response()->json(['error' => 'Invalid login credentials'], 403);
                 }
 
                 $user = Auth::guard('api')->user();
@@ -135,7 +135,16 @@ class AuthController extends Controller
         }
     }
 
-
+    /**
+     * Verfiy Code
+     *
+     * This endpoint is used to Verfiy Code for user in the system.
+     * @bodyParam code number required Should Check Your Email Inbox Custom Example: 2587
+     * @response {
+     * "message": "Success Verfiy Code..!!"
+     * }
+     *
+     */
     public function verify_code(Request $request)
     {
         $user = User::where('code', $request->code)->first();

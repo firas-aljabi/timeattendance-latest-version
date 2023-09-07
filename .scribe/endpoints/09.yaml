@@ -59,7 +59,7 @@ endpoints:
         name: user_id
         description: 'The ID of the user. Must exist in the users table.'
         required: true
-        example: 11
+        example: 19
         type: integer
         enumValues: []
         custom: []
@@ -181,7 +181,7 @@ endpoints:
       type: 2
       car_number: 1021.0
       car_model: bmw.
-      user_id: 11
+      user_id: 19
       manufacturing_year: 2010.0
       Mechanic_card_number: 200054.0
       laptop_type: Asus.
@@ -256,12 +256,12 @@ endpoints:
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
         required: true
-        example: 15
+        example: 10
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 15
+      id: 10
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -332,7 +332,7 @@ endpoints:
         name: deposit_id
         description: 'Must Be Exists In deposits Table'
         required: true
-        example: 15
+        example: 14
         type: integer
         enumValues: []
         custom: []
@@ -345,7 +345,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      deposit_id: 15
+      deposit_id: 14
       reason_reject: 'Without Any Reason.'
     fileParameters: []
     responses:
@@ -409,12 +409,12 @@ endpoints:
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
         required: true
-        example: 14
+        example: 17
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 14
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -481,12 +481,12 @@ endpoints:
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
         required: true
-        example: 3
+        example: 6
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -553,12 +553,12 @@ endpoints:
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
         required: true
-        example: 15
+        example: 8
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 15
+      id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -566,7 +566,7 @@ endpoints:
         name: deposit_id
         description: 'Must Be Exists In deposits Table'
         required: true
-        example: 9
+        example: 19
         type: integer
         enumValues: []
         custom: []
@@ -574,7 +574,7 @@ endpoints:
         name: reason_clearance_reject
         description: ''
         required: true
-        example: et
+        example: possimus
         type: string
         enumValues: []
         custom: []
@@ -587,8 +587,8 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      deposit_id: 9
-      reason_clearance_reject: et
+      deposit_id: 19
+      reason_clearance_reject: possimus
       reason_reject: 'Reject Clearance Request Without Any Reason.'
     fileParameters: []
     responses:
