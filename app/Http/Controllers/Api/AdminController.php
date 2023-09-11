@@ -12,6 +12,7 @@ use App\Http\Requests\Deposit\GetDepositsList;
 use App\Http\Requests\Employees\AdminUpdateEmployeeRequest;
 use App\Http\Requests\Employees\AttendancsOverviewListRequest;
 use App\Http\Requests\Employees\CheckInAttendanceRequest;
+use App\Http\Requests\Employees\CheckLocationRequest;
 use App\Http\Requests\Employees\CheckOutAttendanceRequest;
 use App\Http\Requests\Employees\CreateAdminRequest;
 use App\Http\Requests\Employees\CreateEmployeeRequest;
@@ -85,6 +86,10 @@ class AdminController extends Controller
      * @bodyParam health_insurance file Must be image or pdf and not be greater than 5120 kilobytes
      *
      * @bodyParam passport file Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     * @bodyParam employee_residence file Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     *
      *
      * @bodyParam serial_number number required Custom Example: 0101122
      *
@@ -292,7 +297,7 @@ class AdminController extends Controller
      * @bodyParam end_municipal_card date Custom Example: 2023-08-27
      * @bodyParam end_health_insurance date Custom Example: 2023-08-27
      * @bodyParam end_employee_residence date Custom Example: 2023-08-27
-     *
+     * @bodyParam end_passport date Custom Example: 2023-08-27
      *
      * @bodyParam basic_salary double required  Custom Example: 250000
      *
@@ -454,6 +459,7 @@ class AdminController extends Controller
      * @bodyParam image file Must not be greater than 5120 kilobytes
      *
      * @bodyParam address  string Custom Example: Damascus
+     * @bodyParam skills  string Custom Example: Programming
      *
      *@response 201 scenario="An Employee Edits His personal Information"{
      * "data": {
@@ -551,6 +557,46 @@ class AdminController extends Controller
      * @bodyParam housing_allowance double The housing allowance. Custom Example: 100000
      *
      * @bodyParam transportation_allowance double The transportation allowance. Custom Example: 80000
+     *
+     * @bodyParam end_visa date Custom Example: 2023-08-27
+     * @bodyParam end_employee_sponsorship date Custom Example: 2023-08-27
+     * @bodyParam end_municipal_card date Custom Example: 2023-08-27
+     * @bodyParam end_health_insurance date Custom Example: 2023-08-27
+     * @bodyParam end_employee_residence date Custom Example: 2023-08-27
+     * @bodyParam end_passport date Custom Example: 2023-08-27
+
+     * @bodyParam birthday_date date Custom Example: 2023-08-27
+     *
+     * @bodyParam departement string Custom Example: It
+     *
+     * @bodyParam position  string Custom Example: Developer
+     *
+     * @bodyParam address  string Custom Example: Damascus
+     *
+     * @bodyParam guarantor  string Custom Example: Mouaz Alkhateeb
+     *
+     * @bodyParam branch  string Custom Example: Syria
+     *
+     * @bodyParam skills  string Custom Example: Drwaing
+
+
+
+     * @bodyParam id_photo file Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     * @bodyParam biography file  Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     * @bodyParam visa file Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     * @bodyParam municipal_card file Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     * @bodyParam health_insurance file Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     * @bodyParam passport file Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     * @bodyParam employee_residence file Must be image or pdf and not be greater than 5120 kilobytes
+     *
+     * @bodyParam employee_sponsorship file Must be image or pdf and not be greater than 5120 kilobytes
+     *
      *@response 201 scenario="Admin Update Employee"{
      * "data": {
      * "id": 4,
@@ -2003,5 +2049,10 @@ class AdminController extends Controller
         } else {
             return ['message' => $createdData['message']];
         }
+    }
+    public function check_location(CheckLocationRequest $request)
+    {
+        $createdData =  $this->adminService->check_location($request->validated());
+        return $createdData;
     }
 }

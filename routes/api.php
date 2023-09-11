@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Api\AlertController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\ConversationContoller;
 use App\Http\Controllers\Api\DepositController;
 use App\Http\Controllers\Api\HolidayController;
 use App\Http\Controllers\Api\MessageController;
@@ -54,7 +55,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('get_employee/{id}', [AdminController::class, 'getEmployee']);
     Route::get('remining_vacation_hour_employee/{id}', [AdminController::class, 'remining_vacation_hour_employee']);
     Route::get('profile', [AdminController::class, 'profile']);
-
     Route::post('check_in_attendance', [AdminController::class, 'check_in_attendance']);
     Route::post('check_out_attendance', [AdminController::class, 'check_out_attendance']);
     Route::post('cancle_employees_contract', [AdminController::class, 'cancle_employees_contract']);
@@ -63,6 +63,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('update_employee_permission_time', [AdminController::class, 'update_employee_permission_time']);
     Route::get('leave_calendar', [AdminController::class, 'leave_calendar']);
     Route::get('attendance_overview', [AdminController::class, 'attendance_overview']);
+    Route::post('check_location', [AdminController::class, 'check_location']);
 
     // -- Posts -- //
     Route::post('create_post', [PostController::class, 'store']);
@@ -96,9 +97,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('get_my_alert', [AlertController::class, 'getMyAlert']);
 
     // -- Chat -- //
-    Route::get('get_hrs_list', [MessageController::class, 'getHrsList']);
-
-
+    Route::get('get_hrs_list', [ConversationContoller::class, 'getHrsList']);
+    Route::get('conversations', [ConversationContoller::class, 'index']);
+    Route::get('conversations/{id}/messages', [ConversationContoller::class, 'show_conversation_messages']);
+    Route::post('messages', [ConversationContoller::class, 'store']);
 
     // -- Notifications  -- //
     Route::get('/notification', [NotificationController::class, 'index']);

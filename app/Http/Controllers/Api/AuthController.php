@@ -111,6 +111,7 @@ class AuthController extends Controller
                 $rules = [
                     "email" => "required",
                     "password" => "required",
+                    'device_key' => 'nullable'
                 ];
 
                 $validator = Validator::make($request->only(['email', 'password']), $rules);
@@ -128,6 +129,12 @@ class AuthController extends Controller
                 }
 
                 $user = Auth::guard('api')->user();
+
+                if (isset($request->device_key)) {
+                    $user->update([
+                        'device_key' => $request->device_key
+                    ]);
+                }
 
                 // if ($user->code != null && $user->is_verifed == false) {
                 //     return response()->json(['message' => 'Please Verfied Your Account'], 422);
@@ -174,6 +181,13 @@ class AuthController extends Controller
      */
     public function logout()
     {
+        $user = auth()->user();
+        if ($user->device_key != null) {
+            $user->update([
+                'device_key' => null
+            ]);
+        }
+
         auth()->logout();
         return response()->json(['message' => 'User successfully signed out']);
     }

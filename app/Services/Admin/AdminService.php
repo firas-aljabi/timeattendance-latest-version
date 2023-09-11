@@ -5,7 +5,6 @@ namespace App\Services\Admin;
 use App\Filter\Attendance\AttendanceFilter;
 use App\Filter\Attendance\AttendanceOverviewFilter;
 use App\Filter\Contract\ContractFilter;
-use App\Filter\Deposit\DepositFilter;
 use App\Filter\Employees\EmployeeFilter;
 use App\Filter\Employees\LeaveCalendarFilter;
 use App\Filter\Nationalalities\NationalFilter;
@@ -14,17 +13,14 @@ use App\Interfaces\Admin\AdminServiceInterface;
 use App\Models\Attendance;
 use App\Models\EmployeeAvailableTime;
 use App\Models\Holiday;
-use App\Models\Salary;
 use App\Models\User;
 use App\Query\Admin\AdminDashboardQuery;
 use App\Repository\Admin\AdminRepository;
 use App\Statuses\EmployeeStatus;
 use App\Statuses\UserTypes;
 use Carbon\Carbon;
-use Carbon\CarbonPeriod;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Psy\Formatter\Formatter;
 
 class AdminService implements AdminServiceInterface
 {
@@ -89,6 +85,11 @@ class AdminService implements AdminServiceInterface
     {
         return $this->adminRepository->update_salary($data);
     }
+    public function check_location($data)
+    {
+        return $this->adminRepository->check_location($data);
+    }
+
     public function attendance_overview(AttendanceOverviewFilter $attendanceFilter = null)
     {
         if ($attendanceFilter != null)
@@ -169,9 +170,6 @@ class AdminService implements AdminServiceInterface
         else
             return $this->adminRepository->paginate();
     }
-
-
-
 
 
     public function list_of_nationalities(NationalFilter $nationalFilter = null)

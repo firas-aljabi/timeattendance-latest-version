@@ -4,7 +4,7 @@ namespace App\Http\Requests\Employees;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateEmployeeRequest extends FormRequest
+class CheckLocationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,9 @@ class UpdateEmployeeRequest extends FormRequest
     public function rules()
     {
         return [
-            "email" => "sometimes|email|max:255|regex:/^[a-zA-Z0-9._%+-]{1,16}[^*]{0,}@[^*]+$/",
-            'mobile' => 'sometimes|unique:users,mobile',
-            'address' => 'sometimes|string',
-            'skills' => 'sometimes|string',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg|max:5120',
+            'user_id' => 'required|exists:users,id',
+            'longitude' => 'required|numeric',
+            'latitude' => 'required|numeric',
         ];
     }
 }

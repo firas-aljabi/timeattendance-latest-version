@@ -7,8 +7,10 @@ use App\ApiHelper\Result;
 use App\Events\AddAlertEvent;
 use App\Filter\Alerts\AlertFilter;
 use App\Models\Alert;
+use App\Models\Notification;
 use App\Models\User;
 use App\Repository\BaseRepositoryImplementation;
+use App\Services\Notifications\NotificationService;
 use App\Statuses\UserTypes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -47,7 +49,41 @@ class AlertRepository extends BaseRepositoryImplementation
                 $user = Auth::user();
                 $alert = Alert::findOrFail($alert->id);
                 $notifier = User::where('email', $alert->email)->first();
-                event(new AddAlertEvent($notifier, $alert, $user));
+
+                $title = "You Have New Notification";
+                $body = $alert;
+                $device_key = User::where('email', $alert->email)->pluck('device_key')->first();
+
+
+                if ($notifier->device_key != null) {
+                    if ($alert->type == 1) {
+                        $notification = new Notification();
+                        $notification->user_id = $user->id;
+                        $notification->company_id = $user->company_id;
+                        $notification->notifier_id = $notifier->id;
+                        $notification->message =  "You Have New Alert From Admin Because SWEARING";
+                        $notification->save();
+                    } elseif ($alert->type == 2) {
+                        $notification = new Notification();
+                        $notification->user_id = $user->id;
+                        $notification->company_id = $user->company_id;
+                        $notification->notifier_id = $notifier->id;
+                        $notification->message =  "You Have New Alert From Admin Because FABRICATE PROBLEMS";
+                        $notification->save();
+                    } else {
+                        $notification = new Notification();
+                        $notification->user_id = $user->id;
+                        $notification->company_id = $user->company_id;
+                        $notification->notifier_id = $notifier->id;
+                        $notification->message =  "You Have New Alert From Admin For Many Reasons";
+                        $notification->save();
+                    }
+                    NotificationService::sendNotification($device_key, $body, $title);
+                } else {
+                    event(new AddAlertEvent($notifier, $alert, $user));
+                }
+
+
 
                 DB::commit();
 

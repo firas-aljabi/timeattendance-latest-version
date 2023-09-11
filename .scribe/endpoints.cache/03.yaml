@@ -533,13 +533,13 @@ endpoints:
         name: post_id
         description: 'Must Be in posts Table.'
         required: true
-        example: 10
+        example: 4
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
       content: 'test comment'
-      post_id: 10
+      post_id: 4
     fileParameters: []
     responses:
       -
@@ -593,12 +593,12 @@ endpoints:
         name: post_id
         description: 'Must Be in posts Table.'
         required: true
-        example: 14
+        example: 19
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
-      post_id: 14
+      post_id: 19
     fileParameters: []
     responses:
       -
@@ -648,12 +648,12 @@ endpoints:
         name: comment_id
         description: 'Must Be in comments Table.'
         required: true
-        example: 19
+        example: 15
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
-      comment_id: 19
+      comment_id: 15
     fileParameters: []
     responses:
       -
@@ -703,7 +703,7 @@ endpoints:
         name: post_id
         description: 'The ID of the post to share. Must be in the posts table.'
         required: true
-        example: 18
+        example: 5
         type: integer
         enumValues: []
         custom: []
@@ -711,13 +711,13 @@ endpoints:
         name: content
         description: 'Must not be greater than 500 characters.'
         required: false
-        example: arkuhhv
+        example: emrqyaudikxseycpcjkrflor
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      post_id: 18
-      content: arkuhhv
+      post_id: 5
+      content: emrqyaudikxseycpcjkrflor
     fileParameters: []
     responses:
       -
@@ -816,12 +816,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In posts Table'
         required: true
-        example: 8
+        example: 1
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 8
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -864,12 +864,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In comments Table'
         required: true
-        example: 8
+        example: 13
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 8
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

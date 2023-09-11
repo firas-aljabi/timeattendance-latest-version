@@ -1,17 +1,237 @@
-name: Notifications
+name: Holidays
 description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/notification
+      - POST
+    uri: api/create_weekly_holiday
     metadata:
-      groupName: Notifications
+      groupName: Holidays
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Show My Notifications List And Number Of Unread Notification'
-      description: 'This endpoint is used to display the list of my Notifications And Number Of Unread Notification and authenticate employee access to this API. It will show the Notifications specific to the authenticated employee.'
+      title: 'Create Weekly Holiday'
+      description: 'This endpoint is used to Create Weekly Holiday and  Admin Or Hr Can Access To This Api.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      days:
+        name: days
+        description: ''
+        required: true
+        example:
+          - sunt
+        type: 'string[]'
+        enumValues: []
+        custom: []
+      'days[].day':
+        name: 'days[].day'
+        description: 'This field is required when <code>days</code> is <code>!=</code> or <code>null</code>.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        custom: []
+      day:
+        name: day
+        description: 'Bust Be From 1 to 7 Custom'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      days:
+        - sunt
+      day: 5
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "data": {
+                 "id": 1,
+                 "day": 6,
+                 "day_name": "Friday"
+                 }
+            }
+        headers: []
+        description: 'Create Weekly Holiday'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/create_annual_holiday
+    metadata:
+      groupName: Holidays
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Annual Holiday'
+      description: 'This endpoint is used to Create Annual Holiday and  Admin Or Hr Can Access To This Api.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      holiday_name:
+        name: holiday_name
+        description: Custom
+        required: false
+        example: 'Eid Aladha'
+        type: string
+        enumValues: []
+        custom: []
+      start_date:
+        name: start_date
+        description: Custom
+        required: false
+        example: '2023-08-27'
+        type: date
+        enumValues: []
+        custom: []
+      end_date:
+        name: end_date
+        description: Custom
+        required: false
+        example: '2023-08-29'
+        type: date
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      holiday_name: 'Eid Aladha'
+      start_date: '2023-08-27'
+      end_date: '2023-08-29'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "data": {
+          "id": 3,
+          "holiday_name": "Eid Aladha",
+          "start_date": "2023-06-01",
+          "end_date": "2023-06-04"
+          }
+        headers: []
+        description: 'Create Annual Holiday'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/update_annual_holiday
+    metadata:
+      groupName: Holidays
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Annual Holiday'
+      description: 'This endpoint is used to Upadate Annual Holiday and  Admin Or Hr Can Access To This Api.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      holiday_id:
+        name: holiday_id
+        description: 'Must Be Exists In Holidays Table'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        custom: []
+      holiday_name:
+        name: holiday_name
+        description: Custom
+        required: false
+        example: 'Eid Aladha'
+        type: string
+        enumValues: []
+        custom: []
+      start_date:
+        name: start_date
+        description: Custom
+        required: false
+        example: '2023-08-27'
+        type: date
+        enumValues: []
+        custom: []
+      end_date:
+        name: end_date
+        description: Custom
+        required: false
+        example: '2023-08-29'
+        type: date
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      holiday_id: 2
+      holiday_name: 'Eid Aladha'
+      start_date: '2023-08-27'
+      end_date: '2023-08-29'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "data": {
+          "id": 3,
+          "holiday_name": "Eid Aladha almobarak",
+          "start_date": "2023-06-03",
+          "end_date": "2023-06-06"
+          }
+        headers: []
+        description: 'Update Annual Holiday'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/list_of_holidays
+    metadata:
+      groupName: Holidays
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List Of Holidays'
+      description: 'This endpoint is used to retrieve the list of holidays in the company. Only admins or HR personnel can access this API.'
       authenticated: true
       custom: []
     headers:
@@ -29,56 +249,36 @@ endpoints:
         status: 200
         content: |-
           {
-          "data": [
-           {
-           "id": 6,
-           "notifier_id": 3,
-           "post_id": 1,
-           "user_id": 3,
-            "message": "New Like Added To Your Post By mouaz alkhateeb",
-            "read_at": null,
-             "company_id": 1,
-             "created_at": "2023-08-27T19:01:39.000000Z",
-             "updated_at": "2023-08-27T19:01:39.000000Z"
-          },
-          {
-              "id": 5,
-              "notifier_id": 3,
-             "post_id": 1,
-              "user_id": 3,
-              "message": "New Comment Added To Your Post By mouaz alkhateeb",
-              "read_at": null,
-              "company_id": 1,
-              "created_at": "2023-08-27T19:01:26.000000Z",
-              "updated_at": "2023-08-27T19:01:26.000000Z"
-          },
-          {
-          "id": 4,
-          "notifier_id": 3,
-          "post_id": null,
-          "user_id": 2,
-          "message": "You Have New Alert From Admin For Many Reasons",
-          "read_at": null,
-          "company_id": 1,
-          "created_at": "2023-08-27T18:59:17.000000Z",
-          "updated_at": "2023-08-27T18:59:17.000000Z"
-          },
-          {
-            "id": 3,
-             "notifier_id": 3,
-            "post_id": null,
-             "user_id": 2,
-             "message": "You Have New Alert From Admin Because FABRICATE PROBLEMS",
-             "read_at": null,
-             "company_id": 1,
-             "created_at": "2023-08-27T15:33:04.000000Z",
-             "updated_at": "2023-08-27T15:33:04.000000Z"
-          }
-          ],
-          "unread_notification": 4
+              "data": [
+                  {
+                      "id": 8,
+                      "type": 1,
+                      "day": 6,
+                      "day_name": "Friday"
+                  },
+                  {
+                      "id": 10,
+                      "type": 2,
+                      "holiday_name": "Eid Aladha",
+                      "start_date": "2023-08-04",
+                      "end_date": "2023-08-06"
+                  },
+                  {
+                      "id": 11,
+                      "type": 1,
+                      "day": 4,
+                      "day_name": "Wednesday"
+                  },
+                  {
+                      "id": 12,
+                      "type": 1,
+                      "day": 6,
+                      "day_name": "Friday"
+                  }
+              ]
           }
         headers: []
-        description: 'Show My Notifications List And Number Of Unread Notification'
+        description: 'Show Holidays'
         custom: []
     responseFields: []
     auth: []

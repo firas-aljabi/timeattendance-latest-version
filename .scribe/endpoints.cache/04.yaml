@@ -64,7 +64,7 @@ endpoints:
           - `10`: SICK_CHILD
           - `11`: MARRIED
         required: true
-        example: 13
+        example: 3
         type: integer
         enumValues: []
         custom: []
@@ -164,7 +164,7 @@ endpoints:
       reason: 'death of a lover.'
       start_date: '2023-08-27'
       end_date: '2023-08-27'
-      vacation_type: 13
+      vacation_type: 3
       start_time: '09:00:00.'
       end_time: '15:30:00.'
       payment_type: 1
@@ -534,12 +534,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 14
+        example: 9
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 14
+      id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -633,12 +633,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 18
+        example: 15
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -736,7 +736,7 @@ endpoints:
         name: request_id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 16
+        example: 4
         type: integer
         enumValues: []
         custom: []
@@ -749,7 +749,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      request_id: 16
+      request_id: 4
       reject_reason: 'Without Any Reason.'
     fileParameters: []
     responses:
@@ -845,12 +845,12 @@ endpoints:
         name: type
         description: 'optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending).'
         required: false
-        example: 5
+        example: 16
         type: integer
         enumValues: []
         custom: []
     cleanQueryParameters:
-      type: 5
+      type: 16
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []

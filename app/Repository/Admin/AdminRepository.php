@@ -10,10 +10,12 @@ use App\Filter\Nationalalities\NationalFilter;
 use App\Filter\Salary\SalaryFilter;
 use App\Http\Trait\UploadImage;
 use App\Models\Attendance;
+use App\Models\Company;
 use App\Models\Contract;
 use App\Models\Deposit;
 use App\Models\EmployeeAvailableTime;
 use App\Models\Holiday;
+use App\Models\Location;
 use App\Models\Nationalitie;
 use App\Models\Percentage;
 use App\Models\Request;
@@ -22,6 +24,7 @@ use App\Models\Shift;
 use App\Models\User;
 use App\Notifications\TowFactor;
 use App\Repository\BaseRepositoryImplementation;
+use App\Services\Notifications\NotificationService;
 use App\Statuses\AdversariesType;
 use App\Statuses\DepositStatus;
 use App\Statuses\EmployeeStatus;
@@ -462,6 +465,48 @@ class AdminRepository extends BaseRepositoryImplementation
                         'date' => date('Y-m-d'),
                     ]);
                 }
+
+                if (Arr::has($data, 'id_photo')) {
+                    $file = Arr::get($data, 'id_photo');
+                    $file_name = $this->deleteAndUploadEmployeeAttachment($file, $user->id, 'id_photo');
+
+                    $user->id_photo = $file_name;
+                }
+                if (Arr::has($data, 'biography')) {
+                    $file = Arr::get($data, 'biography');
+                    $file_name = $this->deleteAndUploadEmployeeAttachment($file, $user->id, 'biography');
+                    $user->biography = $file_name;
+                }
+                if (Arr::has($data, 'visa')) {
+                    $file = Arr::get($data, 'visa');
+                    $file_name = $this->deleteAndUploadEmployeeAttachment($file, $user->id, 'visa');
+                    $user->visa = $file_name;
+                }
+                if (Arr::has($data, 'municipal_card')) {
+                    $file = Arr::get($data, 'municipal_card');
+                    $file_name = $this->deleteAndUploadEmployeeAttachment($file, $user->id, 'municipal_card');
+                    $user->municipal_card = $file_name;
+                }
+                if (Arr::has($data, 'health_insurance')) {
+                    $file = Arr::get($data, 'health_insurance');
+                    $file_name = $this->deleteAndUploadEmployeeAttachment($file, $user->id, 'health_insurance');
+                    $user->health_insurance = $file_name;
+                }
+                if (Arr::has($data, 'passport')) {
+                    $file = Arr::get($data, 'passport');
+                    $file_name = $this->deleteAndUploadEmployeeAttachment($file, $user->id, 'passport');
+                    $user->passport = $file_name;
+                }
+                if (Arr::has($data, 'employee_sponsorship')) {
+                    $file = Arr::get($data, 'employee_sponsorship');
+                    $file_name = $this->deleteAndUploadEmployeeAttachment($file, $user->id, 'employee_sponsorship');
+                    $user->employee_sponsorship = $file_name;
+                }
+                if (Arr::has($data, 'employee_residence')) {
+                    $file = Arr::get($data, 'employee_residence');
+                    $file_name = $this->deleteAndUploadEmployeeAttachment($file, $user->id, 'employee_residence');
+                    $user->employee_residence = $file_name;
+                }
             } else {
                 return ['success' => false, 'message' => "Unauthorized"];
             }
@@ -707,6 +752,66 @@ class AdminRepository extends BaseRepositoryImplementation
             DB::commit();
 
             return ['success' => true, 'data' => $user];
+        } catch (\Exception $e) {
+            DB::rollback();
+            Log::error($e->getMessage());
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
+    public function check_location($data)
+    {
+        DB::beginTransaction();
+
+        try {
+            $user = User::findOrFail($data['user_id']);
+            $company = Company::where('id', $user->company_id)->first();
+            $company_location = Location::where('company_id', $company->id)->first();
+
+
+            $longitude_company = floatval($company_location->longitude);
+            $latitude_company = floatval($company_location->latitude);
+
+            $longitude_employee = floatval($data['longitude']);
+            $latitude_employee = floatval($data['latitude']);
+
+            $deltaLat = deg2rad($latitude_employee - $latitude_company);
+            $deltaLon = deg2rad($longitude_employee - $longitude_company);
+
+            $earthRadius = 6371000;
+
+            $a = sin($deltaLat / 2) * sin($deltaLat / 2) + cos(deg2rad($latitude_company)) * cos(deg2rad($latitude_employee)) * sin($deltaLon / 2) * sin($deltaLon / 2);
+            $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+            $distance = $earthRadius * $c;
+
+
+            $threshold = 50;
+
+
+            $today_date = date("Y-m-d");
+            $current_time = Carbon::now();
+
+            $attendance = Attendance::where('date', $today_date)->where('user_id', $data['user_id'])->first();
+            if (isset($attendance)) {
+                if ($attendance->login_time != null && $attendance->logout_time == null && $distance <= $threshold) {
+                    return response()->json(['message' => 'Employee Exists In Company'], 200);
+                } elseif ($attendance->login_time != null && $attendance->logout_time == null && $distance > $threshold) {
+                    $attendance->update([
+                        'logout_time' => $current_time->format('H:i:s')
+                    ]);
+
+                    $user = User::findOrFail($data['user_id']);
+
+                    $title = "You Have New Notification";
+                    $body = "You are checked out of the company, you have exceeded the company domain";
+                    $device_key = User::where('id', $user->id)->pluck('device_key')->first();
+
+                    if ($user->device_key != null) {
+                        NotificationService::sendNotification($device_key, $body, $title);
+                    }
+                }
+            }
+
+            DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
             Log::error($e->getMessage());

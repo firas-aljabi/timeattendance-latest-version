@@ -8,9 +8,12 @@ use App\Events\AddLikeToCommentEvent;
 use App\Http\Trait\UploadImage;
 use App\Models\Comment;
 use App\Models\Like;
+use App\Models\Notification;
 use App\Models\Post;
 use App\Models\Share;
+use App\Models\User;
 use App\Repository\BaseRepositoryImplementation;
+use App\Services\Notifications\NotificationService;
 use App\Services\Posts\PostService;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -82,7 +85,25 @@ class PostRepository extends BaseRepositoryImplementation
             $post = Post::findOrFail($comment->post_id);
             $notifier = $post->user;
 
-            event(new AddCommentEvent($notifier, $post, $user));
+
+
+            $title = "You Have New Notification";
+            $body = $post;
+            $device_key = User::where('id', $notifier->id)->pluck('device_key')->first();
+
+            if ($notifier->device_key != null) {
+                $user_name = User::where('id', $user->id)->first();
+                $notification = new Notification();
+                $notification->user_id = $user->id;
+                $notification->post_id = $post->id;
+                $notification->company_id = $user->company_id;
+                $notification->notifier_id = $notifier->id;
+                $notification->message =  "New Comment Added To Your Post By " . $user_name->name;
+                $notification->save();
+                NotificationService::sendNotification($device_key, $body, $title);
+            } else {
+                event(new AddCommentEvent($notifier, $post, $user));
+            }
 
             DB::commit();
 
@@ -118,7 +139,23 @@ class PostRepository extends BaseRepositoryImplementation
                 $post = Post::findOrFail($like->post_id);
                 $notifier = $post->user;
 
-                event(new AddLikeEvent($notifier, $post, $user));
+                $title = "You Have New Notification";
+                $body = $post;
+                $device_key = User::where('id', $notifier->id)->pluck('device_key')->first();
+
+                if ($notifier->device_key != null) {
+                    $user_name = User::where('id', $user->id)->first();
+                    $notification = new Notification();
+                    $notification->user_id = $user->id;
+                    $notification->company_id = $user->company_id;
+                    $notification->post_id = $post->id;
+                    $notification->notifier_id = $notifier->id;
+                    $notification->message =  "New Like Added To Your Post By " . $user_name->name;
+                    $notification->save();
+                    NotificationService::sendNotification($device_key, $body, $title);
+                } else {
+                    event(new AddLikeEvent($notifier, $post, $user));
+                }
             }
 
             DB::commit();
@@ -158,7 +195,26 @@ class PostRepository extends BaseRepositoryImplementation
                 $comment = Comment::findOrFail($like->comment_id);
                 $notifier = $comment->user;
 
-                event(new AddLikeToCommentEvent($notifier, $comment, $user));
+
+
+
+                $title = "You Have New Notification";
+                $body = $comment;
+                $device_key = User::where('id', $notifier->id)->pluck('device_key')->first();
+
+                if ($notifier->device_key != null) {
+                    $user_name = User::where('id', $user->id)->first();
+                    $notification = new Notification();
+                    $notification->user_id = $user->id;
+                    $notification->post_id = $comment->id;
+                    $notification->company_id = $user->company_id;
+                    $notification->notifier_id = $notifier->id;
+                    $notification->message =  "New Like Added To Your Comment By " . $user_name->name;
+                    $notification->save();
+                    NotificationService::sendNotification($device_key, $body, $title);
+                } else {
+                    event(new AddLikeToCommentEvent($notifier, $comment, $user));
+                }
             }
 
             DB::commit();

@@ -74,7 +74,7 @@ endpoints:
         name: nationalitie_id
         description: 'Must be from 1 to 56'
         required: true
-        example: 17
+        example: 10
         type: integer
         enumValues: []
         custom: []
@@ -250,7 +250,7 @@ endpoints:
         name: end_passport
         description: 'Must be a valid date.'
         required: false
-        example: '2023-09-11T11:30:13'
+        example: '2023-09-11T16:14:46'
         type: string
         enumValues: []
         custom: []
@@ -379,7 +379,7 @@ endpoints:
         description: 'optional An array of shift for the user. Required when `number_of_shifts` is not null.'
         required: false
         example:
-          - sit
+          - sint
         type: 'string[]'
         enumValues: []
         custom: []
@@ -395,7 +395,7 @@ endpoints:
         name: 'shifts[].start_time'
         description: ''
         required: true
-        example: necessitatibus
+        example: recusandae
         type: string
         enumValues: []
         custom: []
@@ -403,7 +403,7 @@ endpoints:
         name: 'shifts[].end_time'
         description: ''
         required: true
-        example: quo
+        example: itaque
         type: string
         enumValues: []
         custom: []
@@ -419,7 +419,7 @@ endpoints:
         name: 'shifts[].end_break_hour'
         description: ''
         required: true
-        example: odit
+        example: et
         type: string
         enumValues: []
         custom: []
@@ -427,7 +427,7 @@ endpoints:
         name: user_id
         description: 'optional The ID of the user That Exists in users Table.'
         required: true
-        example: 17
+        example: 16
         type: integer
         enumValues: []
         custom: []
@@ -468,7 +468,7 @@ endpoints:
       email: mouaz@gmail.com
       password: Abc071096904038
       work_email: mouazalkhateeb@goma.com.
-      nationalitie_id: 17
+      nationalitie_id: 10
       birthday_date: '2023-08-27'
       material_status: 1
       departement: It
@@ -488,7 +488,7 @@ endpoints:
       end_employee_residence: '2023-08-27'
       leave_time: 60.0
       entry_time: 90.0
-      end_passport: '2023-09-11T11:30:13'
+      end_passport: '2023-09-11T16:14:46'
       basic_salary: 250000.0
       housing_allowance: 100000.0
       hourly_annual: 12.0
@@ -496,8 +496,8 @@ endpoints:
       transportation_allowance: 80000.0
       number_of_shifts: 3
       shifts:
-        - sit
-      user_id: 17
+        - sint
+      user_id: 16
       start_time: '09:00:00.'
       end_time: '09:00:00.'
       start_break_hour: '09:00:00.'
@@ -662,7 +662,7 @@ endpoints:
         name: nationalitie_id
         description: 'Must be from 1 to 56'
         required: true
-        example: 1
+        example: 14
         type: integer
         enumValues: []
         custom: []
@@ -746,7 +746,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: '2'
+        example: '1'
         type: string
         enumValues:
           - '1'
@@ -812,7 +812,7 @@ endpoints:
         name: leave_time
         description: ''
         required: false
-        example: '60'
+        example: '90'
         type: string
         enumValues:
           - '30'
@@ -823,7 +823,7 @@ endpoints:
         name: entry_time
         description: ''
         required: false
-        example: '30'
+        example: '60'
         type: string
         enumValues:
           - '30'
@@ -834,7 +834,7 @@ endpoints:
         name: end_passport
         description: 'Must be a valid date.'
         required: false
-        example: '2023-09-11T11:30:13'
+        example: '2023-09-11T16:14:46'
         type: string
         enumValues: []
         custom: []
@@ -954,7 +954,7 @@ endpoints:
         name: number_of_shifts
         description: 'Must be at least 1.'
         required: false
-        example: 73
+        example: 89
         type: integer
         enumValues: []
         custom: []
@@ -963,7 +963,7 @@ endpoints:
         description: 'This field is required when <code>number_of_shifts</code> is <code>!=</code> or <code>null</code>.'
         required: false
         example:
-          - dolorem
+          - sint
         type: 'string[]'
         enumValues: []
         custom: []
@@ -979,7 +979,7 @@ endpoints:
         name: 'shifts[].start_time'
         description: ''
         required: true
-        example: nemo
+        example: assumenda
         type: string
         enumValues: []
         custom: []
@@ -987,7 +987,7 @@ endpoints:
         name: 'shifts[].end_time'
         description: ''
         required: true
-        example: ducimus
+        example: molestias
         type: string
         enumValues: []
         custom: []
@@ -995,7 +995,7 @@ endpoints:
         name: 'shifts[].start_break_hour'
         description: ''
         required: true
-        example: mollitia
+        example: officia
         type: string
         enumValues: []
         custom: []
@@ -1003,7 +1003,7 @@ endpoints:
         name: 'shifts[].end_break_hour'
         description: ''
         required: true
-        example: vero
+        example: quis
         type: string
         enumValues: []
         custom: []
@@ -1023,7 +1023,7 @@ endpoints:
       email: mouaz@gmail.com
       password: Abc071096904038
       work_email: mouazalkhateeb@goma.com.
-      nationalitie_id: 1
+      nationalitie_id: 14
       birthday_date: '2023-08-27'
       material_status: 1
       departement: It
@@ -1033,7 +1033,7 @@ endpoints:
       branch: Syria
       skills: Drwaing
       serial_number: 101122.0
-      gender: '2'
+      gender: '1'
       start_job_contract: '2023-08-27'
       end_job_contract: '2023-08-27'
       end_visa: '2023-08-27'
@@ -1041,13 +1041,13 @@ endpoints:
       end_municipal_card: '2023-08-27'
       end_health_insurance: '2023-08-27'
       end_employee_residence: '2023-08-27'
-      leave_time: '60'
-      entry_time: '30'
-      end_passport: '2023-09-11T11:30:13'
+      leave_time: '90'
+      entry_time: '60'
+      end_passport: '2023-09-11T16:14:46'
       basic_salary: 250000.0
-      number_of_shifts: 73
+      number_of_shifts: 89
       shifts:
-        - dolorem
+        - sint
       status: 1
     fileParameters:
       image: null
@@ -1103,6 +1103,7 @@ endpoints:
           "entry_time": null,
           "leave_time": null,
           "percentage": "0",
+          "is_verifed": false,
           "basic_salary": 200000
           }
         headers: []
@@ -1187,7 +1188,7 @@ endpoints:
         name: company_id
         description: ''
         required: true
-        example: debitis
+        example: perferendis
         type: string
         enumValues: []
         custom: []
@@ -1195,7 +1196,7 @@ endpoints:
         name: nationalitie_id
         description: 'Must be from 1 to 56'
         required: true
-        example: 15
+        example: 7
         type: integer
         enumValues: []
         custom: []
@@ -1211,7 +1212,7 @@ endpoints:
         name: material_status
         description: ''
         required: false
-        example: '2'
+        example: '3'
         type: string
         enumValues:
           - '1'
@@ -1266,7 +1267,7 @@ endpoints:
         name: comapny_id
         description: 'Must be exists in companies table.'
         required: true
-        example: 6
+        example: 17
         type: integer
         enumValues: []
         custom: []
@@ -1275,15 +1276,15 @@ endpoints:
       email: mouaz@gmail.com
       password: Abc071096904038
       work_email: mouazalkhateeb@goma.com.
-      company_id: debitis
-      nationalitie_id: 15
+      company_id: perferendis
+      nationalitie_id: 7
       birthday_date: '2023-08-27'
-      material_status: '2'
+      material_status: '3'
       address: Damascus
       serial_number: 101122.0
       gender: 1
       branch: Syria
-      comapny_id: 6
+      comapny_id: 17
     fileParameters:
       image: null
     responses:
@@ -1330,7 +1331,8 @@ endpoints:
               "entry_time": null,
               "leave_time": null,
               "percentage": "0",
-              "basic_salary": 0
+              "basic_salary": 0,
+              "is_verifed": false,
           }
           }
         headers: []
@@ -1395,9 +1397,18 @@ endpoints:
         type: file
         enumValues: []
         custom: []
+      skills:
+        name: skills
+        description: Custom
+        required: false
+        example: Programming
+        type: string
+        enumValues: []
+        custom: []
     cleanBodyParameters:
       email: mouaz@gmail.com
       address: Damascus
+      skills: Programming
     fileParameters:
       image: null
     responses:
@@ -1443,6 +1454,7 @@ endpoints:
           "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
           "entry_time": "30",
           "leave_time": "60",
+          "is_verifed": false,
           "number_of_working_hours": 0,
           "nationalitie": {
             "name": "Syrian"
@@ -1502,7 +1514,7 @@ endpoints:
         name: user_id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 1
+        example: 13
         type: integer
         enumValues: []
         custom: []
@@ -1536,7 +1548,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 1
+      user_id: 13
       material_status: 1
       housing_allowance: 100000.0
       transportation_allowance: 80000.0
@@ -1584,6 +1596,7 @@ endpoints:
           "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
           "entry_time": "30",
           "leave_time": "60",
+          "is_verifed": false,
           "number_of_working_hours": 0,
           "nationalitie": {
             "name": "Syrian"
@@ -1639,12 +1652,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 14
+        example: 12
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 14
+      id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1691,7 +1704,7 @@ endpoints:
         name: user_id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 20
+        example: 6
         type: integer
         enumValues: []
         custom: []
@@ -1699,7 +1712,7 @@ endpoints:
         name: hourly_annual
         description: 'The number of hourly hours Vacation per year.'
         required: false
-        example: 5
+        example: 11
         type: integer
         enumValues: []
         custom: []
@@ -1707,14 +1720,14 @@ endpoints:
         name: daily_annual
         description: 'The number of daily hours Vacation per year.'
         required: false
-        example: 13
+        example: 14
         type: integer
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 20
-      hourly_annual: 5
-      daily_annual: 13
+      user_id: 6
+      hourly_annual: 11
+      daily_annual: 14
     fileParameters: []
     responses:
       -
@@ -1760,7 +1773,7 @@ endpoints:
         name: user_id
         description: 'The user ID, which must exist in the Users table.'
         required: true
-        example: 8
+        example: 15
         type: integer
         enumValues: []
         custom: []
@@ -1803,7 +1816,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 8
+      user_id: 15
       rewards_type: 1
       adversaries_type: 1
       rewards: 5.0
@@ -1991,6 +2004,7 @@ endpoints:
           "leave_time": 60,
           "percentage": "0",
           "basic_salary": 200000,
+          "is_verifed": false,
           "number_of_working_hours": 0,
           },
           {
@@ -2124,6 +2138,7 @@ endpoints:
                 "leave_time": 60,
                 "percentage": "0",
                 "basic_salary": 200000,
+                *"is_verifed": false,
                 "number_of_working_hours": 0
               },
               {
@@ -2166,6 +2181,7 @@ endpoints:
                 "leave_time": 60,
                 "percentage": "0",
                 "basic_salary": 200000,
+                "is_verifed": false,
                 "number_of_working_hours": 0,
               }
              ]
@@ -2268,7 +2284,7 @@ endpoints:
         name: user_id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 14
+        example: 2
         type: integer
         enumValues: []
         custom: []
@@ -2281,7 +2297,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 14
+      user_id: 2
       new_salary: 75000.0
     fileParameters: []
     responses:
@@ -2327,7 +2343,8 @@ endpoints:
           "employee_residence": null,
           "entry_time": null,
           "leave_time": null,
-          "basic_salary": 750000
+          "basic_salary": 750000,
+          "is_verifed": false,
           "percentage": "0",
           }
           }
@@ -2473,12 +2490,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 2
+        example: 6
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 2
+      id: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2533,6 +2550,7 @@ endpoints:
           },
           "percentage": "0",
           "basic_salary": 200000,
+           "is_verifed": false,
           "shifts": [
             {
                "id": 3,
@@ -2595,12 +2613,12 @@ endpoints:
         name: id
         description: 'The ID of the employee in the Users table.'
         required: true
-        example: 19
+        example: 9
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 19
+      id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2699,6 +2717,7 @@ endpoints:
           },
           "percentage": "0",
           "basic_salary": 200000,
+          "is_verifed": false,
           "shifts": [
             {
                "id": 3,
@@ -2879,7 +2898,7 @@ endpoints:
         name: user_id
         description: 'The ID of the user whose contract is being terminated. Must exist in the Users table.'
         required: true
-        example: 10
+        example: 7
         type: integer
         enumValues: []
         custom: []
@@ -2903,7 +2922,7 @@ endpoints:
           - `6`: Six months
           - `12`: One year
         required: false
-        example: 11
+        example: 5
         type: integer
         enumValues: []
         custom: []
@@ -2911,15 +2930,15 @@ endpoints:
         name: contract_termination_reason
         description: 'The reason for the contract cancle. Required if terminate_type is 1.'
         required: false
-        example: et
+        example: illo
         type: string
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 10
+      user_id: 7
       terminate_type: 2
-      contract_termination_period: 11
-      contract_termination_reason: et
+      contract_termination_period: 5
+      contract_termination_reason: illo
     fileParameters: []
     responses:
       -
@@ -2990,7 +3009,7 @@ endpoints:
         name: user_id
         description: 'Must Be Exists In Users Table'
         required: true
-        example: 10
+        example: 15
         type: integer
         enumValues: []
         custom: []
@@ -3015,7 +3034,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 10
+      user_id: 15
       number_of_month: 12
       new_date: 2025-05-01.
     fileParameters: []
@@ -3334,7 +3353,7 @@ endpoints:
         name: user_id
         description: 'The user ID, which must exist in the users table.'
         required: true
-        example: 9
+        example: 20
         type: integer
         enumValues: []
         custom: []
@@ -3363,7 +3382,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      user_id: 9
+      user_id: 20
       entry_time: 90)
       leave_time: 60.0
     fileParameters: []
@@ -3412,6 +3431,7 @@ endpoints:
                   "leave_time": 90,
                   "percentage": "0",
                   "basic_salary": 200000,
+                  "is_verifed": false,
                   "number_of_working_hours": 0,
               }
           }
@@ -3455,13 +3475,13 @@ endpoints:
         name: day
         description: 'Filter Leave Calendar by day. Use the value "1" to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value "2" to return records where the date is equal to tomorrow''s date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31'
         required: false
-        example: 6
+        example: 13
         type: integer
         enumValues: []
         custom: []
     cleanQueryParameters:
       date: '2023-06-03'
-      day: 6
+      day: 13
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -3556,6 +3576,63 @@ endpoints:
         headers: []
         description: 'Attendance Overview'
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/check_location
+    metadata:
+      groupName: 'Admin Operations'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: ''
+        required: true
+        example: ipsa
+        type: string
+        enumValues: []
+        custom: []
+      longitude:
+        name: longitude
+        description: ''
+        required: true
+        example: 259260933.745
+        type: number
+        enumValues: []
+        custom: []
+      latitude:
+        name: latitude
+        description: ''
+        required: true
+        example: 243598273.76
+        type: number
+        enumValues: []
+        custom: []
+    cleanBodyParameters:
+      user_id: ipsa
+      longitude: 259260933.745
+      latitude: 243598273.76
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null

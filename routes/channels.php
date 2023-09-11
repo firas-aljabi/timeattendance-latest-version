@@ -22,7 +22,8 @@ Broadcast::channel('notifications.{userId}', function ($user, $userId) {
     return $user->id === (int) $userId;
 });
 
-Broadcast::channel('privatechat.{receiverid}', function ($user, $receiverid) {
-
-    return auth()->check();
+Broadcast::channel('Messanger.{id}', function ($user, $id) {
+    if ($user->id == $id) {
+        return $user;
+    }
 });

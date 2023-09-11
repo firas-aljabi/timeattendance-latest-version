@@ -2,6 +2,7 @@
 
 namespace App\Http\Trait;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 
 trait UploadImage
@@ -12,6 +13,29 @@ trait UploadImage
         $file->move(public_path('employees'), $filename);
         $path = 'employees/' . $filename;
         return $path;
+    }
+    public function deleteAndUploadEmployeeAttachment($file, $user_id, $field)
+    {
+        $oldFilePath = public_path($this->getUserPhotoPath($user_id, $field));
+
+        if (file_exists($oldFilePath)) {
+            unlink($oldFilePath);
+        }
+
+        $filename = date('Y-m-d') . '-Employee-' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('employees'), $filename);
+        $path = 'employees/' . $filename;
+
+        $user = User::find($user_id);
+        $user->$field = $filename;
+        $user->save();
+
+        return $path;
+    }
+    public function getUserPhotoPath($user_id, $field)
+    {
+        $user = User::find($user_id);
+        return $user->$field;
     }
     public function uploadCompanyAttachment($file)
     {
