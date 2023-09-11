@@ -16,6 +16,7 @@ class PostResource extends JsonResource
      */
     public function toArray($request)
     {
+
         return [
             'id' => $this->id,
             'content' => $this->content,
@@ -29,8 +30,6 @@ class PostResource extends JsonResource
             'likes' => LikeResource::collection($this->whenLoaded('likes')),
             'shares' => ShareResource::collection($this->whenLoaded('shares')),
             'writer' => EmployeeResource::make($this->whenLoaded('user')),
-
-
         ];
     }
 }

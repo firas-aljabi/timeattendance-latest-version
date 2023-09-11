@@ -52,7 +52,9 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('employees_attendances', [AdminController::class, 'employees_attendances']);
     Route::get('get_contract_expiration', [AdminController::class, 'get_contract_expiration']);
     Route::get('get_employee/{id}', [AdminController::class, 'getEmployee']);
+    Route::get('remining_vacation_hour_employee/{id}', [AdminController::class, 'remining_vacation_hour_employee']);
     Route::get('profile', [AdminController::class, 'profile']);
+
     Route::post('check_in_attendance', [AdminController::class, 'check_in_attendance']);
     Route::post('check_out_attendance', [AdminController::class, 'check_out_attendance']);
     Route::post('cancle_employees_contract', [AdminController::class, 'cancle_employees_contract']);
@@ -95,8 +97,8 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     // -- Chat -- //
     Route::get('get_hrs_list', [MessageController::class, 'getHrsList']);
-    Route::get('/private-messages/{user}', [MessageController::class, 'privateMessages'])->name('privateMessages');
-    Route::post('/private-messages/{user}', [MessageController::class, 'sendPrivateMessage'])->name('privateMessages.store');
+
+
 
     // -- Notifications  -- //
     Route::get('/notification', [NotificationController::class, 'index']);
@@ -117,6 +119,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('my_deposits', [DepositController::class, 'my_deposits']); // For Employee
     Route::get('list_of_deposits', [DepositController::class, 'list_of_deposits']); //For Admin
     Route::get('list_of_clearance_deposits', [DepositController::class, 'list_of_clearance_deposits']); //For Admin
+    Route::get('my_approved_deposits', [DepositController::class, 'my_approved_deposits']);
 
 
     // -- Company  -- //
@@ -124,6 +127,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('add_commercial_record', [CompanyController::class, 'add_commercial_record']);
     Route::get('company/{id}', [CompanyController::class, 'show']);
     Route::post('update_comapny', [CompanyController::class, 'update_comapny']);
+    Route::post('update_commercial_record', [CompanyController::class, 'update_commercial_record']);
     Route::get('show_percenatge_company', [CompanyController::class, 'show_percenatge_company']);
     Route::put('update_percentage', [CompanyController::class, 'update_percentage']);
 });

@@ -116,4 +116,12 @@ class DepositService implements DepositServiceInterface
     {
         return $this->depositRepository->list_of_clearance_deposits();
     }
+
+    public function my_approved_deposits(DepositFilter $depositFilter = null)
+    {
+        if ($depositFilter != null)
+            return $this->depositRepository->my_approved_deposits($depositFilter);
+        else
+            return $this->depositRepository->get();
+    }
 }

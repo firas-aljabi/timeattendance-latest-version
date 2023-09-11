@@ -11,8 +11,6 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use NotificationChannels\OneSignal\OneSignalChannel;
-use NotificationChannels\OneSignal\OneSignalMessage;
 
 class AddAlertEvent implements ShouldBroadcast
 {
@@ -52,10 +50,7 @@ class AddAlertEvent implements ShouldBroadcast
             $notification->save();
         }
     }
-    public function via()
-    {
-        return [OneSignalChannel::class];
-    }
+
     public function broadcastOn()
     {
         return new PrivateChannel('notifications.' . $this->notifier->id);
@@ -76,15 +71,9 @@ class AddAlertEvent implements ShouldBroadcast
 
         $notify = Notification::where('notifier_id', auth()->user()->id)->first();
         $unread_notifiy = Notification::where('read_at', null)->count();
-        // return [
-        //     "data" => $notify,
-        //     "unread_notifiy" => $unread_notifiy
-        // ];
-
-
-        return OneSignalMessage::create([
+        return [
             "data" => $notify,
             "unread_notifiy" => $unread_notifiy
-        ]);
+        ];
     }
 }

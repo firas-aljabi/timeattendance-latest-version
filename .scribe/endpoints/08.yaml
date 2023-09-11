@@ -27,7 +27,7 @@ endpoints:
         description: ''
         required: true
         example:
-          - sit
+          - molestiae
         type: 'string[]'
         enumValues: []
         custom: []
@@ -49,7 +49,7 @@ endpoints:
         custom: []
     cleanBodyParameters:
       days:
-        - sit
+        - molestiae
       day: 5
     fileParameters: []
     responses:
@@ -167,7 +167,7 @@ endpoints:
         name: holiday_id
         description: 'Must Be Exists In Holidays Table'
         required: true
-        example: 18
+        example: 14
         type: integer
         enumValues: []
         custom: []
@@ -196,7 +196,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      holiday_id: 18
+      holiday_id: 14
       holiday_name: 'Eid Aladha'
       start_date: '2023-08-27'
       end_date: '2023-08-29'

@@ -28,11 +28,11 @@ class User extends Authenticatable implements JWTSubject
         'email',
         'password', 'work_email', 'mobile', 'phone', 'serial_number', 'nationalitie_id',
         'birthday_date', 'material_status', 'address', 'guarantor', 'position', 'branch', 'departement', 'gender', 'type', 'status', 'skills',
-        'start_job_contract', 'end_j5ob_contract', 'image', 'id_photo', 'biography',
+        'start_job_contract', 'end_job_contract', 'image', 'id_photo', 'biography',
         'employee_sponsorship', 'end_employee_sponsorship', 'visa', 'end_visa',
         'passport', 'end_passport', 'municipal_card', 'end_municipal_card', 'health_insurance', 'end_health_insurance',
         'basic_salary', 'company_id', 'employee_residence', 'end_employee_residence',
-        'code', 'expired_at', 'entry_time', 'leave_time', 'number_working_hours'
+        'code', 'expired_at', 'entry_time', 'leave_time', 'number_working_hours', 'is_verifed', 'device_key'
     ];
 
     /**
@@ -80,11 +80,6 @@ class User extends Authenticatable implements JWTSubject
     public function alerts()
     {
         return $this->hasMany(Alert::class);
-    }
-
-    public function messages()
-    {
-        return $this->hasMany(Message::class);
     }
 
     public function availableTime()

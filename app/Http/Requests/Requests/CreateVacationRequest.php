@@ -39,7 +39,7 @@ class CreateVacationRequest extends FormRequest
             'person' => ['required_if:vacation_type,4', Rule::in(PatientType::$statuses1)],
             'dead_person' => ['required_if:vacation_type,3', Rule::in(PatientType::$statuses2)],
             'degree_of_kinship' => ['required_if:vacation_type,3', Rule::in(KinShipType::$statuses)],
-            "attachments" => "nullable|file|mimes:jpeg,png,jpg,pdf|max:2048",
+            "attachments" => "nullable|file|mimes:jpeg,png,jpg,pdf|max:5120",
         ];
     }
 }

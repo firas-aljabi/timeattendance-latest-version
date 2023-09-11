@@ -5,12 +5,14 @@ namespace App\Services\Admin;
 use App\Filter\Attendance\AttendanceFilter;
 use App\Filter\Attendance\AttendanceOverviewFilter;
 use App\Filter\Contract\ContractFilter;
+use App\Filter\Deposit\DepositFilter;
 use App\Filter\Employees\EmployeeFilter;
 use App\Filter\Employees\LeaveCalendarFilter;
 use App\Filter\Nationalalities\NationalFilter;
 use App\Filter\Salary\SalaryFilter;
 use App\Interfaces\Admin\AdminServiceInterface;
 use App\Models\Attendance;
+use App\Models\EmployeeAvailableTime;
 use App\Models\Holiday;
 use App\Models\Salary;
 use App\Models\User;
@@ -169,6 +171,9 @@ class AdminService implements AdminServiceInterface
     }
 
 
+
+
+
     public function list_of_nationalities(NationalFilter $nationalFilter = null)
     {
         if ($nationalFilter != null)
@@ -193,6 +198,17 @@ class AdminService implements AdminServiceInterface
     }
 
 
+
+    public function remining_vacation_hour_employee(int $id)
+    {
+        if (auth()->user()->type == UserTypes::ADMIN || auth()->user()->type == UserTypes::HR) {
+            $record = EmployeeAvailableTime::where('user_id', $id)->first();
+
+            return ['success' => true, 'data' => $record];
+        } else {
+            return ['success' => false, 'message' => "Unauthorized"];
+        }
+    }
     public static function careteAttendance()
     {
 

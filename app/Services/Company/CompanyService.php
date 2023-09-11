@@ -31,6 +31,13 @@ class CompanyService implements CompanyServiceInterface
         return $this->companyRepository->update_company($data);
     }
 
+
+    public function update_commercial_record($data)
+    {
+        return $this->companyRepository->update_commercial_record($data);
+    }
+
+
     public function show($id)
     {
         if (auth()->user()->type == UserTypes::ADMIN && auth()->user()->company_id == $id || auth()->user()->type == UserTypes::SUPER_ADMIN) {

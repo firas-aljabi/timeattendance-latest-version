@@ -32,7 +32,7 @@ class CreateAdminRequest extends FormRequest
             'serial_number' => 'required|unique:users,serial_number',
             "gender" => ["nullable", Rule::in(GenderStatus::$statuses)],
             'branch' => 'nullable',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
         ];
     }
 }

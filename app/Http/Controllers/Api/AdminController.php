@@ -8,6 +8,7 @@ use App\ApiHelper\Result;
 use App\ApiHelper\SuccessResult;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contract\TerminateContractRequest;
+use App\Http\Requests\Deposit\GetDepositsList;
 use App\Http\Requests\Employees\AdminUpdateEmployeeRequest;
 use App\Http\Requests\Employees\AttendancsOverviewListRequest;
 use App\Http\Requests\Employees\CheckInAttendanceRequest;
@@ -31,6 +32,7 @@ use App\Http\Resources\Admin\DashboardDataResource;
 use App\Http\Resources\Admin\EmployeeResource;
 use App\Http\Resources\Contract\ContractResource;
 use App\Http\Resources\Contract\UserContractResource;
+use App\Http\Resources\Deposit\DepositResource;
 use App\Http\Resources\Employees\AttendanceResource;
 use App\Http\Resources\Employees\EmployeeAvailableTimeResource;
 use App\Http\Resources\Employees\LeaveCalendarListResource;
@@ -70,19 +72,19 @@ class AdminController extends Controller
      *
      * @bodyParam work_email email The email work of the employee, The work_email must have a maximum length of 255 characters. It should follow the pattern of having 16 letters before the @ symbol. Example:mouazalkhateeb@goma.com.
      *
-     * @bodyParam image file Must not be greater than 2048 kilobytes
+     * @bodyParam image file Must not be greater than 5120 kilobytes
      *
-     * @bodyParam id_photo file Must be image or pdf and not be greater than 2048 kilobytes
+     * @bodyParam id_photo file Must be image or pdf and not be greater than 5120 kilobytes
      *
-     * @bodyParam biography file  Must be image or pdf and not be greater than 2048 kilobytes
+     * @bodyParam biography file  Must be image or pdf and not be greater than 5120 kilobytes
      *
-     * @bodyParam visa file Must be image or pdf and not be greater than 2048 kilobytes
+     * @bodyParam visa file Must be image or pdf and not be greater than 5120 kilobytes
      *
-     * @bodyParam municipal_card file Must be image or pdf and not be greater than 2048 kilobytes
+     * @bodyParam municipal_card file Must be image or pdf and not be greater than 5120 kilobytes
      *
-     * @bodyParam health_insurance file Must be image or pdf and not be greater than 2048 kilobytes
+     * @bodyParam health_insurance file Must be image or pdf and not be greater than 5120 kilobytes
      *
-     * @bodyParam passport file Must be image or pdf and not be greater than 2048 kilobytes
+     * @bodyParam passport file Must be image or pdf and not be greater than 5120 kilobytes
      *
      * @bodyParam serial_number number required Custom Example: 0101122
      *
@@ -245,19 +247,19 @@ class AdminController extends Controller
      *
      * @bodyParam work_email email The email work of the employee, The work_email must have a maximum length of 255 characters. It should follow the pattern of having 16 letters before the @ symbol. Example:mouazalkhateeb@goma.com.
      *
-     * @bodyParam image file Must not be greater than 2048 kilobytes
+     * @bodyParam image file Must not be greater than 5120 kilobytes
      *
-     * @bodyParam id_photo file Must be pdf and not be greater than 2048 kilobytes
+     * @bodyParam id_photo file Must be pdf and not be greater than 5120 kilobytes
      *
-     * @bodyParam biography file  Must not be greater than 2048 kilobytes
+     * @bodyParam biography file  Must not be greater than 5120 kilobytes
      *
-     * @bodyParam visa file Must not be greater than 2048 kilobytes
+     * @bodyParam visa file Must not be greater than 5120 kilobytes
      *
-     * @bodyParam municipal_card file Must not be greater than 2048 kilobytes
+     * @bodyParam municipal_card file Must not be greater than 5120 kilobytes
      *
-     * @bodyParam health_insurance file Must not be greater than 2048 kilobytes
+     * @bodyParam health_insurance file Must not be greater than 5120 kilobytes
      *
-     * @bodyParam passport  file Must not be greater than 2048 kilobytes
+     * @bodyParam passport  file Must not be greater than  kilobytes
      * @bodyParam serial_number number required Custom Example: 0101122
      * @bodyParam birthday_date date Custom Example: 2023-08-27
      * @bodyParam nationalitie_id int required Must be from 1 to 56
@@ -334,6 +336,7 @@ class AdminController extends Controller
      * "entry_time": null,
      * "leave_time": null,
      * "percentage": "0",
+     * "is_verifed": false,
      * "basic_salary": 200000
      *}
      */
@@ -366,7 +369,7 @@ class AdminController extends Controller
      *
      * @bodyParam work_email email The email work of the employee, The work_email must have a maximum length of 255 characters. It should follow the pattern of having 16 letters before the @ symbol. Example:mouazalkhateeb@goma.com.
      *
-     * @bodyParam image file Must not be greater than 2048 kilobytes
+     * @bodyParam image file Must not be greater than 5120 kilobytes
      * @bodyParam serial_number number required Custom Example: 0101122
      * @bodyParam birthday_date date Custom Example: 2023-08-27
      * @bodyParam nationalitie_id int required Must be from 1 to 56
@@ -420,7 +423,8 @@ class AdminController extends Controller
      *     "entry_time": null,
      *     "leave_time": null,
      *     "percentage": "0",
-     *     "basic_salary": 0
+     *     "basic_salary": 0,
+     *     "is_verifed": false,
      * }
      * }
      */
@@ -447,7 +451,7 @@ class AdminController extends Controller
      * @bodyParam email string The email of the employee, The email must have a maximum length of 255 characters. It should follow the pattern of having 16 letters before the @ symbol.
      *                                 Example: mouaz@gmail.com
      *
-     * @bodyParam image file Must not be greater than 2048 kilobytes
+     * @bodyParam image file Must not be greater than 5120 kilobytes
      *
      * @bodyParam address  string Custom Example: Damascus
      *
@@ -490,6 +494,7 @@ class AdminController extends Controller
      * "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
      * "entry_time": "30",
      *"leave_time": "60",
+     *"is_verifed": false,
      *"number_of_working_hours": 0,
      *"nationalitie": {
      *   "name": "Syrian"
@@ -585,6 +590,7 @@ class AdminController extends Controller
      * "employee_residence": "http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg",
      * "entry_time": "30",
      *"leave_time": "60",
+     *"is_verifed": false,
      *"number_of_working_hours": 0,
      *"nationalitie": {
      *   "name": "Syrian"
@@ -699,7 +705,8 @@ class AdminController extends Controller
      *"employee_residence": null,
      *"entry_time": null,
      *"leave_time": null,
-     *"basic_salary": 750000
+     *"basic_salary": 750000,
+     *"is_verifed": false,
      *"percentage": "0",
      *}
      * }
@@ -1075,6 +1082,7 @@ class AdminController extends Controller
      *"leave_time": 60,
      *"percentage": "0",
      *"basic_salary": 200000,
+     *"is_verifed": false,
      *"number_of_working_hours": 0,
      *},
      *{
@@ -1180,6 +1188,7 @@ class AdminController extends Controller
      *       "leave_time": 60,
      *       "percentage": "0",
      *       "basic_salary": 200000,
+     *       *"is_verifed": false,
      *       "number_of_working_hours": 0
      *     },
      *     {
@@ -1222,6 +1231,7 @@ class AdminController extends Controller
      *       "leave_time": 60,
      *       "percentage": "0",
      *       "basic_salary": 200000,
+     *       "is_verifed": false,
      *       "number_of_working_hours": 0,
      *     }
      *    ]
@@ -1364,6 +1374,7 @@ class AdminController extends Controller
             return ['message' => $data['message']];
         }
     }
+
     /**
      * Get Employee
      *
@@ -1415,6 +1426,7 @@ class AdminController extends Controller
      * },
      *"percentage": "0",
      * "basic_salary": 200000,
+     *  "is_verifed": false,
      * "shifts": [
      *   {
      *      "id": 3,
@@ -1456,6 +1468,42 @@ class AdminController extends Controller
             new Result($returnData,  "DONE")
         );
     }
+
+
+    /**
+     * Get Remaining Vacation Hours for an Employee
+     *
+     * This endpoint is used to retrieve the remaining vacation hours for an employee in a company. Only admins or HR personnel can access this API.
+     *
+     * @urlParam id int required The ID of the employee in the Users table.
+     *
+     * @response 201 {
+     *     "data": {
+     *         "id": 7,
+     *         "user_id": 11,
+     *         "hourly_annual": 70,
+     *         "daily_annual": 80
+     *     }
+     * }
+     */
+    public function remining_vacation_hour_employee($id)
+    {
+        $data = $this->adminService->remining_vacation_hour_employee($id);
+        if ($data['success']) {
+            if (isset($data['data'])) {
+                $returnData = EmployeeAvailableTimeResource::make($data['data']);
+                return ApiResponseHelper::sendResponse(
+                    new Result($returnData,  "DONE")
+                );
+            } else {
+                return ['message' => 'Data object not found'];
+            }
+        } else {
+            return ['message' => $data['message']];
+        }
+    }
+
+
     /**
      * Show My Profile
      *
@@ -1506,6 +1554,7 @@ class AdminController extends Controller
      * },
      *"percentage": "0",
      * "basic_salary": 200000,
+     * "is_verifed": false,
      * "shifts": [
      *   {
      *      "id": 3,
@@ -1849,6 +1898,7 @@ class AdminController extends Controller
      *         "leave_time": 90,
      *         "percentage": "0",
      *         "basic_salary": 200000,
+     *         "is_verifed": false,
      *         "number_of_working_hours": 0,
      *     }
      * }

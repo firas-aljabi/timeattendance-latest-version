@@ -119,6 +119,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="admin-operations-GETapi-get_employee--id-">
                                 <a href="#admin-operations-GETapi-get_employee--id-">Get Employee</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-operations-GETapi-remining_vacation_hour_employee--id-">
+                                <a href="#admin-operations-GETapi-remining_vacation_hour_employee--id-">Get Remaining Vacation Hours for an Employee</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="admin-operations-GETapi-profile">
                                 <a href="#admin-operations-GETapi-profile">Show My Profile</a>
                             </li>
@@ -194,6 +197,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="companies-POSTapi-update_comapny">
                                 <a href="#companies-POSTapi-update_comapny">Update Company</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="companies-POSTapi-update_commercial_record">
+                                <a href="#companies-POSTapi-update_commercial_record">Update Commercal Record in Company</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="companies-GETapi-show_percenatge_company">
                                 <a href="#companies-GETapi-show_percenatge_company">Show Company Percentage</a>
                             </li>
@@ -233,6 +239,9 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="deposits-GETapi-list_of_clearance_deposits">
                                 <a href="#deposits-GETapi-list_of_clearance_deposits">List of Clearance Deposits</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="deposits-GETapi-my_approved_deposits">
+                                <a href="#deposits-GETapi-my_approved_deposits">Show My Approved Deposits List</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -383,7 +392,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 7, 2023</li>
+        <li>Last updated: September 11, 2023</li>
     </ul>
 </div>
 
@@ -426,7 +435,7 @@ You can switch the language used with the tabs at the top right (or from the nav
     --form "email=mouaz@gmail.com"\
     --form "password=Abc071096904038"\
     --form "work_email=mouazalkhateeb@goma.com."\
-    --form "nationalitie_id=1"\
+    --form "nationalitie_id=17"\
     --form "birthday_date=2023-08-27"\
     --form "material_status=1"\
     --form "departement=It"\
@@ -446,28 +455,28 @@ You can switch the language used with the tabs at the top right (or from the nav
     --form "end_employee_residence=2023-08-27"\
     --form "leave_time=60"\
     --form "entry_time=90"\
-    --form "end_passport=2023-09-07T13:30:41"\
+    --form "end_passport=2023-09-11T11:30:13"\
     --form "basic_salary=250000"\
     --form "housing_allowance=100000"\
     --form "hourly_annual=12"\
     --form "daily_annual=12"\
     --form "transportation_allowance=80000"\
     --form "number_of_shifts=3"\
-    --form "shifts[]=dignissimos"\
-    --form "user_id=6"\
+    --form "shifts[]=sit"\
+    --form "user_id=17"\
     --form "start_time=09:00:00."\
     --form "end_time=09:00:00."\
     --form "start_break_hour=09:00:00."\
     --form "end_break_hour=09:00:00."\
-    --form "image=@C:\Users\dell\AppData\Local\Temp\php8D79.tmp" \
-    --form "id_photo=@C:\Users\dell\AppData\Local\Temp\php8D7A.tmp" \
-    --form "biography=@C:\Users\dell\AppData\Local\Temp\php8D7B.tmp" \
-    --form "visa=@C:\Users\dell\AppData\Local\Temp\php8D7C.tmp" \
-    --form "municipal_card=@C:\Users\dell\AppData\Local\Temp\php8D7D.tmp" \
-    --form "employee_residence=@C:\Users\dell\AppData\Local\Temp\php8D65.tmp" \
-    --form "health_insurance=@C:\Users\dell\AppData\Local\Temp\php8D7E.tmp" \
-    --form "passport=@C:\Users\dell\AppData\Local\Temp\php8D7F.tmp" \
-    --form "employee_sponsorship=@C:\Users\dell\AppData\Local\Temp\php8D68.tmp" </code></pre></div>
+    --form "image=@C:\Users\dell\AppData\Local\Temp\phpD276.tmp" \
+    --form "id_photo=@C:\Users\dell\AppData\Local\Temp\phpD277.tmp" \
+    --form "biography=@C:\Users\dell\AppData\Local\Temp\phpD278.tmp" \
+    --form "visa=@C:\Users\dell\AppData\Local\Temp\phpD279.tmp" \
+    --form "municipal_card=@C:\Users\dell\AppData\Local\Temp\phpD27A.tmp" \
+    --form "employee_residence=@C:\Users\dell\AppData\Local\Temp\phpD262.tmp" \
+    --form "health_insurance=@C:\Users\dell\AppData\Local\Temp\phpD27B.tmp" \
+    --form "passport=@C:\Users\dell\AppData\Local\Temp\phpD27C.tmp" \
+    --form "employee_sponsorship=@C:\Users\dell\AppData\Local\Temp\phpD275.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -485,7 +494,7 @@ body.append('name', 'mouaz alkhateeb.');
 body.append('email', 'mouaz@gmail.com');
 body.append('password', 'Abc071096904038');
 body.append('work_email', 'mouazalkhateeb@goma.com.');
-body.append('nationalitie_id', '1');
+body.append('nationalitie_id', '17');
 body.append('birthday_date', '2023-08-27');
 body.append('material_status', '1');
 body.append('departement', 'It');
@@ -505,15 +514,15 @@ body.append('end_health_insurance', '2023-08-27');
 body.append('end_employee_residence', '2023-08-27');
 body.append('leave_time', '60');
 body.append('entry_time', '90');
-body.append('end_passport', '2023-09-07T13:30:41');
+body.append('end_passport', '2023-09-11T11:30:13');
 body.append('basic_salary', '250000');
 body.append('housing_allowance', '100000');
 body.append('hourly_annual', '12');
 body.append('daily_annual', '12');
 body.append('transportation_allowance', '80000');
 body.append('number_of_shifts', '3');
-body.append('shifts[]', 'dignissimos');
-body.append('user_id', '6');
+body.append('shifts[]', 'sit');
+body.append('user_id', '17');
 body.append('start_time', '09:00:00.');
 body.append('end_time', '09:00:00.');
 body.append('start_break_hour', '09:00:00.');
@@ -750,10 +759,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="nationalitie_id"                data-endpoint="POSTapi-create_employee"
-               value="1"
+               value="17"
                data-component="body">
     <br>
-<p>Must be from 1 to 56 Example: <code>1</code></p>
+<p>Must be from 1 to 56 Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birthday_date</code></b>&nbsp;&nbsp;
@@ -990,10 +999,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end_passport"                data-endpoint="POSTapi-create_employee"
-               value="2023-09-07T13:30:41"
+               value="2023-09-11T11:30:13"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2023-09-07T13:30:41</code></p>
+<p>Must be a valid date. Example: <code>2023-09-11T11:30:13</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
@@ -1004,7 +1013,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D79.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD276.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_photo</code></b>&nbsp;&nbsp;
@@ -1015,7 +1024,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be image or pdf and not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D7A.tmp</code></p>
+<p>Must be image or pdf and not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD277.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>biography</code></b>&nbsp;&nbsp;
@@ -1026,7 +1035,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be image or pdf and not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D7B.tmp</code></p>
+<p>Must be image or pdf and not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD278.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>visa</code></b>&nbsp;&nbsp;
@@ -1037,7 +1046,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be image or pdf and not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D7C.tmp</code></p>
+<p>Must be image or pdf and not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD279.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>municipal_card</code></b>&nbsp;&nbsp;
@@ -1048,7 +1057,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be image or pdf and not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D7D.tmp</code></p>
+<p>Must be image or pdf and not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD27A.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>employee_residence</code></b>&nbsp;&nbsp;
@@ -1059,7 +1068,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8D65.tmp</code></p>
+<p>Must be a file. Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD262.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>health_insurance</code></b>&nbsp;&nbsp;
@@ -1070,7 +1079,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be image or pdf and not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D7E.tmp</code></p>
+<p>Must be image or pdf and not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD27B.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>passport</code></b>&nbsp;&nbsp;
@@ -1081,7 +1090,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be image or pdf and not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D7F.tmp</code></p>
+<p>Must be image or pdf and not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD27C.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>employee_sponsorship</code></b>&nbsp;&nbsp;
@@ -1092,7 +1101,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8D68.tmp</code></p>
+<p>Must be a file. Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD275.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>basic_salary</code></b>&nbsp;&nbsp;
@@ -1186,10 +1195,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="shifts.0.start_time"                data-endpoint="POSTapi-create_employee"
-               value="sed"
+               value="necessitatibus"
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>necessitatibus</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>end_time</code></b>&nbsp;&nbsp;
@@ -1197,10 +1206,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="shifts.0.end_time"                data-endpoint="POSTapi-create_employee"
-               value="quas"
+               value="quo"
                data-component="body">
     <br>
-<p>Example: <code>quas</code></p>
+<p>Example: <code>quo</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>start_break_hour</code></b>&nbsp;&nbsp;
@@ -1208,10 +1217,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="shifts.0.start_break_hour"                data-endpoint="POSTapi-create_employee"
-               value="et"
+               value="porro"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>porro</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>end_break_hour</code></b>&nbsp;&nbsp;
@@ -1219,10 +1228,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="shifts.0.end_break_hour"                data-endpoint="POSTapi-create_employee"
-               value="est"
+               value="odit"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>odit</code></p>
                     </div>
                                     </details>
         </div>
@@ -1232,10 +1241,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-create_employee"
-               value="6"
+               value="17"
                data-component="body">
     <br>
-<p>optional The ID of the user That Exists in users Table. Example: <code>6</code></p>
+<p>optional The ID of the user That Exists in users Table. Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_time</code></b>&nbsp;&nbsp;
@@ -1304,7 +1313,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "email=mouaz@gmail.com"\
     --form "password=Abc071096904038"\
     --form "work_email=mouazalkhateeb@goma.com."\
-    --form "nationalitie_id=15"\
+    --form "nationalitie_id=1"\
     --form "birthday_date=2023-08-27"\
     --form "material_status=1"\
     --form "departement=It"\
@@ -1314,7 +1323,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "branch=Syria"\
     --form "skills=Drwaing"\
     --form "serial_number=101122"\
-    --form "gender=1"\
+    --form "gender=2"\
     --form "start_job_contract=2023-08-27"\
     --form "end_job_contract=2023-08-27"\
     --form "end_visa=2023-08-27"\
@@ -1323,21 +1332,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "end_health_insurance=2023-08-27"\
     --form "end_employee_residence=2023-08-27"\
     --form "leave_time=60"\
-    --form "entry_time=60"\
-    --form "end_passport=2023-09-07T13:30:41"\
+    --form "entry_time=30"\
+    --form "end_passport=2023-09-11T11:30:13"\
     --form "basic_salary=250000"\
-    --form "number_of_shifts=32"\
-    --form "shifts[]=distinctio"\
+    --form "number_of_shifts=73"\
+    --form "shifts[]=dolorem"\
     --form "status=1"\
-    --form "image=@C:\Users\dell\AppData\Local\Temp\php8D98.tmp" \
-    --form "id_photo=@C:\Users\dell\AppData\Local\Temp\php8D99.tmp" \
-    --form "biography=@C:\Users\dell\AppData\Local\Temp\php8D9A.tmp" \
-    --form "visa=@C:\Users\dell\AppData\Local\Temp\php8D9B.tmp" \
-    --form "municipal_card=@C:\Users\dell\AppData\Local\Temp\php8D9C.tmp" \
-    --form "employee_residence=@C:\Users\dell\AppData\Local\Temp\php8D94.tmp" \
-    --form "health_insurance=@C:\Users\dell\AppData\Local\Temp\php8D9D.tmp" \
-    --form "passport=@C:\Users\dell\AppData\Local\Temp\php8D9E.tmp" \
-    --form "employee_sponsorship=@C:\Users\dell\AppData\Local\Temp\php8D97.tmp" </code></pre></div>
+    --form "image=@C:\Users\dell\AppData\Local\Temp\phpD2A5.tmp" \
+    --form "id_photo=@C:\Users\dell\AppData\Local\Temp\phpD2A6.tmp" \
+    --form "biography=@C:\Users\dell\AppData\Local\Temp\phpD2A7.tmp" \
+    --form "visa=@C:\Users\dell\AppData\Local\Temp\phpD2A8.tmp" \
+    --form "municipal_card=@C:\Users\dell\AppData\Local\Temp\phpD2A9.tmp" \
+    --form "employee_residence=@C:\Users\dell\AppData\Local\Temp\phpD2A1.tmp" \
+    --form "health_insurance=@C:\Users\dell\AppData\Local\Temp\phpD2AA.tmp" \
+    --form "passport=@C:\Users\dell\AppData\Local\Temp\phpD2AB.tmp" \
+    --form "employee_sponsorship=@C:\Users\dell\AppData\Local\Temp\phpD2A4.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1355,7 +1364,7 @@ body.append('name', 'mouaz alkhateeb.');
 body.append('email', 'mouaz@gmail.com');
 body.append('password', 'Abc071096904038');
 body.append('work_email', 'mouazalkhateeb@goma.com.');
-body.append('nationalitie_id', '15');
+body.append('nationalitie_id', '1');
 body.append('birthday_date', '2023-08-27');
 body.append('material_status', '1');
 body.append('departement', 'It');
@@ -1365,7 +1374,7 @@ body.append('guarantor', 'Mouaz Alkhateeb');
 body.append('branch', 'Syria');
 body.append('skills', 'Drwaing');
 body.append('serial_number', '101122');
-body.append('gender', '1');
+body.append('gender', '2');
 body.append('start_job_contract', '2023-08-27');
 body.append('end_job_contract', '2023-08-27');
 body.append('end_visa', '2023-08-27');
@@ -1374,11 +1383,11 @@ body.append('end_municipal_card', '2023-08-27');
 body.append('end_health_insurance', '2023-08-27');
 body.append('end_employee_residence', '2023-08-27');
 body.append('leave_time', '60');
-body.append('entry_time', '60');
-body.append('end_passport', '2023-09-07T13:30:41');
+body.append('entry_time', '30');
+body.append('end_passport', '2023-09-11T11:30:13');
 body.append('basic_salary', '250000');
-body.append('number_of_shifts', '32');
-body.append('shifts[]', 'distinctio');
+body.append('number_of_shifts', '73');
+body.append('shifts[]', 'dolorem');
 body.append('status', '1');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 body.append('id_photo', document.querySelector('input[name="id_photo"]').files[0]);
@@ -1590,10 +1599,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="nationalitie_id"                data-endpoint="POSTapi-create_hr"
-               value="15"
+               value="1"
                data-component="body">
     <br>
-<p>Must be from 1 to 56 Example: <code>15</code></p>
+<p>Must be from 1 to 56 Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birthday_date</code></b>&nbsp;&nbsp;
@@ -1705,10 +1714,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="gender"                data-endpoint="POSTapi-create_hr"
-               value="1"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>1</code></p>
+<p>Example: <code>2</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>1</code></li> <li><code>2</code></li></ul>
         </div>
@@ -1808,10 +1817,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="entry_time"                data-endpoint="POSTapi-create_hr"
-               value="60"
+               value="30"
                data-component="body">
     <br>
-<p>Example: <code>60</code></p>
+<p>Example: <code>30</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>30</code></li> <li><code>60</code></li> <li><code>90</code></li></ul>
         </div>
@@ -1821,10 +1830,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end_passport"                data-endpoint="POSTapi-create_hr"
-               value="2023-09-07T13:30:41"
+               value="2023-09-11T11:30:13"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2023-09-07T13:30:41</code></p>
+<p>Must be a valid date. Example: <code>2023-09-11T11:30:13</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
@@ -1835,7 +1844,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D98.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2A5.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>id_photo</code></b>&nbsp;&nbsp;
@@ -1846,7 +1855,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must be pdf and not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D99.tmp</code></p>
+<p>Must be pdf and not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2A6.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>biography</code></b>&nbsp;&nbsp;
@@ -1857,7 +1866,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D9A.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2A7.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>visa</code></b>&nbsp;&nbsp;
@@ -1868,7 +1877,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D9B.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2A8.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>municipal_card</code></b>&nbsp;&nbsp;
@@ -1879,7 +1888,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D9C.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2A9.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>employee_residence</code></b>&nbsp;&nbsp;
@@ -1890,7 +1899,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8D94.tmp</code></p>
+<p>Must be a file. Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2A1.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>health_insurance</code></b>&nbsp;&nbsp;
@@ -1901,7 +1910,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D9D.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2AA.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>passport</code></b>&nbsp;&nbsp;
@@ -1912,7 +1921,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8D9E.tmp</code></p>
+<p>Must not be greater than  kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2AB.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>employee_sponsorship</code></b>&nbsp;&nbsp;
@@ -1923,7 +1932,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must be a file. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8D97.tmp</code></p>
+<p>Must be a file. Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2A4.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>basic_salary</code></b>&nbsp;&nbsp;
@@ -1986,10 +1995,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="number_of_shifts"                data-endpoint="POSTapi-create_hr"
-               value="32"
+               value="73"
                data-component="body">
     <br>
-<p>Must be at least 1. Example: <code>32</code></p>
+<p>Must be at least 1. Example: <code>73</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -2017,10 +2026,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="shifts.0.start_time"                data-endpoint="POSTapi-create_hr"
-               value="quia"
+               value="nemo"
                data-component="body">
     <br>
-<p>Example: <code>quia</code></p>
+<p>Example: <code>nemo</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>end_time</code></b>&nbsp;&nbsp;
@@ -2028,10 +2037,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="shifts.0.end_time"                data-endpoint="POSTapi-create_hr"
-               value="mollitia"
+               value="ducimus"
                data-component="body">
     <br>
-<p>Example: <code>mollitia</code></p>
+<p>Example: <code>ducimus</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>start_break_hour</code></b>&nbsp;&nbsp;
@@ -2039,10 +2048,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="shifts.0.start_break_hour"                data-endpoint="POSTapi-create_hr"
-               value="iure"
+               value="mollitia"
                data-component="body">
     <br>
-<p>Example: <code>iure</code></p>
+<p>Example: <code>mollitia</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>end_break_hour</code></b>&nbsp;&nbsp;
@@ -2050,10 +2059,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="shifts.0.end_break_hour"                data-endpoint="POSTapi-create_hr"
-               value="perferendis"
+               value="vero"
                data-component="body">
     <br>
-<p>Example: <code>perferendis</code></p>
+<p>Example: <code>vero</code></p>
                     </div>
                                     </details>
         </div>
@@ -2095,16 +2104,16 @@ Must be one of:
     --form "email=mouaz@gmail.com"\
     --form "password=Abc071096904038"\
     --form "work_email=mouazalkhateeb@goma.com."\
-    --form "company_id=inventore"\
+    --form "company_id=debitis"\
     --form "nationalitie_id=15"\
     --form "birthday_date=2023-08-27"\
-    --form "material_status=3"\
+    --form "material_status=2"\
     --form "address=Damascus"\
     --form "serial_number=101122"\
     --form "gender=1"\
     --form "branch=Syria"\
-    --form "comapny_id=2"\
-    --form "image=@C:\Users\dell\AppData\Local\Temp\php8DB0.tmp" </code></pre></div>
+    --form "comapny_id=6"\
+    --form "image=@C:\Users\dell\AppData\Local\Temp\phpD2CC.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2122,15 +2131,15 @@ body.append('name', 'Firas Aljabi.');
 body.append('email', 'mouaz@gmail.com');
 body.append('password', 'Abc071096904038');
 body.append('work_email', 'mouazalkhateeb@goma.com.');
-body.append('company_id', 'inventore');
+body.append('company_id', 'debitis');
 body.append('nationalitie_id', '15');
 body.append('birthday_date', '2023-08-27');
-body.append('material_status', '3');
+body.append('material_status', '2');
 body.append('address', 'Damascus');
 body.append('serial_number', '101122');
 body.append('gender', '1');
 body.append('branch', 'Syria');
-body.append('comapny_id', '2');
+body.append('comapny_id', '6');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -2334,10 +2343,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="company_id"                data-endpoint="POSTapi-create_admin"
-               value="inventore"
+               value="debitis"
                data-component="body">
     <br>
-<p>Example: <code>inventore</code></p>
+<p>Example: <code>debitis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nationalitie_id</code></b>&nbsp;&nbsp;
@@ -2367,10 +2376,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="material_status"                data-endpoint="POSTapi-create_admin"
-               value="3"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>2</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>1</code></li> <li><code>2</code></li> <li><code>3</code></li> <li><code>4</code></li></ul>
         </div>
@@ -2431,7 +2440,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8DB0.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2CC.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>comapny_id</code></b>&nbsp;&nbsp;
@@ -2439,10 +2448,10 @@ Must be one of:
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="comapny_id"                data-endpoint="POSTapi-create_admin"
-               value="2"
+               value="6"
                data-component="body">
     <br>
-<p>Must be exists in companies table. Example: <code>2</code></p>
+<p>Must be exists in companies table. Example: <code>6</code></p>
         </div>
         </form>
 
@@ -2465,7 +2474,7 @@ Must be one of:
     --header "Accept: application/json" \
     --form "email=mouaz@gmail.com"\
     --form "address=Damascus"\
-    --form "image=@C:\Users\dell\AppData\Local\Temp\php8DC2.tmp" </code></pre></div>
+    --form "image=@C:\Users\dell\AppData\Local\Temp\phpD2DE.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2675,7 +2684,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8DC2.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD2DE.tmp</code></p>
         </div>
         </form>
 
@@ -2697,7 +2706,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 6,
+    \"user_id\": 1,
     \"material_status\": 1,
     \"housing_allowance\": 100000,
     \"transportation_allowance\": 80000
@@ -2716,7 +2725,7 @@ const headers = {
 };
 
 let body = {
-    "user_id": 6,
+    "user_id": 1,
     "material_status": 1,
     "housing_allowance": 100000,
     "transportation_allowance": 80000
@@ -2878,10 +2887,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-admin_update_employee"
-               value="6"
+               value="1"
                data-component="body">
     <br>
-<p>Must Be Exists In Users Table Example: <code>6</code></p>
+<p>Must Be Exists In Users Table Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>material_status</code></b>&nbsp;&nbsp;
@@ -2938,14 +2947,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/employee/17" \
+    "http://localhost/api/employee/14" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/employee/17"
+    "http://localhost/api/employee/14"
 );
 
 const headers = {
@@ -3045,10 +3054,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-employee--id-"
-               value="17"
+               value="14"
                data-component="url">
     <br>
-<p>Must Be Exists In Users Table Example: <code>17</code></p>
+<p>Must Be Exists In Users Table Example: <code>14</code></p>
             </div>
                     </form>
 
@@ -3070,9 +3079,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 6,
-    \"hourly_annual\": 8,
-    \"daily_annual\": 1
+    \"user_id\": 20,
+    \"hourly_annual\": 5,
+    \"daily_annual\": 13
 }"
 </code></pre></div>
 
@@ -3088,9 +3097,9 @@ const headers = {
 };
 
 let body = {
-    "user_id": 6,
-    "hourly_annual": 8,
-    "daily_annual": 1
+    "user_id": 20,
+    "hourly_annual": 5,
+    "daily_annual": 13
 };
 
 fetch(url, {
@@ -3191,10 +3200,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-update_working_hours"
-               value="6"
+               value="20"
                data-component="body">
     <br>
-<p>Must Be Exists In Users Table Example: <code>6</code></p>
+<p>Must Be Exists In Users Table Example: <code>20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hourly_annual</code></b>&nbsp;&nbsp;
@@ -3202,10 +3211,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="hourly_annual"                data-endpoint="POSTapi-update_working_hours"
-               value="8"
+               value="5"
                data-component="body">
     <br>
-<p>The number of hourly hours Vacation per year. Example: <code>8</code></p>
+<p>The number of hourly hours Vacation per year. Example: <code>5</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>daily_annual</code></b>&nbsp;&nbsp;
@@ -3213,10 +3222,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="daily_annual"                data-endpoint="POSTapi-update_working_hours"
-               value="1"
+               value="13"
                data-component="body">
     <br>
-<p>The number of daily hours Vacation per year. Example: <code>1</code></p>
+<p>The number of daily hours Vacation per year. Example: <code>13</code></p>
         </div>
         </form>
 
@@ -3238,7 +3247,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 17,
+    \"user_id\": 8,
     \"rewards_type\": 1,
     \"adversaries_type\": 1,
     \"rewards\": 5,
@@ -3258,7 +3267,7 @@ const headers = {
 };
 
 let body = {
-    "user_id": 17,
+    "user_id": 8,
     "rewards_type": 1,
     "adversaries_type": 1,
     "rewards": 5,
@@ -3371,10 +3380,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-reward_adversaries_salary"
-               value="17"
+               value="8"
                data-component="body">
     <br>
-<p>The user ID, which must exist in the Users table. Example: <code>17</code></p>
+<p>The user ID, which must exist in the Users table. Example: <code>8</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>rewards_type</code></b>&nbsp;&nbsp;
@@ -4189,7 +4198,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 4,
+    \"user_id\": 14,
     \"new_salary\": 75000
 }"
 </code></pre></div>
@@ -4206,7 +4215,7 @@ const headers = {
 };
 
 let body = {
-    "user_id": 4,
+    "user_id": 14,
     "new_salary": 75000
 };
 
@@ -4345,10 +4354,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-update_salary"
-               value="4"
+               value="14"
                data-component="body">
     <br>
-<p>Must Be Exists In Users Table Example: <code>4</code></p>
+<p>Must Be Exists In Users Table Example: <code>14</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>new_salary</code></b>&nbsp;&nbsp;
@@ -4647,14 +4656,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/get_employee/19" \
+    --get "http://localhost/api/get_employee/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/get_employee/19"
+    "http://localhost/api/get_employee/2"
 );
 
 const headers = {
@@ -4830,10 +4839,145 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-get_employee--id-"
+               value="2"
+               data-component="url">
+    <br>
+<p>Must Be Exists In Users Table Example: <code>2</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="admin-operations-GETapi-remining_vacation_hour_employee--id-">Get Remaining Vacation Hours for an Employee</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>This endpoint is used to retrieve the remaining vacation hours for an employee in a company. Only admins or HR personnel can access this API.</p>
+
+<span id="example-requests-GETapi-remining_vacation_hour_employee--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/remining_vacation_hour_employee/19" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/remining_vacation_hour_employee/19"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-remining_vacation_hour_employee--id-">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 7,
+        &quot;user_id&quot;: 11,
+        &quot;hourly_annual&quot;: 70,
+        &quot;daily_annual&quot;: 80
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-remining_vacation_hour_employee--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-remining_vacation_hour_employee--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-remining_vacation_hour_employee--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-remining_vacation_hour_employee--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-remining_vacation_hour_employee--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-remining_vacation_hour_employee--id-" data-method="GET"
+      data-path="api/remining_vacation_hour_employee/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-remining_vacation_hour_employee--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-remining_vacation_hour_employee--id-"
+                    onclick="tryItOut('GETapi-remining_vacation_hour_employee--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-remining_vacation_hour_employee--id-"
+                    onclick="cancelTryOut('GETapi-remining_vacation_hour_employee--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-remining_vacation_hour_employee--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/remining_vacation_hour_employee/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-remining_vacation_hour_employee--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-remining_vacation_hour_employee--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-remining_vacation_hour_employee--id-"
                value="19"
                data-component="url">
     <br>
-<p>Must Be Exists In Users Table Example: <code>19</code></p>
+<p>The ID of the employee in the Users table. Example: <code>19</code></p>
             </div>
                     </form>
 
@@ -5343,10 +5487,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 1,
+    \"user_id\": 10,
     \"terminate_type\": 2,
-    \"contract_termination_period\": 13,
-    \"contract_termination_reason\": \"mollitia\"
+    \"contract_termination_period\": 11,
+    \"contract_termination_reason\": \"et\"
 }"
 </code></pre></div>
 
@@ -5362,10 +5506,10 @@ const headers = {
 };
 
 let body = {
-    "user_id": 1,
+    "user_id": 10,
     "terminate_type": 2,
-    "contract_termination_period": 13,
-    "contract_termination_reason": "mollitia"
+    "contract_termination_period": 11,
+    "contract_termination_reason": "et"
 };
 
 fetch(url, {
@@ -5491,10 +5635,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-cancle_employees_contract"
-               value="1"
+               value="10"
                data-component="body">
     <br>
-<p>The ID of the user whose contract is being terminated. Must exist in the Users table. Example: <code>1</code></p>
+<p>The ID of the user whose contract is being terminated. Must exist in the Users table. Example: <code>10</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>terminate_type</code></b>&nbsp;&nbsp;
@@ -5517,7 +5661,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="contract_termination_period"                data-endpoint="POSTapi-cancle_employees_contract"
-               value="13"
+               value="11"
                data-component="body">
     <br>
 <p>The period of the contract termination. Required if terminate_type is 1. Must be one of the following values:</p>
@@ -5525,7 +5669,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <li><code>0</code>: Open term</li>
 <li><code>3</code>: Three months</li>
 <li><code>6</code>: Six months</li>
-<li><code>12</code>: One year Example: <code>13</code></li>
+<li><code>12</code>: One year Example: <code>11</code></li>
 </ul>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
@@ -5534,10 +5678,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="contract_termination_reason"                data-endpoint="POSTapi-cancle_employees_contract"
-               value="mollitia"
+               value="et"
                data-component="body">
     <br>
-<p>The reason for the contract cancle. Required if terminate_type is 1. Example: <code>mollitia</code></p>
+<p>The reason for the contract cancle. Required if terminate_type is 1. Example: <code>et</code></p>
         </div>
         </form>
 
@@ -5559,7 +5703,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 17,
+    \"user_id\": 10,
     \"number_of_month\": 12,
     \"new_date\": \"2025-05-01.\"
 }"
@@ -5577,7 +5721,7 @@ const headers = {
 };
 
 let body = {
-    "user_id": 17,
+    "user_id": 10,
     "number_of_month": 12,
     "new_date": "2025-05-01."
 };
@@ -5687,10 +5831,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-renewal_employment_contract"
-               value="17"
+               value="10"
                data-component="body">
     <br>
-<p>Must Be Exists In Users Table Example: <code>17</code></p>
+<p>Must Be Exists In Users Table Example: <code>10</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>number_of_month</code></b>&nbsp;&nbsp;
@@ -6082,7 +6226,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 13,
+    \"user_id\": 9,
     \"entry_time\": \"90)\",
     \"leave_time\": 60
 }"
@@ -6100,7 +6244,7 @@ const headers = {
 };
 
 let body = {
-    "user_id": 13,
+    "user_id": 9,
     "entry_time": "90)",
     "leave_time": 60
 };
@@ -6241,10 +6385,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-update_employee_permission_time"
-               value="13"
+               value="9"
                data-component="body">
     <br>
-<p>The user ID, which must exist in the users table. Example: <code>13</code></p>
+<p>The user ID, which must exist in the users table. Example: <code>9</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>entry_time</code></b>&nbsp;&nbsp;
@@ -6294,7 +6438,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/leave_calendar?date=2023-06-03&amp;day=15" \
+    --get "http://localhost/api/leave_calendar?date=2023-06-03&amp;day=6" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -6306,7 +6450,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 const params = {
     "date": "2023-06-03",
-    "day": "15",
+    "day": "6",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -6445,10 +6589,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="day"                data-endpoint="GETapi-leave_calendar"
-               value="15"
+               value="6"
                data-component="query">
     <br>
-<p>Filter Leave Calendar by day. Use the value &quot;1&quot; to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value &quot;2&quot; to return records where the date is equal to tomorrow's date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31 Example: <code>15</code></p>
+<p>Filter Leave Calendar by day. Use the value &quot;1&quot; to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value &quot;2&quot; to return records where the date is equal to tomorrow's date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31 Example: <code>6</code></p>
             </div>
                 </form>
 
@@ -7600,10 +7744,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://localhost/api/add_commercial_record" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "company_id=3"\
+    --form "company_id=11"\
     --form "start_commercial_record=2023-08-27"\
     --form "end_commercial_record=2023-08-27"\
-    --form "commercial_record=@C:\Users\dell\AppData\Local\Temp\php8F39.tmp" </code></pre></div>
+    --form "commercial_record=@C:\Users\dell\AppData\Local\Temp\phpD4E4.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -7617,7 +7761,7 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('company_id', '3');
+body.append('company_id', '11');
 body.append('start_commercial_record', '2023-08-27');
 body.append('end_commercial_record', '2023-08-27');
 body.append('commercial_record', document.querySelector('input[name="commercial_record"]').files[0]);
@@ -7733,10 +7877,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="company_id"                data-endpoint="POSTapi-add_commercial_record"
-               value="3"
+               value="11"
                data-component="body">
     <br>
-<p>The ID of the company. Must exist in the companies table. Example: <code>3</code></p>
+<p>The ID of the company. Must exist in the companies table. Example: <code>11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_commercial_record</code></b>&nbsp;&nbsp;
@@ -7769,7 +7913,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The commercial record file. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8F39.tmp</code></p>
+<p>The commercial record file. Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD4E4.tmp</code></p>
         </div>
         </form>
 
@@ -7787,14 +7931,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/company/2" \
+    --get "http://localhost/api/company/18" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/2"
+    "http://localhost/api/company/18"
 );
 
 const headers = {
@@ -7922,10 +8066,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-company--id-"
-               value="2"
+               value="18"
                data-component="url">
     <br>
-<p>Must Be Exists In companies Table Example: <code>2</code></p>
+<p>Must Be Exists In companies Table Example: <code>18</code></p>
             </div>
                     </form>
 
@@ -7944,14 +8088,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/update_comapny" \
-    --header "Content-Type: multipart/form-data" \
+    --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --form "company_id=11"\
-    --form "name=Goma Company"\
-    --form "email=goma@goma.com"\
-    --form "start_commercial_record=2023-08-27"\
-    --form "end_commercial_record=2023-08-27"\
-    --form "commercial_record=@C:\Users\dell\AppData\Local\Temp\php8F3B.tmp" </code></pre></div>
+    --data "{
+    \"company_id\": 15,
+    \"name\": \"Goma Company\",
+    \"email\": \"goma@goma.com\",
+    \"longitude\": 25.12,
+    \"latitude\": 15.32,
+    \"radius\": 15
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -7960,22 +8107,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
+    "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
-const body = new FormData();
-body.append('company_id', '11');
-body.append('name', 'Goma Company');
-body.append('email', 'goma@goma.com');
-body.append('start_commercial_record', '2023-08-27');
-body.append('end_commercial_record', '2023-08-27');
-body.append('commercial_record', document.querySelector('input[name="commercial_record"]').files[0]);
+let body = {
+    "company_id": 15,
+    "name": "Goma Company",
+    "email": "goma@goma.com",
+    "longitude": 25.12,
+    "latitude": 15.32,
+    "radius": 15
+};
 
 fetch(url, {
     method: "POST",
     headers,
-    body,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -8025,7 +8173,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <form id="form-POSTapi-update_comapny" data-method="POST"
       data-path="api/update_comapny"
       data-authed="1"
-      data-hasfiles="1"
+      data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-update_comapny', this);">
@@ -8060,10 +8208,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="POSTapi-update_comapny"
-               value="multipart/form-data"
+               value="application/json"
                data-component="header">
     <br>
-<p>Example: <code>multipart/form-data</code></p>
+<p>Example: <code>application/json</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -8083,10 +8231,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="company_id"                data-endpoint="POSTapi-update_comapny"
-               value="11"
+               value="15"
                data-component="body">
     <br>
-<p>The ID of the company. Must exist in the companies table. Example: <code>11</code></p>
+<p>The ID of the company. Must exist in the companies table. Example: <code>15</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -8111,37 +8259,227 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The email address of the company.Custom Example: <code>goma@goma.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>longitude</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="longitude"                data-endpoint="POSTapi-update_comapny"
+               value="25.12"
+               data-component="body">
+    <br>
+<p>The longitude of the company location. Custom Example: <code>25.12</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>latitude</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="latitude"                data-endpoint="POSTapi-update_comapny"
+               value="15.32"
+               data-component="body">
+    <br>
+<p>The latitude of the company location. Custom Example: <code>15.32</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>radius</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="radius"                data-endpoint="POSTapi-update_comapny"
+               value="15"
+               data-component="body">
+    <br>
+<p>The radius of the company location. Custom Example: <code>15</code></p>
+        </div>
+        </form>
+
+                    <h2 id="companies-POSTapi-update_commercial_record">Update Commercal Record in Company</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>This endpoint is used to update commercal record and authenticate admin access to this API. It will update commercal comapny to the authenticated admin.</p>
+
+<span id="example-requests-POSTapi-update_commercial_record">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/update_commercial_record" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "company_id=16"\
+    --form "start_commercial_record=2023-08-27"\
+    --form "end_commercial_record=2023-08-27"\
+    --form "commercial_record=@C:\Users\dell\AppData\Local\Temp\phpD4F5.tmp" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/update_commercial_record"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('company_id', '16');
+body.append('start_commercial_record', '2023-08-27');
+body.append('end_commercial_record', '2023-08-27');
+body.append('commercial_record', document.querySelector('input[name="commercial_record"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-update_commercial_record">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Goma Company&quot;,
+        &quot;email&quot;: &quot;goma@goma.com&quot;,
+        &quot;commercial_record&quot;: &quot;http://127.0.0.1:8000/companies/2023-09-05-Company-2.png&quot;,
+        &quot;start_commercial_record&quot;: &quot;2023-02-01&quot;,
+        &quot;end_commercial_record&quot;: &quot;2023-09-01&quot;,
+        &quot;locations&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;Longitude&quot;: &quot;25.12&quot;,
+                &quot;Latitude&quot;: &quot;15.32&quot;,
+                &quot;Radius&quot;: &quot;21&quot;
+            }
+        ],
+        &quot;admin&quot;: null
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-update_commercial_record" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-update_commercial_record"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-update_commercial_record"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-update_commercial_record" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-update_commercial_record">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-update_commercial_record" data-method="POST"
+      data-path="api/update_commercial_record"
+      data-authed="1"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-update_commercial_record', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-update_commercial_record"
+                    onclick="tryItOut('POSTapi-update_commercial_record');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-update_commercial_record"
+                    onclick="cancelTryOut('POSTapi-update_commercial_record');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-update_commercial_record"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/update_commercial_record</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-update_commercial_record"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-update_commercial_record"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>company_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="company_id"                data-endpoint="POSTapi-update_commercial_record"
+               value="16"
+               data-component="body">
+    <br>
+<p>The ID of the company. Must exist in the companies table. Example: <code>16</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_commercial_record</code></b>&nbsp;&nbsp;
 <small>date</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="start_commercial_record"                data-endpoint="POSTapi-update_comapny"
+                              name="start_commercial_record"                data-endpoint="POSTapi-update_commercial_record"
                value="2023-08-27"
                data-component="body">
     <br>
-<p>The start date of the commercial record.Custom Example: <code>2023-08-27</code></p>
+<p>The start date of the commercial record. Custom Example: <code>2023-08-27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end_commercial_record</code></b>&nbsp;&nbsp;
 <small>date</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="end_commercial_record"                data-endpoint="POSTapi-update_comapny"
+                              name="end_commercial_record"                data-endpoint="POSTapi-update_commercial_record"
                value="2023-08-27"
                data-component="body">
     <br>
-<p>The end date of the commercial record.Custom Example: <code>2023-08-27</code></p>
+<p>The end date of the commercial record. Custom Example: <code>2023-08-27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commercial_record</code></b>&nbsp;&nbsp;
 <small>file</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="file" style="display: none"
-                              name="commercial_record"                data-endpoint="POSTapi-update_comapny"
+                              name="commercial_record"                data-endpoint="POSTapi-update_commercial_record"
                value=""
                data-component="body">
     <br>
-<p>The commercial record file. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8F3B.tmp</code></p>
+<p>The commercial record file. Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD4F5.tmp</code></p>
         </div>
         </form>
 
@@ -8409,7 +8747,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "type=2"\
     --form "car_number=1021"\
     --form "car_model=bmw."\
-    --form "user_id=19"\
+    --form "user_id=3"\
     --form "manufacturing_year=2010"\
     --form "Mechanic_card_number=200054"\
     --form "laptop_type=Asus."\
@@ -8419,9 +8757,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "mobile_color=blue."\
     --form "mobile_type=samsung."\
     --form "mobile_sim=56252"\
-    --form "car_image=@C:\Users\dell\AppData\Local\Temp\php8F06.tmp" \
-    --form "laptop_image=@C:\Users\dell\AppData\Local\Temp\php8F07.tmp" \
-    --form "mobile_image=@C:\Users\dell\AppData\Local\Temp\php8F08.tmp" </code></pre></div>
+    --form "car_image=@C:\Users\dell\AppData\Local\Temp\phpD492.tmp" \
+    --form "laptop_image=@C:\Users\dell\AppData\Local\Temp\phpD493.tmp" \
+    --form "mobile_image=@C:\Users\dell\AppData\Local\Temp\phpD4A3.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -8438,7 +8776,7 @@ const body = new FormData();
 body.append('type', '2');
 body.append('car_number', '1021');
 body.append('car_model', 'bmw.');
-body.append('user_id', '19');
+body.append('user_id', '3');
 body.append('manufacturing_year', '2010');
 body.append('Mechanic_card_number', '200054');
 body.append('laptop_type', 'Asus.');
@@ -8608,10 +8946,10 @@ Custom Example: <code>bmw.</code></p>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-craete_deposit"
-               value="19"
+               value="3"
                data-component="body">
     <br>
-<p>The ID of the user. Must exist in the users table. Example: <code>19</code></p>
+<p>The ID of the user. Must exist in the users table. Example: <code>3</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>manufacturing_year</code></b>&nbsp;&nbsp;
@@ -8646,7 +8984,7 @@ Custom Example: <code>200054</code></p>
                value=""
                data-component="body">
     <br>
-<p>The car image. This field is required if the deposit type is 1 (car). Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8F06.tmp</code></p>
+<p>The car image. This field is required if the deposit type is 1 (car). Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD492.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>laptop_type</code></b>&nbsp;&nbsp;
@@ -8693,7 +9031,7 @@ Custom Example: <code>red.</code></p>
                value=""
                data-component="body">
     <br>
-<p>The laptop image. This field is required if the deposit type is 2 (laptop). Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8F07.tmp</code></p>
+<p>The laptop image. This field is required if the deposit type is 2 (laptop). Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD493.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>serial_mobile_number</code></b>&nbsp;&nbsp;
@@ -8728,7 +9066,7 @@ Custom Example: <code>blue.</code></p>
                value=""
                data-component="body">
     <br>
-<p>The mobile image. This field is required if the deposit type is 3 (mobile). Must not be greater than 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8F08.tmp</code></p>
+<p>The mobile image. This field is required if the deposit type is 3 (mobile). Must not be greater than 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD4A3.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>mobile_type</code></b>&nbsp;&nbsp;
@@ -8775,14 +9113,14 @@ Custom Example: <code>56252</code></p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/approve_deposit/10" \
+    "http://localhost/api/approve_deposit/13" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/approve_deposit/10"
+    "http://localhost/api/approve_deposit/13"
 );
 
 const headers = {
@@ -8904,10 +9242,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-approve_deposit--id-"
-               value="10"
+               value="13"
                data-component="url">
     <br>
-<p>The ID of the deposit. Must exist in the deposits table. Example: <code>10</code></p>
+<p>The ID of the deposit. Must exist in the deposits table. Example: <code>13</code></p>
             </div>
                     </form>
 
@@ -8934,7 +9272,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"deposit_id\": 14,
+    \"deposit_id\": 6,
     \"reason_reject\": \"Without Any Reason.\"
 }"
 </code></pre></div>
@@ -8951,7 +9289,7 @@ const headers = {
 };
 
 let body = {
-    "deposit_id": 14,
+    "deposit_id": 6,
     "reason_reject": "Without Any Reason."
 };
 
@@ -9070,10 +9408,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="deposit_id"                data-endpoint="POSTapi-reject_deposit"
-               value="14"
+               value="6"
                data-component="body">
     <br>
-<p>Must Be Exists In deposits Table Example: <code>14</code></p>
+<p>Must Be Exists In deposits Table Example: <code>6</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>reason_reject</code></b>&nbsp;&nbsp;
@@ -9262,14 +9600,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/approve_clearance_request/6" \
+    "http://localhost/api/approve_clearance_request/14" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/approve_clearance_request/6"
+    "http://localhost/api/approve_clearance_request/14"
 );
 
 const headers = {
@@ -9391,10 +9729,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-approve_clearance_request--id-"
-               value="6"
+               value="14"
                data-component="url">
     <br>
-<p>The ID of the deposit. Must exist in the deposits table. Example: <code>6</code></p>
+<p>The ID of the deposit. Must exist in the deposits table. Example: <code>14</code></p>
             </div>
                     </form>
 
@@ -9421,8 +9759,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"deposit_id\": 19,
-    \"reason_clearance_reject\": \"possimus\",
+    \"deposit_id\": 3,
+    \"reason_clearance_reject\": \"et\",
     \"reason_reject\": \"Reject Clearance Request Without Any Reason.\"
 }"
 </code></pre></div>
@@ -9439,8 +9777,8 @@ const headers = {
 };
 
 let body = {
-    "deposit_id": 19,
-    "reason_clearance_reject": "possimus",
+    "deposit_id": 3,
+    "reason_clearance_reject": "et",
     "reason_reject": "Reject Clearance Request Without Any Reason."
 };
 
@@ -9557,10 +9895,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="POSTapi-reject_clearance_request"
-               value="8"
+               value="6"
                data-component="url">
     <br>
-<p>The ID of the deposit. Must exist in the deposits table. Example: <code>8</code></p>
+<p>The ID of the deposit. Must exist in the deposits table. Example: <code>6</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -9569,10 +9907,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="deposit_id"                data-endpoint="POSTapi-reject_clearance_request"
-               value="19"
+               value="3"
                data-component="body">
     <br>
-<p>Must Be Exists In deposits Table Example: <code>19</code></p>
+<p>Must Be Exists In deposits Table Example: <code>3</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>reason_clearance_reject</code></b>&nbsp;&nbsp;
@@ -9580,10 +9918,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="reason_clearance_reject"                data-endpoint="POSTapi-reject_clearance_request"
-               value="possimus"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>possimus</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>reason_reject</code></b>&nbsp;&nbsp;
@@ -10072,6 +10410,154 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="deposits-GETapi-my_approved_deposits">Show My Approved Deposits List</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>This endpoint is used to display the list of approved deposits for the authenticated employee. Only authenticated employees can access this API. It will show the approved deposits specific to the authenticated employee.</p>
+
+<span id="example-requests-GETapi-my_approved_deposits">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/my_approved_deposits" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/my_approved_deposits"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-my_approved_deposits">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;type&quot;: 3,
+            &quot;status&quot;: 1,
+            &quot;extra_status&quot;: null,
+            &quot;serial_mobile_number&quot;: &quot;01hg23&quot;,
+            &quot;mobile_color&quot;: &quot;red&quot;,
+            &quot;mobile_type&quot;: &quot;samsung201&quot;,
+            &quot;mobile_sim&quot;: &quot;5422ll&quot;,
+            &quot;mobile_image&quot;: &quot;http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-1144.jpg&quot;,
+            &quot;reason_reject&quot;: null,
+            &quot;reason_clearance_reject&quot;: null,
+            &quot;deposit_request_date&quot;: &quot;2023-09-10&quot;,
+            &quot;clearance_request_date&quot;: null
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;type&quot;: 2,
+            &quot;status&quot;: 1,
+            &quot;extra_status&quot;: null,
+            &quot;laptop_type&quot;: &quot;asus&quot;,
+            &quot;Serial_laptop_number&quot;: &quot;2010&quot;,
+            &quot;laptop_color&quot;: &quot;blue&quot;,
+            &quot;laptop_image&quot;: &quot;http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-119.jpeg&quot;,
+            &quot;reason_reject&quot;: null,
+            &quot;reason_clearance_reject&quot;: null,
+            &quot;deposit_request_date&quot;: &quot;2023-09-10&quot;,
+            &quot;clearance_request_date&quot;: null
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-my_approved_deposits" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-my_approved_deposits"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-my_approved_deposits"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-my_approved_deposits" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-my_approved_deposits">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-my_approved_deposits" data-method="GET"
+      data-path="api/my_approved_deposits"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-my_approved_deposits', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-my_approved_deposits"
+                    onclick="tryItOut('GETapi-my_approved_deposits');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-my_approved_deposits"
+                    onclick="cancelTryOut('GETapi-my_approved_deposits');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-my_approved_deposits"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/my_approved_deposits</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-my_approved_deposits"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-my_approved_deposits"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
                 <h1 id="holidays">Holidays</h1>
 
     
@@ -10095,7 +10581,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"days\": [
-        \"sit\"
+        \"molestiae\"
     ],
     \"day\": 5
 }"
@@ -10114,7 +10600,7 @@ const headers = {
 
 let body = {
     "days": [
-        "sit"
+        "molestiae"
     ],
     "day": 5
 };
@@ -10434,7 +10920,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"holiday_id\": 18,
+    \"holiday_id\": 14,
     \"holiday_name\": \"Eid Aladha\",
     \"start_date\": \"2023-08-27\",
     \"end_date\": \"2023-08-29\"
@@ -10453,7 +10939,7 @@ const headers = {
 };
 
 let body = {
-    "holiday_id": 18,
+    "holiday_id": 14,
     "holiday_name": "Eid Aladha",
     "start_date": "2023-08-27",
     "end_date": "2023-08-29"
@@ -10558,10 +11044,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="holiday_id"                data-endpoint="POSTapi-update_annual_holiday"
-               value="18"
+               value="14"
                data-component="body">
     <br>
-<p>Must Be Exists In Holidays Table Example: <code>18</code></p>
+<p>Must Be Exists In Holidays Table Example: <code>14</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>holiday_name</code></b>&nbsp;&nbsp;
@@ -10893,14 +11379,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/private-messages/18" \
+    --get "http://localhost/api/private-messages/20" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/private-messages/18"
+    "http://localhost/api/private-messages/20"
 );
 
 const headers = {
@@ -11029,10 +11515,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="GETapi-private-messages--user_id-"
-               value="18"
+               value="20"
                data-component="url">
     <br>
-<p>The user ID, must be in the Users table. Example: <code>18</code></p>
+<p>The user ID, must be in the Users table. Example: <code>20</code></p>
             </div>
                     </form>
 
@@ -11050,7 +11536,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/private-messages/2" \
+    "http://localhost/api/private-messages/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -11061,7 +11547,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/private-messages/2"
+    "http://localhost/api/private-messages/10"
 );
 
 const headers = {
@@ -11181,10 +11667,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-private-messages--user_id-"
-               value="2"
+               value="10"
                data-component="url">
     <br>
-<p>The user ID, must be in the Users table. Example: <code>2</code></p>
+<p>The user ID, must be in the Users table. Example: <code>10</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -11390,7 +11876,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --form "content=test post"\
-    --form "image=@C:\Users\dell\AppData\Local\Temp\php8E41.tmp" </code></pre></div>
+    --form "image=@C:\Users\dell\AppData\Local\Temp\phpD39B.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -11570,7 +12056,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The image file to be attached to the post. Must not exceed 2048 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\php8E41.tmp</code></p>
+<p>The image file to be attached to the post. Must not exceed 5120 kilobytes. Example: <code>C:\Users\dell\AppData\Local\Temp\phpD39B.tmp</code></p>
         </div>
         </form>
 
@@ -11626,6 +12112,7 @@ fetch(url, {
             &quot;likes_count&quot;: 1,
             &quot;shares_count&quot;: 0,
             &quot;created_at&quot;: &quot;2023-08-27&quot;,
+            &quot;isLiked&quot;: true,
             &quot;comments&quot;: [
                 {
                     &quot;content&quot;: &quot;New Comment&quot;,
@@ -11634,6 +12121,7 @@ fetch(url, {
                         &quot;name&quot;: &quot;Mouaz Alkhateeb&quot;,
                         &quot;image&quot;: &quot;http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg&quot;
                     },
+                    &quot;isLiked&quot;: false,
                     &quot;created_at&quot;: &quot;2023-08-27&quot;
                 }
             ],
@@ -11896,6 +12384,7 @@ fetch(url, {
             &quot;likes_count&quot;: 1,
             &quot;shares_count&quot;: 0,
             &quot;created_at&quot;: &quot;2023-08-27&quot;,
+            &quot;isLiked&quot;: false,
             &quot;comments&quot;: [
                 {
                     &quot;content&quot;: &quot;New Comment&quot;,
@@ -11904,6 +12393,7 @@ fetch(url, {
                         &quot;name&quot;: &quot;Mouaz Alkhateeb&quot;,
                         &quot;image&quot;: &quot;http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg&quot;
                     },
+                    &quot;isLiked&quot;: true,
                     &quot;created_at&quot;: &quot;2023-08-27&quot;
                 }
             ],
@@ -12133,7 +12623,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"content\": \"test comment\",
-    \"post_id\": 16
+    \"post_id\": 10
 }"
 </code></pre></div>
 
@@ -12150,7 +12640,7 @@ const headers = {
 
 let body = {
     "content": "test comment",
-    "post_id": 16
+    "post_id": 10
 };
 
 fetch(url, {
@@ -12270,10 +12760,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="post_id"                data-endpoint="POSTapi-add_comment"
-               value="16"
+               value="10"
                data-component="body">
     <br>
-<p>Must Be in posts Table. Example: <code>16</code></p>
+<p>Must Be in posts Table. Example: <code>10</code></p>
         </div>
         </form>
 
@@ -12295,7 +12785,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"post_id\": 9
+    \"post_id\": 14
 }"
 </code></pre></div>
 
@@ -12311,7 +12801,7 @@ const headers = {
 };
 
 let body = {
-    "post_id": 9
+    "post_id": 14
 };
 
 fetch(url, {
@@ -12416,10 +12906,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="post_id"                data-endpoint="POSTapi-add_like"
-               value="9"
+               value="14"
                data-component="body">
     <br>
-<p>Must Be in posts Table. Example: <code>9</code></p>
+<p>Must Be in posts Table. Example: <code>14</code></p>
         </div>
         </form>
 
@@ -12441,7 +12931,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"comment_id\": 16
+    \"comment_id\": 19
 }"
 </code></pre></div>
 
@@ -12457,7 +12947,7 @@ const headers = {
 };
 
 let body = {
-    "comment_id": 16
+    "comment_id": 19
 };
 
 fetch(url, {
@@ -12562,10 +13052,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="comment_id"                data-endpoint="POSTapi-add_like_comment"
-               value="16"
+               value="19"
                data-component="body">
     <br>
-<p>Must Be in comments Table. Example: <code>16</code></p>
+<p>Must Be in comments Table. Example: <code>19</code></p>
         </div>
         </form>
 
@@ -12587,7 +13077,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"post_id\": 2
+    \"post_id\": 18,
+    \"content\": \"arkuhhv\"
 }"
 </code></pre></div>
 
@@ -12603,7 +13094,8 @@ const headers = {
 };
 
 let body = {
-    "post_id": 2
+    "post_id": 18,
+    "content": "arkuhhv"
 };
 
 fetch(url, {
@@ -12635,6 +13127,7 @@ fetch(url, {
         &quot;likes_count&quot;: 1,
         &quot;shares_count&quot;: 1,
         &quot;created_at&quot;: &quot;2023-08-27&quot;,
+        &quot;isLiked&quot;: true,
         &quot;writer&quot;: {
             &quot;id&quot;: 3,
             &quot;name&quot;: &quot;mouaz alkhateeb&quot;,
@@ -12760,10 +13253,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="post_id"                data-endpoint="POSTapi-share_post"
-               value="2"
+               value="18"
                data-component="body">
     <br>
-<p>The ID of the post to share. Must be in the posts table. Example: <code>2</code></p>
+<p>The ID of the post to share. Must be in the posts table. Example: <code>18</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="content"                data-endpoint="POSTapi-share_post"
+               value="arkuhhv"
+               data-component="body">
+    <br>
+<p>Must not be greater than 500 characters. Example: <code>arkuhhv</code></p>
         </div>
         </form>
 
@@ -12781,14 +13285,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/post/11" \
+    "http://localhost/api/post/8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/post/11"
+    "http://localhost/api/post/8"
 );
 
 const headers = {
@@ -12888,10 +13392,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-post--id-"
-               value="11"
+               value="8"
                data-component="url">
     <br>
-<p>Must Be Exists In posts Table Example: <code>11</code></p>
+<p>Must Be Exists In posts Table Example: <code>8</code></p>
             </div>
                     </form>
 
@@ -12909,14 +13413,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/comment/10" \
+    "http://localhost/api/comment/8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/comment/10"
+    "http://localhost/api/comment/8"
 );
 
 const headers = {
@@ -13016,10 +13520,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-comment--id-"
-               value="10"
+               value="8"
                data-component="url">
     <br>
-<p>Must Be Exists In comments Table Example: <code>10</code></p>
+<p>Must Be Exists In comments Table Example: <code>8</code></p>
             </div>
                     </form>
 
@@ -13042,21 +13546,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/add_vacation_request" \
-    --header "Content-Type: application/json" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --data "{
-    \"reason\": \"death of a lover.\",
-    \"start_date\": \"2023-08-27\",
-    \"end_date\": \"2023-08-27\",
-    \"vacation_type\": 19,
-    \"start_time\": \"09:00:00.\",
-    \"end_time\": \"15:30:00.\",
-    \"payment_type\": 1,
-    \"person\": 5,
-    \"dead_person\": 5,
-    \"degree_of_kinship\": 2
-}"
-</code></pre></div>
+    --form "reason=death of a lover."\
+    --form "start_date=2023-08-27"\
+    --form "end_date=2023-08-27"\
+    --form "vacation_type=13"\
+    --form "start_time=09:00:00."\
+    --form "end_time=15:30:00."\
+    --form "payment_type=1"\
+    --form "person=5"\
+    --form "dead_person=5"\
+    --form "degree_of_kinship=2"\
+    --form "attachments=@C:\Users\dell\AppData\Local\Temp\phpD3EB.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -13065,27 +13567,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
-let body = {
-    "reason": "death of a lover.",
-    "start_date": "2023-08-27",
-    "end_date": "2023-08-27",
-    "vacation_type": 19,
-    "start_time": "09:00:00.",
-    "end_time": "15:30:00.",
-    "payment_type": 1,
-    "person": 5,
-    "dead_person": 5,
-    "degree_of_kinship": 2
-};
+const body = new FormData();
+body.append('reason', 'death of a lover.');
+body.append('start_date', '2023-08-27');
+body.append('end_date', '2023-08-27');
+body.append('vacation_type', '13');
+body.append('start_time', '09:00:00.');
+body.append('end_time', '15:30:00.');
+body.append('payment_type', '1');
+body.append('person', '5');
+body.append('dead_person', '5');
+body.append('degree_of_kinship', '2');
+body.append('attachments', document.querySelector('input[name="attachments"]').files[0]);
 
 fetch(url, {
     method: "POST",
     headers,
-    body: JSON.stringify(body),
+    body,
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -13189,7 +13691,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <form id="form-POSTapi-add_vacation_request" data-method="POST"
       data-path="api/add_vacation_request"
       data-authed="1"
-      data-hasfiles="0"
+      data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-add_vacation_request', this);">
@@ -13224,10 +13726,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="POSTapi-add_vacation_request"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -13280,7 +13782,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="vacation_type"                data-endpoint="POSTapi-add_vacation_request"
-               value="19"
+               value="13"
                data-component="body">
     <br>
 <p>. Must be one of the following values:</p>
@@ -13294,7 +13796,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <li><code>7</code>: EXAM.</li>
 <li><code>8</code>: PREGNANT_WOMAN.</li>
 <li><code>9</code>: METERNITY.</li>
-<li><code>10</code>: SICK_CHILD Example: <code>19</code></li>
+<li><code>10</code>: SICK_CHILD</li>
+<li><code>11</code>: MARRIED Example: <code>13</code></li>
 </ul>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
@@ -13403,6 +13906,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <li><code>2</code>: SECOND. Custom Example: <code>2</code></li>
 </ul>
         </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>attachments</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="attachments"                data-endpoint="POSTapi-add_vacation_request"
+               value=""
+               data-component="body">
+    <br>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD3EB.tmp</code></p>
+        </div>
         </form>
 
                     <h2 id="requests-POSTapi-add_justify_request">Add Justify Request</h2>
@@ -13427,7 +13941,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "start_date=2023-08-27"\
     --form "end_date=2023-08-27"\
     --form "justify_type=2"\
-    --form "attachments=@C:\Users\dell\AppData\Local\Temp\php8E81.tmp" </code></pre></div>
+    --form "attachments=@C:\Users\dell\AppData\Local\Temp\phpD3FD.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -13621,7 +14135,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8E81.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD3FD.tmp</code></p>
         </div>
         </form>
 
@@ -13643,7 +14157,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --form "reason=death of a lover."\
-    --form "attachments=@C:\Users\dell\AppData\Local\Temp\php8E93.tmp" </code></pre></div>
+    --form "attachments=@C:\Users\dell\AppData\Local\Temp\phpD40F.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -13783,7 +14297,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8E93.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD40F.tmp</code></p>
         </div>
         </form>
 
@@ -13805,7 +14319,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --form "reason=death of a lover."\
-    --form "attachments=@C:\Users\dell\AppData\Local\Temp\php8E95.tmp" </code></pre></div>
+    --form "attachments=@C:\Users\dell\AppData\Local\Temp\phpD411.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -13945,7 +14459,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must not be greater than 2048 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\php8E95.tmp</code></p>
+<p>Must not be greater than 5120 kilobytes Example: <code>C:\Users\dell\AppData\Local\Temp\phpD411.tmp</code></p>
         </div>
         </form>
 
@@ -13963,14 +14477,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/request/13" \
+    --get "http://localhost/api/request/14" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/request/13"
+    "http://localhost/api/request/14"
 );
 
 const headers = {
@@ -14123,10 +14637,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-request--id-"
-               value="13"
+               value="14"
                data-component="url">
     <br>
-<p>Must Be Exists In requests Table Example: <code>13</code></p>
+<p>Must Be Exists In requests Table Example: <code>14</code></p>
             </div>
                     </form>
 
@@ -14144,14 +14658,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/approve_request/3" \
+    "http://localhost/api/approve_request/18" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/approve_request/3"
+    "http://localhost/api/approve_request/18"
 );
 
 const headers = {
@@ -14304,10 +14818,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-approve_request--id-"
-               value="3"
+               value="18"
                data-component="url">
     <br>
-<p>Must Be Exists In requests Table Example: <code>3</code></p>
+<p>Must Be Exists In requests Table Example: <code>18</code></p>
             </div>
                     </form>
 
@@ -14329,7 +14843,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"request_id\": 12,
+    \"request_id\": 16,
     \"reject_reason\": \"Without Any Reason.\"
 }"
 </code></pre></div>
@@ -14346,7 +14860,7 @@ const headers = {
 };
 
 let body = {
-    "request_id": 12,
+    "request_id": 16,
     "reject_reason": "Without Any Reason."
 };
 
@@ -14499,10 +15013,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="request_id"                data-endpoint="POSTapi-reject_request"
-               value="12"
+               value="16"
                data-component="body">
     <br>
-<p>Must Be Exists In requests Table Example: <code>12</code></p>
+<p>Must Be Exists In requests Table Example: <code>16</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>reject_reason</code></b>&nbsp;&nbsp;
@@ -14531,7 +15045,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/my_requests?type=18" \
+    --get "http://localhost/api/my_requests?type=5" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -14542,7 +15056,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "type": "18",
+    "type": "5",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -14676,10 +15190,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="type"                data-endpoint="GETapi-my_requests"
-               value="18"
+               value="5"
                data-component="query">
     <br>
-<p>optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending). Example: <code>18</code></p>
+<p>optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending). Example: <code>5</code></p>
             </div>
                 </form>
 
@@ -15238,7 +15752,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/my_monthly_shift?duration=5" \
+    --get "http://localhost/api/my_monthly_shift?duration=12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -15249,7 +15763,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "duration": "5",
+    "duration": "12",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -15376,10 +15890,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="duration"                data-endpoint="GETapi-my_monthly_shift"
-               value="5"
+               value="12"
                data-component="query">
     <br>
-<p>optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences). Example: <code>5</code></p>
+<p>optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences). Example: <code>12</code></p>
             </div>
                 </form>
 
@@ -15615,7 +16129,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"shift_id\": 4,
+    \"shift_id\": 17,
     \"start_time\": \"09:00:00.\",
     \"end_time\": \"15:00:00.\",
     \"start_break_hour\": \"12:30:00.\",
@@ -15635,7 +16149,7 @@ const headers = {
 };
 
 let body = {
-    "shift_id": 4,
+    "shift_id": 17,
     "start_time": "09:00:00.",
     "end_time": "15:00:00.",
     "start_break_hour": "12:30:00.",
@@ -15743,10 +16257,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="shift_id"                data-endpoint="POSTapi-update_employee_shift"
-               value="4"
+               value="17"
                data-component="body">
     <br>
-<p>Must Be Exists In shifts Table Example: <code>4</code></p>
+<p>Must Be Exists In shifts Table Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>start_time</code></b>&nbsp;&nbsp;

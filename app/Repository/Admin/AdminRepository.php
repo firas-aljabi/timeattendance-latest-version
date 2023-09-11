@@ -183,6 +183,8 @@ class AdminRepository extends BaseRepositoryImplementation
         }
     }
 
+
+
     public function getHrsList()
     {
         $records = User::query()->where('type', UserTypes::HR)->where('company_id', auth()->user()->company_id);
@@ -203,6 +205,7 @@ class AdminRepository extends BaseRepositoryImplementation
                 $user->password = Hash::make($data['password']);
                 $user->departement = $data['departement'];
                 $user->skills = $data['skills'];
+                $user->position = $data['position'];
                 $user->gender = $data['gender'];
                 $user->status = EmployeeStatus::ABSENT;
                 $user->phone = $data['phone'];
@@ -345,6 +348,7 @@ class AdminRepository extends BaseRepositoryImplementation
                     foreach ($data['shifts'] as $shift) {
                         Shift::create([
                             'user_id' => $user->id,
+                            'company_id' => $user->company_id,
                             'start_time' => $shift['start_time'],
                             'end_time' => $shift['end_time'],
                             'start_break_hour' => $shift['start_break_hour'],

@@ -64,7 +64,7 @@ class CompanyRepository extends BaseRepositoryImplementation
         DB::beginTransaction();
         try {
 
-            if (auth()->user()->type == UserTypes::SUPER_ADMIN) {
+            if (auth()->user()->type == UserTypes::ADMIN && auth()->user()->company_id == $data['company_id']) {
 
                 $company = $this->getById($data['company_id']);
 
@@ -96,18 +96,30 @@ class CompanyRepository extends BaseRepositoryImplementation
     {
         DB::beginTransaction();
         try {
-            if (auth()->user()->type == UserTypes::ADMIN && auth()->user()->company_id == $data['company_id']) {
+            if (auth()->user()->type == UserTypes::SUPER_ADMIN) {
                 $company = $this->updateById($data['company_id'], $data);
-                if (Arr::has($data, 'commercial_record')) {
-                    $file = Arr::get($data, 'commercial_record');
-                    $file_name = $this->uploadCompanyAttachment($file);
-                    $company->commercial_record = $file_name;
+                $location = Location::where('company_id', $data['company_id']);
+                if (isset($data['longitude'])) {
+                    $location->update([
+                        'longitude' => $data['longitude']
+                    ]);
                 }
+                if (isset($data['latitude'])) {
+                    $location->update([
+                        'latitude' => $data['latitude']
+                    ]);
+                }
+                if (isset($data['radius'])) {
+                    $location->update([
+                        'radius' => $data['radius']
+                    ]);
+                }
+
                 DB::commit();
                 if ($company === null) {
                     return ['success' => false, 'message' => "Company was not Updated"];
                 }
-                return ['success' => true, 'data' => $company->load('admin')];
+                return ['success' => true, 'data' => $company->load('admin', 'locations')];
             } else {
                 return ['success' => false, 'message' => "Unauthorized"];
             }
@@ -118,7 +130,34 @@ class CompanyRepository extends BaseRepositoryImplementation
         }
     }
 
+    public function update_commercial_record($data)
+    {
+        DB::beginTransaction();
+        try {
 
+
+            if (auth()->user()->type == UserTypes::ADMIN && auth()->user()->company_id == $data['company_id']) {
+                $company = $this->updateById($data['company_id'], $data);
+                if (Arr::has($data, 'commercial_record')) {
+                    $file = Arr::get($data, 'commercial_record');
+                    $file_name = $this->uploadCompanyAttachment($file);
+                    $company->commercial_record = $file_name;
+                }
+
+                DB::commit();
+                if ($company === null) {
+                    return ['success' => false, 'message' => "Commercial Record was not Updated"];
+                }
+                return ['success' => true, 'data' => $company->load('admin', 'locations')];
+            } else {
+                return ['success' => false, 'message' => "Unauthorized"];
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+            Log::error($e->getMessage());
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
 
 
     public function model()

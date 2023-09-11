@@ -146,6 +146,12 @@ class DepositRepository extends BaseRepositoryImplementation
             return ['success' => false, 'message' => "Unauthorized"];
         }
     }
+    public function my_approved_deposits($filter)
+    {
+        $user = auth()->user();
+        $deposits = Deposit::where('user_id', $user->id)->where('status', DepositStatus::APPROVED)->get();
+        return ['success' => true, 'data' => $deposits];
+    }
 
     public function model()
     {

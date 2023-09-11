@@ -39,7 +39,7 @@ class PostController extends Controller
      * This endpoint is used to create a new post. Admin, HR, or Employee can access this API.
      *
      * @bodyParam content string required The content of the post. Example: test post
-     * @bodyParam image file The image file to be attached to the post. Must not exceed 2048 kilobytes.
+     * @bodyParam image file The image file to be attached to the post. Must not exceed 5120 kilobytes.
      *
      * @response 200 scenario="Create Post"{
      *   "data": {
@@ -634,12 +634,13 @@ class PostController extends Controller
     {
         $createdData =  $this->postService->share_post($request->validated());
 
-        if ($createdData == null) {
-            return response()->json(["message" => "Share Deleted..!"]);
-        } else {
-            $returnData = ShareResource::make($createdData);
-        }
 
+        $postData = $createdData['post'];
+        $shareData = $createdData['share'];
+
+
+        dd($shareData);
+        $returnData = PostResource::make($createdData);
 
         return ApiResponseHelper::sendResponse(
             new Result($returnData, "Done")

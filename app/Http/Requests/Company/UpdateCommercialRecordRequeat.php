@@ -4,7 +4,7 @@ namespace App\Http\Requests\Company;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCompanyLocationRequest extends FormRequest
+class UpdateCommercialRecordRequeat extends FormRequest
 {
 
     public function authorize()
@@ -16,9 +16,9 @@ class UpdateCompanyLocationRequest extends FormRequest
     {
         return [
             'company_id' => 'required|exists:companies,id',
-            'longitude' => 'required',
-            'latitude' => 'required',
-            'radius' => 'required',
+            'start_commercial_record' => 'nullable|date',
+            'end_commercial_record' => 'nullable|date',
+            'commercial_record' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:5120',
         ];
     }
 }

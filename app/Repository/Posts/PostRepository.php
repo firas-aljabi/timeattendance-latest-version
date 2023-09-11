@@ -180,30 +180,22 @@ class PostRepository extends BaseRepositoryImplementation
         DB::beginTransaction();
         $share = null;
         try {
-            $existingShare = Share::where('user_id', Auth::id())
-                ->where('post_id', $data['post_id'])
-                ->first();
 
-            if ($existingShare) {
-                $existingShare->delete();
+            $share = new Share();
+            $share->user_id = Auth::id();
+            $share->post_id = $data['post_id'];
+            $share->save();
 
-                PostService::decreasePostSharesCount($data['post_id']);
-            } else {
-                $share = new Share();
-                $share->user_id = Auth::id();
-                $share->post_id = $data['post_id'];
-                $share->save();
+            $post = new Post();
+            $post->user_id = Auth::id();
+            $post->content = $data['content'];
+            $post->save();
 
-                PostService::increasePostSharesCount($share->post_id);
-            }
+            PostService::increasePostSharesCount($share->post_id);
+
 
             DB::commit();
-
-            if ($share != null) {
-                return $share->load(['user', 'post.user']);
-            } else {
-                return $share;
-            }
+            return ['post' => $post, 'share' => $share];
         } catch (\Exception $e) {
             DB::rollback();
             throw $e;

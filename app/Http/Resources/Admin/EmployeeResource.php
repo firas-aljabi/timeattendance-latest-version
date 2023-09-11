@@ -65,6 +65,7 @@ class EmployeeResource extends JsonResource
             'employee_residence' => $this->employee_residence ? asset($this->employee_residence) : null,
             'entry_time' => intval($this->entry_time),
             'leave_time' => intval($this->leave_time),
+            'is_verifed' => $this->is_verifed == 1 ? true : false,
             'nationalitie' => $this->whenLoaded('nationalitie', function () {
                 return [
                     'name' => $this->nationalitie->Name,

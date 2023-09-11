@@ -51,7 +51,7 @@ class DepositController extends Controller
      * @bodyParam Mechanic_card_number number The mechanic card number of the car. This field is required if the deposit type is 1 (car).
      * Custom Example: 200054.
      *
-     * @bodyParam car_image file The car image. This field is required if the deposit type is 1 (car). Must not be greater than 2048 kilobytes.
+     * @bodyParam car_image file The car image. This field is required if the deposit type is 1 (car). Must not be greater than 5120 kilobytes.
      *
      * @bodyParam laptop_type string The laptop type. This field is required if the deposit type is 2 (laptop).
      * Custom Example: Asus.
@@ -62,7 +62,7 @@ class DepositController extends Controller
      * @bodyParam laptop_color string The color of the laptop. This field is required if the deposit type is 2 (laptop).
      * Custom Example: red.
      *
-     * @bodyParam laptop_image file The laptop image. This field is required if the deposit type is 2 (laptop). Must not be greater than 2048 kilobytes.
+     * @bodyParam laptop_image file The laptop image. This field is required if the deposit type is 2 (laptop). Must not be greater than 5120 kilobytes.
      *
      * @bodyParam serial_mobile_number number The serial number of the mobile. This field is required if the deposit type is 3 (mobile).
      * Custom Example: 01021.
@@ -76,7 +76,7 @@ class DepositController extends Controller
      * @bodyParam mobile_sim number The SIM number of the mobile. This field is required if the deposit type is 3 (mobile).
      * Custom Example: 56252.
      *
-     * @bodyParam mobile_image file The mobile image. This field is required if the deposit type is 3 (mobile). Must not be greater than 2048 kilobytes.
+     * @bodyParam mobile_image file The mobile image. This field is required if the deposit type is 3 (mobile). Must not be greater than 5120 kilobytes.
      *
      * @response 200 {
      *     "data": {
@@ -524,6 +524,58 @@ class DepositController extends Controller
             $returnData = DepositResource::collection($newData);
             return ApiResponseHelper::sendResponse(
                 new Result($returnData,  "DONE")
+            );
+        } else {
+            return ['message' => $data['message']];
+        }
+    }
+    /**
+     * Show My Approved Deposits List
+     *
+     * This endpoint is used to display the list of approved deposits for the authenticated employee. Only authenticated employees can access this API. It will show the approved deposits specific to the authenticated employee.
+     *
+     * @response 200 {
+     *     "data": [
+     *         {
+     *             "id": 1,
+     *             "type": 3,
+     *             "status": 1,
+     *             "extra_status": null,
+     *             "serial_mobile_number": "01hg23",
+     *             "mobile_color": "red",
+     *             "mobile_type": "samsung201",
+     *             "mobile_sim": "5422ll",
+     *             "mobile_image": "http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-1144.jpg",
+     *             "reason_reject": null,
+     *             "reason_clearance_reject": null,
+     *             "deposit_request_date": "2023-09-10",
+     *             "clearance_request_date": null
+     *         },
+     *         {
+     *             "id": 2,
+     *             "type": 2,
+     *             "status": 1,
+     *             "extra_status": null,
+     *             "laptop_type": "asus",
+     *             "Serial_laptop_number": "2010",
+     *             "laptop_color": "blue",
+     *             "laptop_image": "http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-119.jpeg",
+     *             "reason_reject": null,
+     *             "reason_clearance_reject": null,
+     *             "deposit_request_date": "2023-09-10",
+     *             "clearance_request_date": null
+     *         }
+     *     ]
+     * }
+     */
+    public function my_approved_deposits(GetDepositsList $request)
+    {
+        $data = $this->depositService->my_approved_deposits($request->generateFilter());
+        if ($data['success']) {
+            $newData = $data['data'];
+            $returnData = DepositResource::collection($newData);
+            return ApiResponseHelper::sendResponse(
+                new Result($returnData, "DONE")
             );
         } else {
             return ['message' => $data['message']];

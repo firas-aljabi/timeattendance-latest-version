@@ -27,7 +27,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'verify_code']]);
     }
     /**
      * Login
@@ -86,6 +86,7 @@ class AuthController extends Controller
      * "leave_time": null,
      * "number_of_working_hours": 0,
      * "code": null,
+     * "is_verifed": false,
      * "expired_at": null,
      * "created_at": "2023-08-26T07:01:20.000000Z",
      * "updated_at": "2023-08-26T07:01:20.000000Z",
@@ -128,6 +129,10 @@ class AuthController extends Controller
 
                 $user = Auth::guard('api')->user();
 
+                // if ($user->code != null && $user->is_verifed == false) {
+                //     return response()->json(['message' => 'Please Verfied Your Account'], 422);
+                // }
+
                 return response()->json(['token' => $token, 'user' => EmployeeResource::make($user)]);
             }
         } catch (\Exception $ex) {
@@ -150,10 +155,12 @@ class AuthController extends Controller
         $user = User::where('code', $request->code)->first();
         if ($request->code == $user->code) {
             $user->reset_code();
+            $user->update([
+                'is_verifed' => true
+            ]);
             return response()->json(['message' => 'Success Verfiy Code..!!']);
         }
     }
-
 
     /**
      * Logout

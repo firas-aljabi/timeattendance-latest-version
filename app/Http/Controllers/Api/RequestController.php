@@ -95,7 +95,7 @@ class RequestController extends Controller
      * - `1`: FIRST.
      * - `2`: SECOND. Custom Example: 2.
      *
-     * @bodyParam attachments  file Must not be greater than 2048 kilobytes
+     * @bodyParam attachments  file Must not be greater than 5120 kilobytes
      *
      * @response 200 scenario="Add Vacation Request"{
      *   "data": {
@@ -204,7 +204,7 @@ class RequestController extends Controller
      * - `2`: TRAVEL.
      * - `3`: OTHERS. Custom Example: 2.
      *
-     * @bodyParam attachments  file Must not be greater than 2048 kilobytes
+     * @bodyParam attachments  file Must not be greater than 5120 kilobytes
      *
      * @response 200 scenario="Add Justify Request"{
      *   "data": {
@@ -248,7 +248,7 @@ class RequestController extends Controller
      *
      * @bodyParam reason string required The reason for the retirement request Custom Example: death of a lover.
      *
-     * @bodyParam attachments  file Must not be greater than 2048 kilobytes
+     * @bodyParam attachments  file Must not be greater than 5120 kilobytes
      *
      * @response 200 scenario="Add Retirement Request"{
      *   "data": {
@@ -289,7 +289,7 @@ class RequestController extends Controller
      *
      * @bodyParam reason string required The reason for the resignation request Custom Example: death of a lover.
      *
-     * @bodyParam attachments  file Must not be greater than 2048 kilobytes
+     * @bodyParam attachments  file Must not be greater than 5120 kilobytes
      *
      * @response 200 scenario="Add Resignation Request"{
      *   "data": {

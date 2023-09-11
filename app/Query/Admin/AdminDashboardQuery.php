@@ -6,6 +6,7 @@ use App\Models\Attendance;
 use App\Models\Nationalitie;
 use App\Models\User;
 use App\Statuses\EmployeeStatus;
+use App\Statuses\GenderStatus;
 use App\Statuses\UserTypes;
 use Carbon\Carbon;
 
@@ -83,7 +84,7 @@ class AdminDashboardQuery
 
     private function getMaleEmployeesPercentage()
     {
-        $maleEmployeeCount = User::where('type', UserTypes::EMPLOYEE)->where('company_id', auth()->user()->company_id)->where('gender', 'male')->count();
+        $maleEmployeeCount = User::where('type', UserTypes::EMPLOYEE)->where('company_id', auth()->user()->company_id)->where('gender', GenderStatus::MALE)->count();
         $allEmployeesCount = User::where('type', UserTypes::EMPLOYEE)->where('company_id', auth()->user()->company_id)->count();
 
         if ($allEmployeesCount != 0) {
@@ -95,7 +96,7 @@ class AdminDashboardQuery
     }
     private function getFemaleEmployeesPercentage()
     {
-        $femaleEmployeeCount = User::where('type', UserTypes::EMPLOYEE)->where('company_id', auth()->user()->company_id)->where('gender', 'female')->count();
+        $femaleEmployeeCount = User::where('type', UserTypes::EMPLOYEE)->where('company_id', auth()->user()->company_id)->where('gender', GenderStatus::FEMALE)->count();
         $allEmployeesCount = User::where('type', UserTypes::EMPLOYEE)->where('company_id', auth()->user()->company_id)->count();
 
         if ($allEmployeesCount != 0) {
@@ -200,11 +201,11 @@ class AdminDashboardQuery
 
     public function getContractExpiration()
     {
-        $approachingExpirationEmployees = User::where('type', UserTypes::EMPLOYEE)
+        $approachingExpirationContractEmployees = User::where('type', UserTypes::EMPLOYEE)
             ->whereNotNull('end_job_contract')
             ->where('end_job_contract', '<=', Carbon::now()->addMonth())
             ->get(['id', 'name', 'start_job_contract', 'end_job_contract']);
-        return $approachingExpirationEmployees;
+        return $approachingExpirationContractEmployees;
     }
 
     public function getExpiredPassports()

@@ -15,7 +15,7 @@ class CreateResignationRequest extends FormRequest
     {
         return [
             'reason' => 'required',
-            "attachments" => "nullable|file|mimes:jpeg,png,jpg,pdf|max:2048",
+            "attachments" => "nullable|file|mimes:jpeg,png,jpg,pdf|max:5120",
         ];
     }
 }

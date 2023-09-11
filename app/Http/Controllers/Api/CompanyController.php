@@ -7,6 +7,7 @@ use App\ApiHelper\Result;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Company\AddCommercialRecordRequeat;
 use App\Http\Requests\Company\CreateComapnyRequest;
+use App\Http\Requests\Company\UpdateCommercialRecordRequeat;
 use App\Http\Requests\Company\UpdateCompanyLocationRequest;
 use App\Http\Requests\Company\UpdateCompanyRequest;
 use App\Http\Resources\Company\ComapnyResource;
@@ -79,7 +80,7 @@ class CompanyController extends Controller
      * @bodyParam company_id int required The ID of the company. Must exist in the companies table.
      * @bodyParam start_commercial_record date The start date of the commercial record. Custom Example: 2023-08-27
      * @bodyParam end_commercial_record date The end date of the commercial record. Custom  Example: 2023-08-27
-     * @bodyParam commercial_record file The commercial record file. Must not be greater than 2048 kilobytes.
+     * @bodyParam commercial_record file The commercial record file. Must not be greater than 5120 kilobytes.
      *
      * @response 200 {
      *     "data": {
@@ -226,9 +227,9 @@ class CompanyController extends Controller
      * @bodyParam company_id int required The ID of the company. Must exist in the companies table.
      * @bodyParam name string required The name of the company. Custom Example: Goma Company
      * @bodyParam email email required The email address of the company.Custom Example: goma@goma.com
-     * @bodyParam start_commercial_record date The start date of the commercial record.Custom Example: 2023-08-27
-     * @bodyParam end_commercial_record date The end date of the commercial record.Custom Example: 2023-08-27
-     * @bodyParam commercial_record file The commercial record file. Must not be greater than 2048 kilobytes.
+     * @bodyParam longitude number required The longitude of the company location. Custom  Example: 25.12
+     * @bodyParam latitude number required The latitude of the company location. Custom Example: 15.32
+     * @bodyParam radius number required The radius of the company location. Custom Example: 15
      *
      * @response 200 {
      *     "data": {
@@ -253,6 +254,51 @@ class CompanyController extends Controller
     public function update_comapny(UpdateCompanyRequest $request)
     {
         $createdData =  $this->companyService->update_company($request->validated());
+
+        if ($createdData['success']) {
+            $newData = $createdData['data'];
+            $returnData = ComapnyResource::make($newData);
+            return ApiResponseHelper::sendResponse(
+                new Result($returnData, "Done")
+            );
+        } else {
+            return ['message' => $createdData['message']];
+        }
+    }
+
+    /**
+     * Update Commercal Record in Company
+     *
+     * This endpoint is used to update commercal record and authenticate admin access to this API. It will update commercal comapny to the authenticated admin.
+     *
+     * @bodyParam company_id int required The ID of the company. Must exist in the companies table.
+     * @bodyParam start_commercial_record date The start date of the commercial record. Custom Example: 2023-08-27
+     * @bodyParam end_commercial_record date The end date of the commercial record. Custom  Example: 2023-08-27
+     * @bodyParam commercial_record file The commercial record file. Must not be greater than 5120 kilobytes.
+     *
+     * @response 200 {
+     *     "data": {
+     *         "id": 1,
+     *         "name": "Goma Company",
+     *         "email": "goma@goma.com",
+     *         "commercial_record": "http://127.0.0.1:8000/companies/2023-09-05-Company-2.png",
+     *         "start_commercial_record": "2023-02-01",
+     *         "end_commercial_record": "2023-09-01",
+     *         "locations": [
+     *             {
+     *                 "id": 1,
+     *                 "Longitude": "25.12",
+     *                 "Latitude": "15.32",
+     *                 "Radius": "21"
+     *             }
+     *         ],
+     *         "admin": null
+     *     }
+     * }
+     */
+    public function update_commercial_record(UpdateCommercialRecordRequeat $request)
+    {
+        $createdData =  $this->companyService->update_commercial_record($request->validated());
 
         if ($createdData['success']) {
             $newData = $createdData['data'];

@@ -24,14 +24,14 @@ class CreateDepositRequest extends FormRequest
             'user_id' => 'required|exists:users,id',
             'manufacturing_year' => 'required_if:type,1',
             'Mechanic_card_number' => 'required_if:type,1',
-            'car_image' => 'required_if:type,1|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'car_image' => 'required_if:type,1|file|mimes:jpeg,png,jpg,pdf|max:5120',
             'laptop_type' => 'required_if:type,2',
             'serial_laptop_number' => 'required_if:type,2',
             'laptop_color' => 'required_if:type,2',
-            'laptop_image' => 'required_if:type,2|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'laptop_image' => 'required_if:type,2|file|mimes:jpeg,png,jpg,pdf|max:5120',
             'serial_mobile_number' => 'required_if:type,3',
             'mobile_color' => 'required_if:type,3',
-            'mobile_image' => 'required_if:type,3|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'mobile_image' => 'required_if:type,3|file|mimes:jpeg,png,jpg,pdf|max:5120',
             'mobile_type' => 'required_if:type,3',
             'mobile_sim' => 'nullable'
 

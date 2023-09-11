@@ -25,7 +25,8 @@ class CreateSharePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'post_id' => 'required|exists:posts,id'
+            'post_id' => 'required|exists:posts,id',
+            'content' => 'nullable|string|max:500',
         ];
     }
 }

@@ -31,7 +31,7 @@ class CreateJustifyRequest extends FormRequest
             'start_date' => 'nullable|required_if:date,null|date',
             'end_date' => 'nullable|required_if:date,null|date',
             'justify_type' => ['required', Rule::in(JustifyTypes::$statuses)],
-            "attachments" => "nullable|file|mimes:jpeg,png,jpg,pdf|max:2048",
+            "attachments" => "nullable|file|mimes:jpeg,png,jpg,pdf|max:5120",
         ];
     }
 }

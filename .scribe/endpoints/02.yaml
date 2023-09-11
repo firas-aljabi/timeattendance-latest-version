@@ -26,7 +26,7 @@ endpoints:
         name: shift_id
         description: 'Must Be Exists In shifts Table'
         required: true
-        example: 4
+        example: 17
         type: integer
         enumValues: []
         custom: []
@@ -63,7 +63,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      shift_id: 4
+      shift_id: 17
       start_time: '09:00:00.'
       end_time: '15:00:00.'
       start_break_hour: '12:30:00.'

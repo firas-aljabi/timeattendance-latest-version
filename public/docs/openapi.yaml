@@ -280,7 +280,7 @@ paths:
                 nationalitie_id:
                   type: integer
                   description: 'Must be from 1 to 56'
-                  example: 1
+                  example: 17
                 birthday_date:
                   type: date
                   description: Custom
@@ -360,43 +360,43 @@ paths:
                 end_passport:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2023-09-07T13:30:41'
+                  example: '2023-09-11T11:30:13'
                 image:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
                 id_photo:
                   type: string
                   format: binary
-                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 5120 kilobytes'
                 biography:
                   type: string
                   format: binary
-                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 5120 kilobytes'
                 visa:
                   type: string
                   format: binary
-                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 5120 kilobytes'
                 municipal_card:
                   type: string
                   format: binary
-                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 5120 kilobytes'
                 employee_residence:
                   type: string
                   format: binary
-                  description: 'Must be a file. Must not be greater than 2048 kilobytes.'
+                  description: 'Must be a file. Must not be greater than 5120 kilobytes.'
                 health_insurance:
                   type: string
                   format: binary
-                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 5120 kilobytes'
                 passport:
                   type: string
                   format: binary
-                  description: 'Must be image or pdf and not be greater than 2048 kilobytes'
+                  description: 'Must be image or pdf and not be greater than 5120 kilobytes'
                 employee_sponsorship:
                   type: string
                   format: binary
-                  description: 'Must be a file. Must not be greater than 2048 kilobytes.'
+                  description: 'Must be a file. Must not be greater than 5120 kilobytes.'
                 basic_salary:
                   type: number
                   description: Custom
@@ -425,13 +425,13 @@ paths:
                   type: array
                   description: 'optional An array of shift for the user. Required when `number_of_shifts` is not null.'
                   example:
-                    - dignissimos
+                    - sit
                   items:
                     type: string
                 user_id:
                   type: integer
                   description: 'optional The ID of the user That Exists in users Table.'
-                  example: 6
+                  example: 17
                 start_time:
                   type: time
                   description: 'The start time of the shift in the format `HH:MM:SS` Custom'
@@ -512,7 +512,7 @@ paths:
                 nationalitie_id:
                   type: integer
                   description: 'Must be from 1 to 56'
-                  example: 15
+                  example: 1
                 birthday_date:
                   type: date
                   description: Custom
@@ -552,7 +552,7 @@ paths:
                 gender:
                   type: string
                   description: ''
-                  example: '1'
+                  example: '2'
                   enum:
                     - '1'
                     - '2'
@@ -595,7 +595,7 @@ paths:
                 entry_time:
                   type: string
                   description: ''
-                  example: '60'
+                  example: '30'
                   enum:
                     - '30'
                     - '60'
@@ -603,43 +603,43 @@ paths:
                 end_passport:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2023-09-07T13:30:41'
+                  example: '2023-09-11T11:30:13'
                 image:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
                 id_photo:
                   type: string
                   format: binary
-                  description: 'Must be pdf and not be greater than 2048 kilobytes'
+                  description: 'Must be pdf and not be greater than 5120 kilobytes'
                 biography:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
                 visa:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
                 municipal_card:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
                 employee_residence:
                   type: string
                   format: binary
-                  description: 'Must be a file. Must not be greater than 2048 kilobytes.'
+                  description: 'Must be a file. Must not be greater than 5120 kilobytes.'
                 health_insurance:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
                 passport:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than  kilobytes'
                 employee_sponsorship:
                   type: string
                   format: binary
-                  description: 'Must be a file. Must not be greater than 2048 kilobytes.'
+                  description: 'Must be a file. Must not be greater than 5120 kilobytes.'
                 basic_salary:
                   type: number
                   description: Custom
@@ -663,12 +663,12 @@ paths:
                 number_of_shifts:
                   type: integer
                   description: 'Must be at least 1.'
-                  example: 32
+                  example: 73
                 shifts:
                   type: array
                   description: 'This field is required when <code>number_of_shifts</code> is <code>!=</code> or <code>null</code>.'
                   example:
-                    - distinctio
+                    - dolorem
                   items:
                     type: string
                 status:
@@ -895,7 +895,7 @@ paths:
                 company_id:
                   type: string
                   description: ''
-                  example: inventore
+                  example: debitis
                 nationalitie_id:
                   type: integer
                   description: 'Must be from 1 to 56'
@@ -907,7 +907,7 @@ paths:
                 material_status:
                   type: string
                   description: ''
-                  example: '3'
+                  example: '2'
                   enum:
                     - '1'
                     - '2'
@@ -932,11 +932,11 @@ paths:
                 image:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
                 comapny_id:
                   type: integer
                   description: 'Must be exists in companies table.'
-                  example: 2
+                  example: 6
               required:
                 - name
                 - email
@@ -1206,7 +1206,7 @@ paths:
                 image:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
   /api/admin_update_employee:
     post:
       summary: 'Admin Update Employee in the Company'
@@ -1456,7 +1456,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'Must Be Exists In Users Table'
-                  example: 6
+                  example: 1
                 material_status:
                   type: integer
                   description: "optional The material status of the user. Must be one of the following values:\n- `1`: single status.\n- `2`: married status.\n- `3`: married status.\n- `4`: widower status. Custom"
@@ -1493,7 +1493,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In Users Table'
-        example: 17
+        example: 14
         required: true
         schema:
           type: integer
@@ -1540,15 +1540,15 @@ paths:
                 user_id:
                   type: integer
                   description: 'Must Be Exists In Users Table'
-                  example: 6
+                  example: 20
                 hourly_annual:
                   type: integer
                   description: 'The number of hourly hours Vacation per year.'
-                  example: 8
+                  example: 5
                 daily_annual:
                   type: integer
                   description: 'The number of daily hours Vacation per year.'
-                  example: 1
+                  example: 13
               required:
                 - user_id
   /api/reward_adversaries_salary:
@@ -1622,7 +1622,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'The user ID, which must exist in the Users table.'
-                  example: 17
+                  example: 8
                 rewards_type:
                   type: integer
                   description: "optional The type of rewards for the user. Must be one of the following values:\n- `1`: Number.\n- `2`: Rate. (Custom"
@@ -1828,7 +1828,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'Must Be Exists In Users Table'
-                  example: 4
+                  example: 14
                 new_salary:
                   type: number
                   description: 'Refers To New Salary Custom'
@@ -2283,6 +2283,52 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In Users Table'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/remining_vacation_hour_employee/{id}':
+    get:
+      summary: 'Get Remaining Vacation Hours for an Employee'
+      operationId: getRemainingVacationHoursForAnEmployee
+      description: 'This endpoint is used to retrieve the remaining vacation hours for an employee in a company. Only admins or HR personnel can access this API.'
+      parameters: []
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 7
+                    user_id: 11
+                    hourly_annual: 70
+                    daily_annual: 80
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 7
+                      user_id:
+                        type: integer
+                        example: 11
+                      hourly_annual:
+                        type: integer
+                        example: 70
+                      daily_annual:
+                        type: integer
+                        example: 80
+      tags:
+        - 'Admin Operations'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the employee in the Users table.'
         example: 19
         required: true
         schema:
@@ -2731,7 +2777,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'The ID of the user whose contract is being terminated. Must exist in the Users table.'
-                  example: 1
+                  example: 10
                 terminate_type:
                   type: integer
                   description: "The type of termination. Must be one of the following values:\n- `1`: Temporary\n- `2`: Permanent Custom"
@@ -2739,11 +2785,11 @@ paths:
                 contract_termination_period:
                   type: integer
                   description: "The period of the contract termination. Required if terminate_type is 1. Must be one of the following values:\n- `0`: Open term\n- `3`: Three months\n- `6`: Six months\n- `12`: One year"
-                  example: 13
+                  example: 11
                 contract_termination_reason:
                   type: string
                   description: 'The reason for the contract cancle. Required if terminate_type is 1.'
-                  example: mollitia
+                  example: et
               required:
                 - user_id
                 - terminate_type
@@ -2773,7 +2819,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'Must Be Exists In Users Table'
-                  example: 17
+                  example: 10
                 number_of_month:
                   type: integer
                   description: "Must Be Required if new_date equal null, Must be one of the following values:\n- `3`: Three Month.\n- `6`: Six Month.\n- `12`: One Year. Custom"
@@ -3176,7 +3222,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'The user ID, which must exist in the users table.'
-                  example: 13
+                  example: 9
                 entry_time:
                   type: numberMust
                   description: "be one of the following values:\n- 30\n- 60\n- 90 (Custom"
@@ -3207,12 +3253,12 @@ paths:
           in: query
           name: day
           description: 'Filter Leave Calendar by day. Use the value "1" to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value "2" to return records where the date is equal to tomorrow''s date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31'
-          example: 15
+          example: 6
           required: false
           schema:
             type: integer
             description: 'Filter Leave Calendar by day. Use the value "1" to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value "2" to return records where the date is equal to tomorrow''s date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31'
-            example: 15
+            example: 6
       responses:
         200:
           description: 'Leave Calendar'
@@ -3910,7 +3956,7 @@ paths:
                 company_id:
                   type: integer
                   description: 'The ID of the company. Must exist in the companies table.'
-                  example: 3
+                  example: 11
                 start_commercial_record:
                   type: date
                   description: 'The start date of the commercial record. Custom'
@@ -3922,7 +3968,7 @@ paths:
                 commercial_record:
                   type: string
                   format: binary
-                  description: 'The commercial record file. Must not be greater than 2048 kilobytes.'
+                  description: 'The commercial record file. Must not be greater than 5120 kilobytes.'
               required:
                 - company_id
   '/api/company/{id}':
@@ -3953,7 +3999,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In companies Table'
-        example: 2
+        example: 18
         required: true
         schema:
           type: integer
@@ -4038,14 +4084,14 @@ paths:
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
                 company_id:
                   type: integer
                   description: 'The ID of the company. Must exist in the companies table.'
-                  example: 11
+                  example: 15
                 name:
                   type: string
                   description: 'The name of the company. Custom'
@@ -4054,22 +4100,128 @@ paths:
                   type: email
                   description: 'The email address of the company.Custom'
                   example: goma@goma.com
-                start_commercial_record:
-                  type: date
-                  description: 'The start date of the commercial record.Custom'
-                  example: '2023-08-27'
-                end_commercial_record:
-                  type: date
-                  description: 'The end date of the commercial record.Custom'
-                  example: '2023-08-27'
-                commercial_record:
-                  type: string
-                  format: binary
-                  description: 'The commercial record file. Must not be greater than 2048 kilobytes.'
+                longitude:
+                  type: number
+                  description: 'The longitude of the company location. Custom'
+                  example: 25.12
+                latitude:
+                  type: number
+                  description: 'The latitude of the company location. Custom'
+                  example: 15.32
+                radius:
+                  type: number
+                  description: 'The radius of the company location. Custom'
+                  example: 15.0
               required:
                 - company_id
                 - name
                 - email
+                - longitude
+                - latitude
+                - radius
+  /api/update_commercial_record:
+    post:
+      summary: 'Update Commercal Record in Company'
+      operationId: updateCommercalRecordInCompany
+      description: 'This endpoint is used to update commercal record and authenticate admin access to this API. It will update commercal comapny to the authenticated admin.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: 'Goma Company'
+                    email: goma@goma.com
+                    commercial_record: 'http://127.0.0.1:8000/companies/2023-09-05-Company-2.png'
+                    start_commercial_record: '2023-02-01'
+                    end_commercial_record: '2023-09-01'
+                    locations:
+                      -
+                        id: 1
+                        Longitude: '25.12'
+                        Latitude: '15.32'
+                        Radius: '21'
+                    admin: null
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Goma Company'
+                      email:
+                        type: string
+                        example: goma@goma.com
+                      commercial_record:
+                        type: string
+                        example: 'http://127.0.0.1:8000/companies/2023-09-05-Company-2.png'
+                      start_commercial_record:
+                        type: string
+                        example: '2023-02-01'
+                      end_commercial_record:
+                        type: string
+                        example: '2023-09-01'
+                      locations:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            Longitude: '25.12'
+                            Latitude: '15.32'
+                            Radius: '21'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            Longitude:
+                              type: string
+                              example: '25.12'
+                            Latitude:
+                              type: string
+                              example: '15.32'
+                            Radius:
+                              type: string
+                              example: '21'
+                      admin:
+                        type: string
+                        example: null
+      tags:
+        - Companies
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  description: 'The ID of the company. Must exist in the companies table.'
+                  example: 16
+                start_commercial_record:
+                  type: date
+                  description: 'The start date of the commercial record. Custom'
+                  example: '2023-08-27'
+                end_commercial_record:
+                  type: date
+                  description: 'The end date of the commercial record. Custom'
+                  example: '2023-08-27'
+                commercial_record:
+                  type: string
+                  format: binary
+                  description: 'The commercial record file. Must not be greater than 5120 kilobytes.'
+              required:
+                - company_id
   /api/show_percenatge_company:
     get:
       summary: 'Show Company Percentage'
@@ -4158,7 +4310,7 @@ paths:
                 user_id:
                   type: integer
                   description: 'The ID of the user. Must exist in the users table.'
-                  example: 19
+                  example: 3
                 manufacturing_year:
                   type: number
                   description: "The manufacturing year of the car. This field is required if the deposit type is 1 (car).\nCustom"
@@ -4170,7 +4322,7 @@ paths:
                 car_image:
                   type: string
                   format: binary
-                  description: 'The car image. This field is required if the deposit type is 1 (car). Must not be greater than 2048 kilobytes.'
+                  description: 'The car image. This field is required if the deposit type is 1 (car). Must not be greater than 5120 kilobytes.'
                 laptop_type:
                   type: string
                   description: "The laptop type. This field is required if the deposit type is 2 (laptop).\nCustom"
@@ -4186,7 +4338,7 @@ paths:
                 laptop_image:
                   type: string
                   format: binary
-                  description: 'The laptop image. This field is required if the deposit type is 2 (laptop). Must not be greater than 2048 kilobytes.'
+                  description: 'The laptop image. This field is required if the deposit type is 2 (laptop). Must not be greater than 5120 kilobytes.'
                 serial_mobile_number:
                   type: number
                   description: "The serial number of the mobile. This field is required if the deposit type is 3 (mobile).\nCustom"
@@ -4198,7 +4350,7 @@ paths:
                 mobile_image:
                   type: string
                   format: binary
-                  description: 'The mobile image. This field is required if the deposit type is 3 (mobile). Must not be greater than 2048 kilobytes.'
+                  description: 'The mobile image. This field is required if the deposit type is 3 (mobile). Must not be greater than 5120 kilobytes.'
                 mobile_type:
                   type: string
                   description: "The type of the mobile. This field is required if the deposit type is 3 (mobile).\nCustom"
@@ -4308,7 +4460,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
-        example: 10
+        example: 13
         required: true
         schema:
           type: integer
@@ -4415,7 +4567,7 @@ paths:
                 deposit_id:
                   type: integer
                   description: 'Must Be Exists In deposits Table'
-                  example: 14
+                  example: 6
                 reason_reject:
                   type: string
                   description: 'The reject reason for the deposit Custom'
@@ -4623,7 +4775,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
-        example: 6
+        example: 14
         required: true
         schema:
           type: integer
@@ -4722,11 +4874,11 @@ paths:
                 deposit_id:
                   type: integer
                   description: 'Must Be Exists In deposits Table'
-                  example: 19
+                  example: 3
                 reason_clearance_reject:
                   type: string
                   description: ''
-                  example: possimus
+                  example: et
                 reason_reject:
                   type: string
                   description: 'The reject reason for the deposit Custom'
@@ -4740,7 +4892,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the deposit. Must exist in the deposits table.'
-        example: 8
+        example: 6
         required: true
         schema:
           type: integer
@@ -5078,6 +5230,123 @@ paths:
                               example: null
       tags:
         - Deposits
+  /api/my_approved_deposits:
+    get:
+      summary: 'Show My Approved Deposits List'
+      operationId: showMyApprovedDepositsList
+      description: 'This endpoint is used to display the list of approved deposits for the authenticated employee. Only authenticated employees can access this API. It will show the approved deposits specific to the authenticated employee.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      type: 3
+                      status: 1
+                      extra_status: null
+                      serial_mobile_number: 01hg23
+                      mobile_color: red
+                      mobile_type: samsung201
+                      mobile_sim: 5422ll
+                      mobile_image: 'http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-1144.jpg'
+                      reason_reject: null
+                      reason_clearance_reject: null
+                      deposit_request_date: '2023-09-10'
+                      clearance_request_date: null
+                    -
+                      id: 2
+                      type: 2
+                      status: 1
+                      extra_status: null
+                      laptop_type: asus
+                      Serial_laptop_number: '2010'
+                      laptop_color: blue
+                      laptop_image: 'http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-119.jpeg'
+                      reason_reject: null
+                      reason_clearance_reject: null
+                      deposit_request_date: '2023-09-10'
+                      clearance_request_date: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        type: 3
+                        status: 1
+                        extra_status: null
+                        serial_mobile_number: 01hg23
+                        mobile_color: red
+                        mobile_type: samsung201
+                        mobile_sim: 5422ll
+                        mobile_image: 'http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-1144.jpg'
+                        reason_reject: null
+                        reason_clearance_reject: null
+                        deposit_request_date: '2023-09-10'
+                        clearance_request_date: null
+                      -
+                        id: 2
+                        type: 2
+                        status: 1
+                        extra_status: null
+                        laptop_type: asus
+                        Serial_laptop_number: '2010'
+                        laptop_color: blue
+                        laptop_image: 'http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-119.jpeg'
+                        reason_reject: null
+                        reason_clearance_reject: null
+                        deposit_request_date: '2023-09-10'
+                        clearance_request_date: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        type:
+                          type: integer
+                          example: 3
+                        status:
+                          type: integer
+                          example: 1
+                        extra_status:
+                          type: string
+                          example: null
+                        serial_mobile_number:
+                          type: string
+                          example: 01hg23
+                        mobile_color:
+                          type: string
+                          example: red
+                        mobile_type:
+                          type: string
+                          example: samsung201
+                        mobile_sim:
+                          type: string
+                          example: 5422ll
+                        mobile_image:
+                          type: string
+                          example: 'http://127.0.0.1:8000/employees_deposits/2023-09-10-EmployeeDeposit-1144.jpg'
+                        reason_reject:
+                          type: string
+                          example: null
+                        reason_clearance_reject:
+                          type: string
+                          example: null
+                        deposit_request_date:
+                          type: string
+                          example: '2023-09-10'
+                        clearance_request_date:
+                          type: string
+                          example: null
+      tags:
+        - Deposits
   /api/create_weekly_holiday:
     post:
       summary: 'Create Weekly Holiday'
@@ -5122,7 +5391,7 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - sit
+                    - molestiae
                   items:
                     type: string
                 day:
@@ -5193,7 +5462,7 @@ paths:
                 holiday_id:
                   type: integer
                   description: 'Must Be Exists In Holidays Table'
-                  example: 18
+                  example: 14
                 holiday_name:
                   type: string
                   description: Custom
@@ -5529,7 +5798,7 @@ paths:
         in: path
         name: user_id
         description: 'The user ID, must be in the Users table.'
-        example: 18
+        example: 20
         required: true
         schema:
           type: integer
@@ -5698,7 +5967,7 @@ paths:
                 image:
                   type: string
                   format: binary
-                  description: 'The image file to be attached to the post. Must not exceed 2048 kilobytes.'
+                  description: 'The image file to be attached to the post. Must not exceed 5120 kilobytes.'
               required:
                 - content
   /api/get_posts_list:
@@ -5714,7 +5983,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"content\": \"test data\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n\n          {\n            \"id\": 2,\n            \"content\": \"new post\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n     ],\n   }"
+                example: "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"content\": \"test data\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"isLiked\": true,\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"isLiked\": false,\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n\n          {\n            \"id\": 2,\n            \"content\": \"new post\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n     ],\n   }"
       tags:
         - Posts
   /api/get_my_posts:
@@ -5730,7 +5999,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"content\": \"test data\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n\n          {\n            \"id\": 2,\n            \"content\": \"new post\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n     ],\n   }"
+                example: "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"content\": \"test data\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"isLiked\": false,\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"isLiked\": true,\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n\n          {\n            \"id\": 2,\n            \"content\": \"new post\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n     ],\n   }"
       tags:
         - Posts
   /api/add_comment:
@@ -5763,7 +6032,7 @@ paths:
                 post_id:
                   type: integer
                   description: 'Must Be in posts Table.'
-                  example: 16
+                  example: 10
               required:
                 - content
                 - post_id
@@ -5793,7 +6062,7 @@ paths:
                 post_id:
                   type: integer
                   description: 'Must Be in posts Table.'
-                  example: 9
+                  example: 14
               required:
                 - post_id
   /api/add_like_comment:
@@ -5822,7 +6091,7 @@ paths:
                 comment_id:
                   type: integer
                   description: 'Must Be in comments Table.'
-                  example: 16
+                  example: 19
               required:
                 - comment_id
   /api/share_post:
@@ -5838,7 +6107,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n  \"data\": {\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees/2023-08-27-Employee-8.jpg\"\n      },\n    \"post\": {\n        \"id\": 1,\n        \"content\": \"test data\",\n        \"image\": null,\n        \"comments_count\": 4,\n        \"likes_count\": 1,\n        \"shares_count\": 1,\n        \"created_at\": \"2023-08-27\",\n        \"writer\": {\n            \"id\": 3,\n            \"name\": \"mouaz alkhateeb\",\n            \"email\": \"mouaz@gmail.com\",\n            \"work_email\": \"mouazalkhateeb@gmail.com\",\n            \"status\": 1,\n            \"type\": 4,\n            \"gender\": 1,\n            \"mobile\": \"0969040322\",\n            \"phone\": \"0969040322\",\n            \"departement\": \"it\",\n            \"address\": \"Damascus\",\n            \"position\": null,\n            \"skills\": \"no skills\",\n            \"serial_number\": \"000007\",\n            \"birthday_date\": \"2022-11-26\",\n            \"marital_status\": null,\n            \"guarantor\": \"admin\",\n            \"branch\": \"syria branch\",\n            \"start_job_contract\": \"2023-08-01\",\n            \"end_job_contract\": \"2025-05-01\",\n            \"end_visa\": \"2023-09-11\",\n            \"end_passport\": \"2023-09-11\",\n            \"end_employee_sponsorship\": null,\n            \"end_municipal_card\": \"2023-09-10\",\n            \"end_health_insurance\": \"2023-09-14\",\n            \"end_employee_residence\": \"2023-09-20\",\n            \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n            \"id_photo\": null,\n            \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n            \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n            \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n            \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n            \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n            \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n            \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n            \"permission_to_entry\": 1,\n            \"entry_time\": 30,\n            \"permission_to_leave\": 1,\n            \"leave_time\": 60,\n            \"percentage\": \"0\",\n            \"basic_salary\": 200000,\n            \"number_of_working_hours\": 0,\n          }\n        },\n            \"created_at\": \"2023-08-28\"\n    }"
+                example: "{\n  \"data\": {\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees/2023-08-27-Employee-8.jpg\"\n      },\n    \"post\": {\n        \"id\": 1,\n        \"content\": \"test data\",\n        \"image\": null,\n        \"comments_count\": 4,\n        \"likes_count\": 1,\n        \"shares_count\": 1,\n        \"created_at\": \"2023-08-27\",\n        \"isLiked\": true,\n        \"writer\": {\n            \"id\": 3,\n            \"name\": \"mouaz alkhateeb\",\n            \"email\": \"mouaz@gmail.com\",\n            \"work_email\": \"mouazalkhateeb@gmail.com\",\n            \"status\": 1,\n            \"type\": 4,\n            \"gender\": 1,\n            \"mobile\": \"0969040322\",\n            \"phone\": \"0969040322\",\n            \"departement\": \"it\",\n            \"address\": \"Damascus\",\n            \"position\": null,\n            \"skills\": \"no skills\",\n            \"serial_number\": \"000007\",\n            \"birthday_date\": \"2022-11-26\",\n            \"marital_status\": null,\n            \"guarantor\": \"admin\",\n            \"branch\": \"syria branch\",\n            \"start_job_contract\": \"2023-08-01\",\n            \"end_job_contract\": \"2025-05-01\",\n            \"end_visa\": \"2023-09-11\",\n            \"end_passport\": \"2023-09-11\",\n            \"end_employee_sponsorship\": null,\n            \"end_municipal_card\": \"2023-09-10\",\n            \"end_health_insurance\": \"2023-09-14\",\n            \"end_employee_residence\": \"2023-09-20\",\n            \"image\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-8.jpg\",\n            \"id_photo\": null,\n            \"biography\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-test.pdf\",\n            \"employee_sponsorship\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-55.jpg\",\n            \"visa\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-7.jpg\",\n            \"passport\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-6.jpeg\",\n            \"municipal_card\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpeg\",\n            \"health_insurance\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-9.jpg\",\n            \"employee_residence\": \"http://127.0.0.1:8000/employees/2023-08-27-Employee-77.jpg\",\n            \"permission_to_entry\": 1,\n            \"entry_time\": 30,\n            \"permission_to_leave\": 1,\n            \"leave_time\": 60,\n            \"percentage\": \"0\",\n            \"basic_salary\": 200000,\n            \"number_of_working_hours\": 0,\n          }\n        },\n            \"created_at\": \"2023-08-28\"\n    }"
       tags:
         - Posts
       requestBody:
@@ -5851,7 +6120,11 @@ paths:
                 post_id:
                   type: integer
                   description: 'The ID of the post to share. Must be in the posts table.'
-                  example: 2
+                  example: 18
+                content:
+                  type: string
+                  description: 'Must not be greater than 500 characters.'
+                  example: arkuhhv
               required:
                 - post_id
   '/api/post/{id}':
@@ -5876,7 +6149,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In posts Table'
-        example: 11
+        example: 8
         required: true
         schema:
           type: integer
@@ -5902,7 +6175,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In comments Table'
-        example: 10
+        example: 8
         required: true
         schema:
           type: integer
@@ -5925,7 +6198,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
@@ -5943,8 +6216,8 @@ paths:
                   example: '2023-08-27'
                 vacation_type:
                   type: integer
-                  description: ". Must be one of the following values:\n- `1`: HOURLY.\n- `2`: DAILY.\n- `3`: DEATH.\n- `4`: SATISFYING.\n- `5`: PILGRIMAME.\n- `6`: NEW_BABY.\n- `7`: EXAM.\n- `8`: PREGNANT_WOMAN.\n- `9`: METERNITY.\n- `10`: SICK_CHILD"
-                  example: 19
+                  description: ". Must be one of the following values:\n- `1`: HOURLY.\n- `2`: DAILY.\n- `3`: DEATH.\n- `4`: SATISFYING.\n- `5`: PILGRIMAME.\n- `6`: NEW_BABY.\n- `7`: EXAM.\n- `8`: PREGNANT_WOMAN.\n- `9`: METERNITY.\n- `10`: SICK_CHILD\n- `11`: MARRIED"
+                  example: 13
                 start_time:
                   type: time
                   description: 'required_if vacation type equal 1 The start time of the vacation request in the format `HH:MM:SS` Custom'
@@ -5969,6 +6242,10 @@ paths:
                   type: integer
                   description: "required_if vacation_type equal 3 (death). Must be one of the following values:\n- `1`: FIRST.\n- `2`: SECOND. Custom"
                   example: 2
+                attachments:
+                  type: string
+                  format: binary
+                  description: 'Must not be greater than 5120 kilobytes'
               required:
                 - reason
                 - start_date
@@ -6080,7 +6357,7 @@ paths:
                 attachments:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
               required:
                 - reason
                 - justify_type
@@ -6114,7 +6391,7 @@ paths:
                 attachments:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
               required:
                 - reason
   /api/add_resignation_request:
@@ -6147,7 +6424,7 @@ paths:
                 attachments:
                   type: string
                   format: binary
-                  description: 'Must not be greater than 2048 kilobytes'
+                  description: 'Must not be greater than 5120 kilobytes'
               required:
                 - reason
   '/api/request/{id}':
@@ -6171,7 +6448,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In requests Table'
-        example: 13
+        example: 14
         required: true
         schema:
           type: integer
@@ -6196,7 +6473,7 @@ paths:
         in: path
         name: id
         description: 'Must Be Exists In requests Table'
-        example: 3
+        example: 18
         required: true
         schema:
           type: integer
@@ -6226,7 +6503,7 @@ paths:
                 request_id:
                   type: integer
                   description: 'Must Be Exists In requests Table'
-                  example: 12
+                  example: 16
                 reject_reason:
                   type: string
                   description: 'The reject reason for the request Custom'
@@ -6244,12 +6521,12 @@ paths:
           in: query
           name: type
           description: 'optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending).'
-          example: 18
+          example: 5
           required: false
           schema:
             type: integer
             description: 'optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending).'
-            example: 18
+            example: 5
       responses:
         200:
           description: ''
@@ -6577,12 +6854,12 @@ paths:
           in: query
           name: duration
           description: 'optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences).'
-          example: 5
+          example: 12
           required: false
           schema:
             type: integer
             description: 'optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences).'
-            example: 5
+            example: 12
       responses:
         200:
           description: ''
@@ -6932,7 +7209,7 @@ paths:
                 shift_id:
                   type: integer
                   description: 'Must Be Exists In shifts Table'
-                  example: 4
+                  example: 17
                 start_time:
                   type: time
                   description: 'The start time of the shift in the format `HH:MM:SS` Custom'

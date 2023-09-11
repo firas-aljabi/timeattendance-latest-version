@@ -27,7 +27,7 @@ class AddCommercialRecordRequeat extends FormRequest
             'company_id' => 'required|exists:companies,id',
             'start_commercial_record' => 'required|date',
             'end_commercial_record' => 'required|date',
-            'commercial_record' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'commercial_record' => 'nullable|file|mimes:jpeg,png,jpg,pdf|max:5120',
         ];
     }
 }

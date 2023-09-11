@@ -27,7 +27,7 @@ class UpdateEmployeeRequest extends FormRequest
             "email" => "sometimes|email|max:255|regex:/^[a-zA-Z0-9._%+-]{1,16}[^*]{0,}@[^*]+$/",
             'mobile' => 'sometimes|unique:users,mobile',
             'address' => 'sometimes|string',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg|max:5120',
         ];
     }
 }

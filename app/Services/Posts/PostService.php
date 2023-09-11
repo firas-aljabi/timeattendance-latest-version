@@ -7,6 +7,8 @@ use App\Interfaces\Posts\PostServiceInterface;
 use App\Models\Comment;
 use App\Models\Like;
 use App\Models\Post;
+use App\Models\Share;
+use App\Models\Shift;
 use App\Repository\Posts\PostRepository;
 use App\Statuses\UserTypes;
 use Illuminate\Support\Facades\Auth;
@@ -148,5 +150,14 @@ class PostService implements PostServiceInterface
         } else {
             return false;
         }
+    }
+    public static function getOrginalPost($post_id)
+    {
+        // $post = Post::where('id', $post_id)->first();
+        // dd($post);
+
+
+
+        return true;
     }
 }

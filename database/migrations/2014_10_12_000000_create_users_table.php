@@ -65,6 +65,8 @@ return new class extends Migration
             $table->tinyInteger('leave_time')->nullable();
             $table->string('code')->nullable();
             $table->dateTime('expired_at')->nullable();
+            $table->boolean('is_verifed')->default(false)->nullable();
+            $table->text('device_key')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

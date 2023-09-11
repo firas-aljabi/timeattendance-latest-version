@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "244eeaec-2224-432e-bfb4-540a80a007cb",
+        "_postman_id": "a930057c-691a-4623-9d61-a8c1a94ae68e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -68,7 +68,7 @@
                                 },
                                 {
                                     "key": "nationalitie_id",
-                                    "value": 1,
+                                    "value": 17,
                                     "type": "text",
                                     "description": "Must be from 1 to 56"
                                 },
@@ -188,7 +188,7 @@
                                 },
                                 {
                                     "key": "end_passport",
-                                    "value": "2023-09-07T13:30:41",
+                                    "value": "2023-09-11T11:30:13",
                                     "type": "text",
                                     "description": "Must be a valid date."
                                 },
@@ -230,13 +230,13 @@
                                 },
                                 {
                                     "key": "shifts[0]",
-                                    "value": "dignissimos",
+                                    "value": "sit",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "user_id",
-                                    "value": 6,
+                                    "value": 17,
                                     "type": "text",
                                     "description": "optional The ID of the user That Exists in users Table."
                                 },
@@ -371,7 +371,7 @@
                                 },
                                 {
                                     "key": "nationalitie_id",
-                                    "value": 15,
+                                    "value": 1,
                                     "type": "text",
                                     "description": "Must be from 1 to 56"
                                 },
@@ -431,7 +431,7 @@
                                 },
                                 {
                                     "key": "gender",
-                                    "value": "1",
+                                    "value": "2",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -485,13 +485,13 @@
                                 },
                                 {
                                     "key": "entry_time",
-                                    "value": "60",
+                                    "value": "30",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "end_passport",
-                                    "value": "2023-09-07T13:30:41",
+                                    "value": "2023-09-11T11:30:13",
                                     "type": "text",
                                     "description": "Must be a valid date."
                                 },
@@ -503,13 +503,13 @@
                                 },
                                 {
                                     "key": "number_of_shifts",
-                                    "value": 32,
+                                    "value": 73,
                                     "type": "text",
                                     "description": "Must be at least 1."
                                 },
                                 {
                                     "key": "shifts[0]",
-                                    "value": "distinctio",
+                                    "value": "dolorem",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -626,7 +626,7 @@
                                 },
                                 {
                                     "key": "company_id",
-                                    "value": "inventore",
+                                    "value": "debitis",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -644,7 +644,7 @@
                                 },
                                 {
                                     "key": "material_status",
-                                    "value": "3",
+                                    "value": "2",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -674,7 +674,7 @@
                                 },
                                 {
                                     "key": "comapny_id",
-                                    "value": 2,
+                                    "value": 6,
                                     "type": "text",
                                     "description": "Must be exists in companies table."
                                 },
@@ -771,7 +771,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":6,\"material_status\":1,\"housing_allowance\":100000,\"transportation_allowance\":80000}"
+                            "raw": "{\"user_id\":1,\"material_status\":1,\"housing_allowance\":100000,\"transportation_allowance\":80000}"
                         },
                         "description": "This endpoint is used to Update Employee Data in the Company and Just Admin Or Hr Can Access To This Api."
                     },
@@ -796,7 +796,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "14",
                                     "description": "Must Be Exists In Users Table"
                                 }
                             ]
@@ -846,7 +846,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":6,\"hourly_annual\":8,\"daily_annual\":1}"
+                            "raw": "{\"user_id\":20,\"hourly_annual\":5,\"daily_annual\":13}"
                         },
                         "description": "This endpoint is used to Update Vacation Hours For Employee in the Company and Admin Or Hr Can Access To This Api."
                     },
@@ -881,7 +881,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":17,\"rewards_type\":1,\"adversaries_type\":1,\"rewards\":5,\"adversaries\":3}"
+                            "raw": "{\"user_id\":8,\"rewards_type\":1,\"adversaries_type\":1,\"rewards\":5,\"adversaries\":3}"
                         },
                         "description": "This endpoint is used to add reward and adversaries allowance for an employee in the company. Only admins or HR personnel can access this API."
                     },
@@ -1058,7 +1058,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":4,\"new_salary\":75000}"
+                            "raw": "{\"user_id\":14,\"new_salary\":75000}"
                         },
                         "description": "This endpoint is used to Update Employee Salary in the Company and Admin Or Hr Can Access To This Api."
                     },
@@ -1147,7 +1147,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "19",
+                                    "value": "2",
                                     "description": "Must Be Exists In Users Table"
                                 }
                             ]
@@ -1172,6 +1172,46 @@
                             "code": 201,
                             "body": "{\n\"data\": {\n\"id\": 4,\n\"name\": \"mouaz alkhateeb\",\n\"email\": \"mouaz@gmail.com\",\n\"work_email\": \"mouazalkhateeb@gmail.com\",\n\"status\": \"1\",\n\"type\": 4,\n\"gender\": \"1\",\n\"mobile\": \"0969040322\",\n\"phone\": \"0969040322\",\n\"departement\": \"it\",\n\"address\": \"Damascus\",\n\"position\": null,\n\"skills\": \"no skills\",\n\"serial_number\": \"000007\",\n\"birthday_date\": \"2022-11-26\",\n\"marital_status\": null,\n\"guarantor\": \"admin\",\n\"branch\": \"syria branch\",\n\"start_job_contract\": \"2023-08-01\",\n\"end_job_contract\": \"2023-10-01\",\n\"end_visa\": \"2023-09-11\",\n\"end_passport\": \"2023-09-11\",\n\"end_employee_sponsorship\": null,\n\"end_municipal_card\": \"2023-09-10\",\n\"end_health_insurance\": \"2023-09-14\",\n\"end_employee_residence\": \"2023-09-20\",\n\"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n\"id_photo\": null,\n\"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n\"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n\"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n\"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n\"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n\"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n\"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n\"entry_time\": 30,\n\"leave_time\": 60,\n\"number_of_working_hours\": 0,\n\"nationalitie\": {\n  \"name\": \"Syrian\"\n},\n\"percentage\": \"0\",\n\"basic_salary\": 200000,\n\"shifts\": [\n  {\n     \"id\": 3,\n    \"start_time\": \"09:00:00\",\n   \"end_time\": \"15:00:00\",\n  \"start_break_hour\": \"12:30:00\",\n  \"end_break_hour\": \"13:00:00\"\n},\n{\n  \"id\": 4,\n  \"start_time\": \"16:00:00\",\n \"end_time\": \"22:00:00\",\n \"start_break_hour\": \"20:30:00\",\n \"end_break_hour\": \"21:00:00\"\n}\n],\n\"deposits\": [\n{\n\"id\": 1,\n\"type\": 2,\n\"status\": 1,\n\"extra_status\": null,\n\"laptop_type\": \"asus\",\n\"Serial_laptop_number\": \"2010\",\n\"laptop_color\": \"blue\",\n\"laptop_image\": \"http:\/\/127.0.0.1:8000\/employees_deposits\/2023-08-27-EmployeeDeposit-844.png\",\n\"reason_reject\": null,\n\"reason_clearance_reject\": null\n}\n]\n}\n}",
                             "name": "Show Employee"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Remaining Vacation Hours for an Employee",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/remining_vacation_hour_employee\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/remining_vacation_hour_employee\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "19",
+                                    "description": "The ID of the employee in the Users table."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint is used to retrieve the remaining vacation hours for an employee in a company. Only admins or HR personnel can access this API."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n    \"data\": {\n        \"id\": 7,\n        \"user_id\": 11,\n        \"hourly_annual\": 70,\n        \"daily_annual\": 80\n    }\n}",
+                            "name": ""
                         }
                     ]
                 },
@@ -1299,7 +1339,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":1,\"terminate_type\":2,\"contract_termination_period\":13,\"contract_termination_reason\":\"mollitia\"}"
+                            "raw": "{\"user_id\":10,\"terminate_type\":2,\"contract_termination_period\":11,\"contract_termination_reason\":\"et\"}"
                         },
                         "description": "This endpoint is used to terminate an employee's contract in the company. Only admins or HR personnel can access this API."
                     },
@@ -1334,7 +1374,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":17,\"number_of_month\":12,\"new_date\":\"2025-05-01.\"}"
+                            "raw": "{\"user_id\":10,\"number_of_month\":12,\"new_date\":\"2025-05-01.\"}"
                         },
                         "description": "This endpoint is used to  Renewal Employee Contract in the Company and Admin Or Hr Can Access To This Api."
                     },
@@ -1401,7 +1441,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":13,\"entry_time\":\"90)\",\"leave_time\":60}"
+                            "raw": "{\"user_id\":9,\"entry_time\":\"90)\",\"leave_time\":60}"
                         },
                         "description": "This endpoint is used to update the permission time for an employee. Only admins or HR personnel can access this API."
                     },
@@ -1429,12 +1469,12 @@
                                 },
                                 {
                                     "key": "day",
-                                    "value": "15",
+                                    "value": "6",
                                     "description": "Filter Leave Calendar by day. Use the value \"1\" to return records where the date is equal to the current date or it exists between the start_date and end_date. Use the value \"2\" to return records where the date is equal to tomorrow's date or it exists between the start_date and end_date. Example for day 1: 2023-08-30, Example for day 2: 2023-08-31",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/leave_calendar?date=2023-06-03&day=15"
+                            "raw": "{{baseUrl}}\/api\/leave_calendar?date=2023-06-03&day=6"
                         },
                         "method": "GET",
                         "header": [
@@ -1757,7 +1797,7 @@
                             "formdata": [
                                 {
                                     "key": "company_id",
-                                    "value": 3,
+                                    "value": 11,
                                     "type": "text",
                                     "description": "The ID of the company. Must exist in the companies table."
                                 },
@@ -1803,7 +1843,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "18",
                                     "description": "Must Be Exists In companies Table"
                                 }
                             ]
@@ -1850,6 +1890,41 @@
                         "header": [
                             {
                                 "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"company_id\":15,\"name\":\"Goma Company\",\"email\":\"goma@goma.com\",\"longitude\":25.12,\"latitude\":15.32,\"radius\":15}"
+                        },
+                        "description": "This endpoint is used to update a company. Only super admins can access this API."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Goma Company\",\n        \"email\": \"goma@goma.com\",\n        \"commercial_record\": null,\n        \"start_commercial_record\": \"2023-02-01\",\n        \"end_commercial_record\": \"2023-09-01\",\n        \"locations\": [\n            {\n                \"id\": 1,\n                \"Longitude\": \"25.12\",\n                \"Latitude\": \"15.32\",\n                \"Radius\": \"21\"\n            }\n        ],\n        \"admin\": null\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Commercal Record in Company",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/update_commercial_record",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/update_commercial_record"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
                                 "value": "multipart\/form-data"
                             },
                             {
@@ -1862,33 +1937,21 @@
                             "formdata": [
                                 {
                                     "key": "company_id",
-                                    "value": 11,
+                                    "value": 16,
                                     "type": "text",
                                     "description": "The ID of the company. Must exist in the companies table."
-                                },
-                                {
-                                    "key": "name",
-                                    "value": "Goma Company",
-                                    "type": "text",
-                                    "description": "The name of the company. Custom"
-                                },
-                                {
-                                    "key": "email",
-                                    "value": "goma@goma.com",
-                                    "type": "text",
-                                    "description": "The email address of the company.Custom"
                                 },
                                 {
                                     "key": "start_commercial_record",
                                     "value": "2023-08-27",
                                     "type": "text",
-                                    "description": "The start date of the commercial record.Custom"
+                                    "description": "The start date of the commercial record. Custom"
                                 },
                                 {
                                     "key": "end_commercial_record",
                                     "value": "2023-08-27",
                                     "type": "text",
-                                    "description": "The end date of the commercial record.Custom"
+                                    "description": "The end date of the commercial record. Custom"
                                 },
                                 {
                                     "key": "commercial_record",
@@ -1897,13 +1960,13 @@
                                 }
                             ]
                         },
-                        "description": "This endpoint is used to update a company. Only super admins can access this API."
+                        "description": "This endpoint is used to update commercal record and authenticate admin access to this API. It will update commercal comapny to the authenticated admin."
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Goma Company\",\n        \"email\": \"goma@goma.com\",\n        \"commercial_record\": null,\n        \"start_commercial_record\": \"2023-02-01\",\n        \"end_commercial_record\": \"2023-09-01\",\n        \"locations\": [\n            {\n                \"id\": 1,\n                \"Longitude\": \"25.12\",\n                \"Latitude\": \"15.32\",\n                \"Radius\": \"21\"\n            }\n        ],\n        \"admin\": null\n    }\n}",
+                            "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Goma Company\",\n        \"email\": \"goma@goma.com\",\n        \"commercial_record\": \"http:\/\/127.0.0.1:8000\/companies\/2023-09-05-Company-2.png\",\n        \"start_commercial_record\": \"2023-02-01\",\n        \"end_commercial_record\": \"2023-09-01\",\n        \"locations\": [\n            {\n                \"id\": 1,\n                \"Longitude\": \"25.12\",\n                \"Latitude\": \"15.32\",\n                \"Radius\": \"21\"\n            }\n        ],\n        \"admin\": null\n    }\n}",
                             "name": ""
                         }
                     ]
@@ -2021,7 +2084,7 @@
                                 },
                                 {
                                     "key": "user_id",
-                                    "value": 19,
+                                    "value": 3,
                                     "type": "text",
                                     "description": "The ID of the user. Must exist in the users table."
                                 },
@@ -2119,7 +2182,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "13",
                                     "description": "The ID of the deposit. Must exist in the deposits table."
                                 }
                             ]
@@ -2169,7 +2232,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"deposit_id\":14,\"reason_reject\":\"Without Any Reason.\"}"
+                            "raw": "{\"deposit_id\":6,\"reason_reject\":\"Without Any Reason.\"}"
                         },
                         "description": "This endpoint is used to reject a deposit. Employees can access this API to rejecte their deposits. The status will be set to 1, where:\n- `1`: approved.\n- `2`: rejected.\n- `3`: pending status."
                     },
@@ -2234,7 +2297,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "14",
                                     "description": "The ID of the deposit. Must exist in the deposits table."
                                 }
                             ]
@@ -2274,7 +2337,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "6",
                                     "description": "The ID of the deposit. Must exist in the deposits table."
                                 }
                             ]
@@ -2292,7 +2355,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"deposit_id\":19,\"reason_clearance_reject\":\"possimus\",\"reason_reject\":\"Reject Clearance Request Without Any Reason.\"}"
+                            "raw": "{\"deposit_id\":3,\"reason_clearance_reject\":\"et\",\"reason_reject\":\"Reject Clearance Request Without Any Reason.\"}"
                         },
                         "description": "This endpoint is used to Reject Clearance Request. Admin Or Hr can access this API to Reject Clearance Request Deposits. The extra status will be set to 6, where:\n- `4`: up paid.\n- `5`: paid.\n- `6`: un paid rejected status Custom Example:4."
                     },
@@ -2407,6 +2470,38 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Show My Approved Deposits List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/my_approved_deposits",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/my_approved_deposits"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint is used to display the list of approved deposits for the authenticated employee. Only authenticated employees can access this API. It will show the approved deposits specific to the authenticated employee."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"type\": 3,\n            \"status\": 1,\n            \"extra_status\": null,\n            \"serial_mobile_number\": \"01hg23\",\n            \"mobile_color\": \"red\",\n            \"mobile_type\": \"samsung201\",\n            \"mobile_sim\": \"5422ll\",\n            \"mobile_image\": \"http:\/\/127.0.0.1:8000\/employees_deposits\/2023-09-10-EmployeeDeposit-1144.jpg\",\n            \"reason_reject\": null,\n            \"reason_clearance_reject\": null,\n            \"deposit_request_date\": \"2023-09-10\",\n            \"clearance_request_date\": null\n        },\n        {\n            \"id\": 2,\n            \"type\": 2,\n            \"status\": 1,\n            \"extra_status\": null,\n            \"laptop_type\": \"asus\",\n            \"Serial_laptop_number\": \"2010\",\n            \"laptop_color\": \"blue\",\n            \"laptop_image\": \"http:\/\/127.0.0.1:8000\/employees_deposits\/2023-09-10-EmployeeDeposit-119.jpeg\",\n            \"reason_reject\": null,\n            \"reason_clearance_reject\": null,\n            \"deposit_request_date\": \"2023-09-10\",\n            \"clearance_request_date\": null\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -2436,7 +2531,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"days\":[\"sit\"],\"day\":5}"
+                            "raw": "{\"days\":[\"molestiae\"],\"day\":5}"
                         },
                         "description": "This endpoint is used to Create Weekly Holiday and  Admin Or Hr Can Access To This Api."
                     },
@@ -2506,7 +2601,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"holiday_id\":18,\"holiday_name\":\"Eid Aladha\",\"start_date\":\"2023-08-27\",\"end_date\":\"2023-08-29\"}"
+                            "raw": "{\"holiday_id\":14,\"holiday_name\":\"Eid Aladha\",\"start_date\":\"2023-08-27\",\"end_date\":\"2023-08-29\"}"
                         },
                         "description": "This endpoint is used to Upadate Annual Holiday and  Admin Or Hr Can Access To This Api."
                     },
@@ -2601,7 +2696,7 @@
                                 {
                                     "id": "user_id",
                                     "key": "user_id",
-                                    "value": "18",
+                                    "value": "20",
                                     "description": "The user ID, must be in the Users table."
                                 }
                             ]
@@ -2641,7 +2736,7 @@
                                 {
                                     "id": "user_id",
                                     "key": "user_id",
-                                    "value": "2",
+                                    "value": "10",
                                     "description": "The user ID, must be in the Users table."
                                 }
                             ]
@@ -2790,7 +2885,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"content\": \"test data\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n\n          {\n            \"id\": 2,\n            \"content\": \"new post\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n     ],\n   }",
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"content\": \"test data\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"isLiked\": true,\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"isLiked\": false,\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n\n          {\n            \"id\": 2,\n            \"content\": \"new post\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n     ],\n   }",
                             "name": "List Of Posts"
                         }
                     ]
@@ -2822,7 +2917,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"content\": \"test data\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n\n          {\n            \"id\": 2,\n            \"content\": \"new post\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n     ],\n   }",
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"content\": \"test data\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"isLiked\": false,\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"isLiked\": true,\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n\n          {\n            \"id\": 2,\n            \"content\": \"new post\",\n            \"image\": null,\n            \"comments_count\": 1,\n            \"likes_count\": 1,\n            \"shares_count\": 0,\n            \"created_at\": \"2023-08-27\",\n            \"comments\": [\n                {\n                    \"content\": \"New Comment\",\n                    \"likes_count\": 0,\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"likes\": [\n                {\n                    \"user\": {\n                        \"name\": \"Mouaz Alkhateeb\",\n                        \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\"\n                    },\n                    \"created_at\": \"2023-08-27\"\n                }\n            ],\n            \"shares\": [],\n            \"writer\": {\n                \"id\": 3,\n                \"name\": \"Mouaz Alkhateeb\",\n                \"email\": \"mouaz@gmail.com\",\n                \"work_email\": \"mouazalkhateeb@gmail.com\",\n                \"status\": 1,\n                \"type\": 4,\n                \"gender\": 1,\n                \"mobile\": \"0969040322\",\n                \"phone\": \"0969040322\",\n                \"department\": \"IT\",\n                \"address\": \"Damascus\",\n                \"position\": null,\n                \"skills\": \"no skills\",\n                \"serial_number\": \"000007\",\n                \"birthday_date\": \"2022-11-26\",\n                \"marital_status\": null,\n                \"guarantor\": \"admin\",\n                \"branch\": \"Syria Branch\",\n                \"start_job_contract\": \"2023-08-01\",\n                \"end_job_contract\": \"2025-05-01\",\n                \"end_visa\": \"2023-09-11\",\n                \"end_passport\": \"2023-09-11\",\n                \"end_employee_sponsorship\": null,\n                \"end_municipal_card\": \"2023-09-10\",\n                \"end_health_insurance\": \"2023-09-14\",\n                \"end_employee_residence\": \"2023-09-20\",\n                \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n                \"id_photo\": null,\n                \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n                \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n                \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n                \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n                \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n                \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n                \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n                \"permission_to_entry\": 1,\n                \"entry_time\": 30,\n                \"permission_to_leave\": 1,\n                \"leave_time\": 60,\n                \"percentage\": \"0\",\n                \"basic_salary\": 200000,\n                \"number_of_working_hours\": 0,\n               }\n            },\n          },\n     ],\n   }",
                             "name": "My Posts"
                         }
                     ]
@@ -2849,7 +2944,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"content\":\"test comment\",\"post_id\":16}"
+                            "raw": "{\"content\":\"test comment\",\"post_id\":10}"
                         },
                         "description": "This endpoint is used to create a new Comment on post. Admin, HR, or Employee can access this API."
                     },
@@ -2884,7 +2979,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"post_id\":9}"
+                            "raw": "{\"post_id\":14}"
                         },
                         "description": "This endpoint is used to Add a new Like on post. Admin, HR, or Employee can access this API."
                     },
@@ -2919,7 +3014,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"comment_id\":16}"
+                            "raw": "{\"comment_id\":19}"
                         },
                         "description": "This endpoint is used to Add Like To Comment. Admin, HR, or Employee can access this API."
                     },
@@ -2954,7 +3049,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"post_id\":2}"
+                            "raw": "{\"post_id\":18,\"content\":\"arkuhhv\"}"
                         },
                         "description": "This endpoint is used to share a post. Admin, HR, or Employee can access this API."
                     },
@@ -2962,7 +3057,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n  \"data\": {\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees\/2023-08-27-Employee-8.jpg\"\n      },\n    \"post\": {\n        \"id\": 1,\n        \"content\": \"test data\",\n        \"image\": null,\n        \"comments_count\": 4,\n        \"likes_count\": 1,\n        \"shares_count\": 1,\n        \"created_at\": \"2023-08-27\",\n        \"writer\": {\n            \"id\": 3,\n            \"name\": \"mouaz alkhateeb\",\n            \"email\": \"mouaz@gmail.com\",\n            \"work_email\": \"mouazalkhateeb@gmail.com\",\n            \"status\": 1,\n            \"type\": 4,\n            \"gender\": 1,\n            \"mobile\": \"0969040322\",\n            \"phone\": \"0969040322\",\n            \"departement\": \"it\",\n            \"address\": \"Damascus\",\n            \"position\": null,\n            \"skills\": \"no skills\",\n            \"serial_number\": \"000007\",\n            \"birthday_date\": \"2022-11-26\",\n            \"marital_status\": null,\n            \"guarantor\": \"admin\",\n            \"branch\": \"syria branch\",\n            \"start_job_contract\": \"2023-08-01\",\n            \"end_job_contract\": \"2025-05-01\",\n            \"end_visa\": \"2023-09-11\",\n            \"end_passport\": \"2023-09-11\",\n            \"end_employee_sponsorship\": null,\n            \"end_municipal_card\": \"2023-09-10\",\n            \"end_health_insurance\": \"2023-09-14\",\n            \"end_employee_residence\": \"2023-09-20\",\n            \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n            \"id_photo\": null,\n            \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n            \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n            \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n            \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n            \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n            \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n            \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n            \"permission_to_entry\": 1,\n            \"entry_time\": 30,\n            \"permission_to_leave\": 1,\n            \"leave_time\": 60,\n            \"percentage\": \"0\",\n            \"basic_salary\": 200000,\n            \"number_of_working_hours\": 0,\n          }\n        },\n            \"created_at\": \"2023-08-28\"\n    }",
+                            "body": "{\n  \"data\": {\n     \"user\": {\n        \"id\": 3,\n        \"name\": \"mouaz alkhateeb\",\n        \"image\": \"employees\/2023-08-27-Employee-8.jpg\"\n      },\n    \"post\": {\n        \"id\": 1,\n        \"content\": \"test data\",\n        \"image\": null,\n        \"comments_count\": 4,\n        \"likes_count\": 1,\n        \"shares_count\": 1,\n        \"created_at\": \"2023-08-27\",\n        \"isLiked\": true,\n        \"writer\": {\n            \"id\": 3,\n            \"name\": \"mouaz alkhateeb\",\n            \"email\": \"mouaz@gmail.com\",\n            \"work_email\": \"mouazalkhateeb@gmail.com\",\n            \"status\": 1,\n            \"type\": 4,\n            \"gender\": 1,\n            \"mobile\": \"0969040322\",\n            \"phone\": \"0969040322\",\n            \"departement\": \"it\",\n            \"address\": \"Damascus\",\n            \"position\": null,\n            \"skills\": \"no skills\",\n            \"serial_number\": \"000007\",\n            \"birthday_date\": \"2022-11-26\",\n            \"marital_status\": null,\n            \"guarantor\": \"admin\",\n            \"branch\": \"syria branch\",\n            \"start_job_contract\": \"2023-08-01\",\n            \"end_job_contract\": \"2025-05-01\",\n            \"end_visa\": \"2023-09-11\",\n            \"end_passport\": \"2023-09-11\",\n            \"end_employee_sponsorship\": null,\n            \"end_municipal_card\": \"2023-09-10\",\n            \"end_health_insurance\": \"2023-09-14\",\n            \"end_employee_residence\": \"2023-09-20\",\n            \"image\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-8.jpg\",\n            \"id_photo\": null,\n            \"biography\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-test.pdf\",\n            \"employee_sponsorship\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-55.jpg\",\n            \"visa\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-7.jpg\",\n            \"passport\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-6.jpeg\",\n            \"municipal_card\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpeg\",\n            \"health_insurance\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-9.jpg\",\n            \"employee_residence\": \"http:\/\/127.0.0.1:8000\/employees\/2023-08-27-Employee-77.jpg\",\n            \"permission_to_entry\": 1,\n            \"entry_time\": 30,\n            \"permission_to_leave\": 1,\n            \"leave_time\": 60,\n            \"percentage\": \"0\",\n            \"basic_salary\": 200000,\n            \"number_of_working_hours\": 0,\n          }\n        },\n            \"created_at\": \"2023-08-28\"\n    }",
                             "name": "Share Post"
                         }
                     ]
@@ -2979,7 +3074,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "8",
                                     "description": "Must Be Exists In posts Table"
                                 }
                             ]
@@ -3019,7 +3114,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "8",
                                     "description": "Must Be Exists In comments Table"
                                 }
                             ]
@@ -3066,7 +3161,7 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
@@ -3074,8 +3169,74 @@
                             }
                         ],
                         "body": {
-                            "mode": "raw",
-                            "raw": "{\"reason\":\"death of a lover.\",\"start_date\":\"2023-08-27\",\"end_date\":\"2023-08-27\",\"vacation_type\":19,\"start_time\":\"09:00:00.\",\"end_time\":\"15:30:00.\",\"payment_type\":1,\"person\":5,\"dead_person\":5,\"degree_of_kinship\":2}"
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "reason",
+                                    "value": "death of a lover.",
+                                    "type": "text",
+                                    "description": "The reason for the vacation request Custom"
+                                },
+                                {
+                                    "key": "start_date",
+                                    "value": "2023-08-27",
+                                    "type": "text",
+                                    "description": "The end date of the vacation request Custom"
+                                },
+                                {
+                                    "key": "end_date",
+                                    "value": "2023-08-27",
+                                    "type": "text",
+                                    "description": "The end date of the vacation request Custom"
+                                },
+                                {
+                                    "key": "vacation_type",
+                                    "value": 13,
+                                    "type": "text",
+                                    "description": ". Must be one of the following values:\n- `1`: HOURLY.\n- `2`: DAILY.\n- `3`: DEATH.\n- `4`: SATISFYING.\n- `5`: PILGRIMAME.\n- `6`: NEW_BABY.\n- `7`: EXAM.\n- `8`: PREGNANT_WOMAN.\n- `9`: METERNITY.\n- `10`: SICK_CHILD\n- `11`: MARRIED"
+                                },
+                                {
+                                    "key": "start_time",
+                                    "value": "09:00:00.",
+                                    "type": "text",
+                                    "description": "required_if vacation type equal 1 The start time of the vacation request in the format `HH:MM:SS` Custom"
+                                },
+                                {
+                                    "key": "end_time",
+                                    "value": "15:30:00.",
+                                    "type": "text",
+                                    "description": "required_if vacation type equal 1 The end time of the vacation request in the format `HH:MM:SS` Custom"
+                                },
+                                {
+                                    "key": "payment_type",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": "The payment type of the vacation request. Must be one of the following values:\n- `1`: payment.\n- `2`: unpayment. Custom"
+                                },
+                                {
+                                    "key": "person",
+                                    "value": 5,
+                                    "type": "text",
+                                    "description": "required_if vacation_type equal 4. Must be one of the following values:\n- `1`: FATHER.\n- `2`: MOTHER.\n- `3`: SISTER.\n- `4`: PROTHER.\n- `5`: SON.\n- `6`: DAUGHTER.\n- `7`: HUSBAND.\n- `8`: ME.\n- `9`: GRAND_FATHER.\n- `10`: GRAND_MOTHER\n- `11`: UNCLE.\n- `12`: AUNT.\n- `13`: MATERNAL_UNCLE.\n- `14`: MATERNAL_AUNT. Custom"
+                                },
+                                {
+                                    "key": "dead_person",
+                                    "value": 5,
+                                    "type": "text",
+                                    "description": "required_if vacation_type equal 3 (death). Must be one of the following values:\n- `1`: FATHER.\n- `2`: MOTHER.\n- `3`: SISTER.\n- `4`: PROTHER.\n- `5`: SON.\n- `6`: DAUGHTER.\n- `7`: HUSBAND.\n- `8`: ME.\n- `9`: GRAND_FATHER.\n- `10`: GRAND_MOTHER\n- `11`: UNCLE.\n- `12`: AUNT.\n- `13`: MATERNAL_UNCLE.\n- `14`: MATERNAL_AUNT. Custom"
+                                },
+                                {
+                                    "key": "degree_of_kinship",
+                                    "value": 2,
+                                    "type": "text",
+                                    "description": "required_if vacation_type equal 3 (death). Must be one of the following values:\n- `1`: FIRST.\n- `2`: SECOND. Custom"
+                                },
+                                {
+                                    "key": "attachments",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
                         },
                         "description": "This endpoint is used to add a vacation request. Employee can access this API Once A Day."
                     },
@@ -3265,7 +3426,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "14",
                                     "description": "Must Be Exists In requests Table"
                                 }
                             ]
@@ -3305,7 +3466,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "18",
                                     "description": "Must Be Exists In requests Table"
                                 }
                             ]
@@ -3355,7 +3516,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"request_id\":12,\"reject_reason\":\"Without Any Reason.\"}"
+                            "raw": "{\"request_id\":16,\"reject_reason\":\"Without Any Reason.\"}"
                         },
                         "description": "This endpoint is used to rjected a request in the company. Admin or HR can access this API. The status will be set to 1, where number 1 refers to approved,number 2 refers to rejected, and number 3 refers to pending status."
                     },
@@ -3377,12 +3538,12 @@
                             "query": [
                                 {
                                     "key": "type",
-                                    "value": "18",
+                                    "value": "5",
                                     "description": "optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending).",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/my_requests?type=18"
+                            "raw": "{{baseUrl}}\/api\/my_requests?type=5"
                         },
                         "method": "GET",
                         "header": [
@@ -3544,12 +3705,12 @@
                             "query": [
                                 {
                                     "key": "duration",
-                                    "value": "5",
+                                    "value": "12",
                                     "description": "optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences).",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/my_monthly_shift?duration=5"
+                            "raw": "{{baseUrl}}\/api\/my_monthly_shift?duration=12"
                         },
                         "method": "GET",
                         "header": [
@@ -3634,7 +3795,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"shift_id\":4,\"start_time\":\"09:00:00.\",\"end_time\":\"15:00:00.\",\"start_break_hour\":\"12:30:00.\",\"end_break_hour\":\"13:30:00.\"}"
+                            "raw": "{\"shift_id\":17,\"start_time\":\"09:00:00.\",\"end_time\":\"15:00:00.\",\"start_break_hour\":\"12:30:00.\",\"end_break_hour\":\"13:30:00.\"}"
                         },
                         "description": "This endpoint is used to Create Update Employee Shifts and Admin Or Hr Can Access To This Api."
                     },

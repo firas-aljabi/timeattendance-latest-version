@@ -17,7 +17,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -62,8 +62,9 @@ endpoints:
           - `8`: PREGNANT_WOMAN.
           - `9`: METERNITY.
           - `10`: SICK_CHILD
+          - `11`: MARRIED
         required: true
-        example: 19
+        example: 13
         type: integer
         enumValues: []
         custom: []
@@ -151,18 +152,27 @@ endpoints:
         type: integer
         enumValues: []
         custom: []
+      attachments:
+        name: attachments
+        description: 'Must not be greater than 5120 kilobytes'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        custom: []
     cleanBodyParameters:
       reason: 'death of a lover.'
       start_date: '2023-08-27'
       end_date: '2023-08-27'
-      vacation_type: 19
+      vacation_type: 13
       start_time: '09:00:00.'
       end_time: '15:30:00.'
       payment_type: 1
       person: 5
       dead_person: 5
       degree_of_kinship: 2
-    fileParameters: []
+    fileParameters:
+      attachments: null
     responses:
       -
         status: 200
@@ -316,7 +326,7 @@ endpoints:
         custom: []
       attachments:
         name: attachments
-        description: 'Must not be greater than 2048 kilobytes'
+        description: 'Must not be greater than 5120 kilobytes'
         required: false
         example: null
         type: file
@@ -392,7 +402,7 @@ endpoints:
         custom: []
       attachments:
         name: attachments
-        description: 'Must not be greater than 2048 kilobytes'
+        description: 'Must not be greater than 5120 kilobytes'
         required: false
         example: null
         type: file
@@ -463,7 +473,7 @@ endpoints:
         custom: []
       attachments:
         name: attachments
-        description: 'Must not be greater than 2048 kilobytes'
+        description: 'Must not be greater than 5120 kilobytes'
         required: false
         example: null
         type: file
@@ -524,12 +534,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 13
+        example: 14
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 13
+      id: 14
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -623,12 +633,12 @@ endpoints:
         name: id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 3
+        example: 18
         type: integer
         enumValues: []
         custom: []
     cleanUrlParameters:
-      id: 3
+      id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -726,7 +736,7 @@ endpoints:
         name: request_id
         description: 'Must Be Exists In requests Table'
         required: true
-        example: 12
+        example: 16
         type: integer
         enumValues: []
         custom: []
@@ -739,7 +749,7 @@ endpoints:
         enumValues: []
         custom: []
     cleanBodyParameters:
-      request_id: 12
+      request_id: 16
       reject_reason: 'Without Any Reason.'
     fileParameters: []
     responses:
@@ -835,12 +845,12 @@ endpoints:
         name: type
         description: 'optional Filter the requests by type. Possible values: 1 (approved), 2 (rejected), 3 (pending).'
         required: false
-        example: 18
+        example: 5
         type: integer
         enumValues: []
         custom: []
     cleanQueryParameters:
-      type: 18
+      type: 5
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -1138,12 +1148,12 @@ endpoints:
         name: duration
         description: 'optional Filter the Monthly Shifts by duration. Possible values: 1 (only day absences), 2 (several days absences).'
         required: false
-        example: 5
+        example: 12
         type: integer
         enumValues: []
         custom: []
     cleanQueryParameters:
-      duration: 5
+      duration: 12
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
